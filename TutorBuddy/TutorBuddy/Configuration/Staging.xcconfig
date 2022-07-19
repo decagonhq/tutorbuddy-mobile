@@ -1,0 +1,15 @@
+//
+//  Staging.xcconfig
+//  TutorBuddy
+//
+//  Created by Folahanmi Kolawole on 16/07/2022.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-TutorBuddy/Pods-TutorBuddy.staging.xcconfig"
+
+APP_NAME = TutorBuddy Staging
+BUNDLE_ID = com.decagonhq.tutorbuddy.staging
+BASE_URL = https:/$()/api.staging.myautochek.com/v1/
