@@ -25,8 +25,8 @@ class OnboardingCollectionViewCell: BaseCollectionViewCell {
             iconImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
         ])
         
-        titleLabel.anchor(top: iconImageView.bottomAnchor, leading: iconImageView.leadingAnchor, trailing: iconImageView.trailingAnchor, padding: ._init(top: 30, left: 20, right: 20))
-        subtitleLabel.anchor(top: titleLabel.bottomAnchor, leading: titleLabel.leadingAnchor, trailing: titleLabel.trailingAnchor, padding: ._init(top: 30))
+        titleLabel.anchor(top: iconImageView.bottomAnchor, leading: iconImageView.leadingAnchor, trailing: iconImageView.trailingAnchor, padding: ._init(top: 20, left: 20, right: 20))
+        subtitleLabel.anchor(top: titleLabel.bottomAnchor, leading: titleLabel.leadingAnchor, bottom: contentView.bottomAnchor, trailing: titleLabel.trailingAnchor, padding: ._init(top: 20))
     }
     
     func configure(item: OnboardingItem) {

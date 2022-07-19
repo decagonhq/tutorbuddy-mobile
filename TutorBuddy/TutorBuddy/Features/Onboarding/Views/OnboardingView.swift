@@ -61,7 +61,7 @@ class OnboardingView: BaseView {
         onboardingItemsCollectionView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            onboardingItemsCollectionView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.7),
+            onboardingItemsCollectionView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.85),
             onboardingItemsCollectionView.topAnchor.constraint(equalTo: topAnchor),
             onboardingItemsCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             onboardingItemsCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
