@@ -27,17 +27,17 @@ def utilityPods
   pod 'BottomPopup'
   #Rx Datasources for TableViews and UICollectionViews
   pod 'RxDataSources', '~> 4.0'
-  pod 'RangeSeekSlider'
-  pod 'SVPinView', '~> 1.0'
+#  pod 'RangeSeekSlider'
+#  pod 'SVPinView', '~> 1.0'
   pod "AttributedStringBuilder"
   pod 'PopupDialog'
-  pod 'MarqueeLabel'
+#  pod 'MarqueeLabel'
   pod 'SDWebImage', '~> 5.0'
   pod 'SDWebImageSVGKitPlugin'
-  pod "WARangeSlider"
+#  pod "WARangeSlider"
   pod 'IQKeyboardManagerSwift'
   #pod 'FittedSheets'
-  pod 'Cosmos', '~> 21.0'
+#  pod 'Cosmos', '~> 21.0'
   pod 'DropDown'
   pod 'HorizontalProgressBar'
   pod 'DeviceKit', '~> 4.0'
