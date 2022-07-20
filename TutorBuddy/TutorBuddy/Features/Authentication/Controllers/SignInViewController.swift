@@ -32,9 +32,7 @@ class SignInViewController: BaseViewController<SignInView, IAuthViewModel> {
             }
             
             $0.createAnAccountTapHandler = { [weak self] in
-//                let signupViewController = AppDelegate.dependencyContainer.signUpController
-                let welcomeViewController = ViewController()
-//                self?.navigationController?.setViewControllers([welcomeViewController, signupViewController], animated: true)
+                self?.setViewControllers(using: AppDelegate.dependencyContainer.selectOptionsController, animate: true)
             }
         }
     }
