@@ -16,6 +16,8 @@
 		BC533A9E2886850600D2A6DA /* SelectOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A9D2886850600D2A6DA /* SelectOptionsView.swift */; };
 		BC533AA02886967600D2A6DA /* TutorSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A9F2886967600D2A6DA /* TutorSignUpViewController.swift */; };
 		BC533AA2288696D600D2A6DA /* TutorSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533AA1288696D600D2A6DA /* TutorSignUpView.swift */; };
+		BC533AA42887E54B00D2A6DA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533AA32887E54B00D2A6DA /* WelcomeViewController.swift */; };
+		BC533AA62887E56500D2A6DA /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533AA52887E56500D2A6DA /* WelcomeView.swift */; };
 		BCFB81562882C7CA00C50982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB81552882C7CA00C50982 /* AppDelegate.swift */; };
 		BCFB81582882C7CA00C50982 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB81572882C7CA00C50982 /* SceneDelegate.swift */; };
 		BCFB815A2882C7CA00C50982 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB81592882C7CA00C50982 /* ViewController.swift */; };
@@ -153,6 +155,8 @@
 		BC533A9D2886850600D2A6DA /* SelectOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsView.swift; sourceTree = "<group>"; };
 		BC533A9F2886967600D2A6DA /* TutorSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorSignUpViewController.swift; sourceTree = "<group>"; };
 		BC533AA1288696D600D2A6DA /* TutorSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorSignUpView.swift; sourceTree = "<group>"; };
+		BC533AA32887E54B00D2A6DA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		BC533AA52887E56500D2A6DA /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BCFB81522882C7CA00C50982 /* TutorBuddy Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TutorBuddy Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCFB81552882C7CA00C50982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCFB81572882C7CA00C50982 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -482,6 +486,7 @@
 				BCFB81C52883127700C50982 /* SignInViewController.swift */,
 				BC533A8B2885CA5500D2A6DA /* StudentSignUpViewController.swift */,
 				BC533A9F2886967600D2A6DA /* TutorSignUpViewController.swift */,
+				BC533AA32887E54B00D2A6DA /* WelcomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				BCFB81CA2883127700C50982 /* SignInView.swift */,
 				BC533A8D2885CA8500D2A6DA /* StudentSignUpView.swift */,
 				BC533AA1288696D600D2A6DA /* TutorSignUpView.swift */,
+				BC533AA52887E56500D2A6DA /* WelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1033,6 +1039,7 @@
 				BCFB82962883155000C50982 /* Typealiases+Utils.swift in Sources */,
 				BC533A9E2886850600D2A6DA /* SelectOptionsView.swift in Sources */,
 				BCFB826A288314FB00C50982 /* Loader.swift in Sources */,
+				BC533AA62887E56500D2A6DA /* WelcomeView.swift in Sources */,
 				BCFB8266288314FB00C50982 /* BaseTableViewCell.swift in Sources */,
 				BCFB8215288312A900C50982 /* Preference+Utils.swift in Sources */,
 				BCFB8263288314FB00C50982 /* TBTextField.swift in Sources */,
@@ -1104,6 +1111,7 @@
 				BCFB82942883155000C50982 /* Numeric+Utils.swift in Sources */,
 				BCFB81982882F47200C50982 /* DependencyContainer.swift in Sources */,
 				BCFB8264288314FB00C50982 /* PickerManager.swift in Sources */,
+				BC533AA42887E54B00D2A6DA /* WelcomeViewController.swift in Sources */,
 				BCFB821E288312A900C50982 /* IAuthRemoteDatasource.swift in Sources */,
 				BCFB82862883155000C50982 /* DateType.swift in Sources */,
 				BCFB81582882C7CA00C50982 /* SceneDelegate.swift in Sources */,

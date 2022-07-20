@@ -29,5 +29,7 @@ extension Container {
     var signInController: SignInViewController { resolve(SignInViewController.self)! }
     
     var selectOptionsController: SelectOptionsViewController { resolve(SelectOptionsViewController.self)! }
+    
+    var welcomeController: WelcomeViewController { resolve(WelcomeViewController.self)! }
 
 }

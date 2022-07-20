@@ -21,7 +21,8 @@ class OnboardingViewModelImpl: BaseViewModel, IOnboardingViewModel {
     
     override func didAppear() {
         super.didAppear()
-        getUserCountry()
+//        getUserCountry()
+        navigate()
     }
     
     fileprivate func getUserCountry() {

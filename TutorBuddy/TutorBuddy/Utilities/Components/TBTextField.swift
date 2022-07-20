@@ -12,6 +12,8 @@ class TBTextField: BaseView {
     fileprivate let errorLabel = UILabel(text: "Error Label", font: .interRegular(size: 13), numberOfLines: 0, color: .systemRed, alignment: .left)
     let textField = TextField()
     fileprivate let passwordIconImageView = UIImageView(image: R.image.eye_open_icon(), tintColor: .primaryTextColor, size: 22)
+    fileprivate let penIconImageView = UIImageView(image: R.image.pen_icon(), tintColor: .primaryTextColor, size: 22)
+    fileprivate let uploadIconImageView = UIImageView(image: R.image.upload_icon(), tintColor: .primaryTextColor, height: 30, width: 80)
     fileprivate let pickerManager = PickerManager()
     fileprivate let pickerView = UIPickerView()
     fileprivate var passwordVisible = false
@@ -32,7 +34,7 @@ class TBTextField: BaseView {
         set { textField.text = newValue }
     }
     
-    convenience init(title: String, placeholder: String = "", isPassword: Bool = false, height: CGFloat? = 80, validationType: ValidationType? = nil, keyboardType: UIKeyboardType = .alphabet, maxLength: Int? = nil) {
+    convenience init(title: String, placeholder: String = "", isPassword: Bool = false, isBio: Bool = false, isUploadProfilePicture: Bool = false, height: CGFloat? = 80, validationType: ValidationType? = nil, keyboardType: UIKeyboardType = .alphabet, maxLength: Int? = nil) {
         self.init(frame: .zero)
         backgroundColor = .clear
         titleLabel.text = title
@@ -53,6 +55,14 @@ class TBTextField: BaseView {
         
         if isPassword {
             setupPassword()
+        }
+        
+        if isBio {
+            setupBio()
+        }
+        
+        if isUploadProfilePicture {
+            setupUploadProfilePicture()
         }
     }
     
@@ -108,6 +118,34 @@ class TBTextField: BaseView {
         passwordIconImageView.animateViewOnTapGesture(duration: 0.1, completion: togglePasswordVisibility)
     }
     
+    func setupBio() {
+        let paddingView = UIView(size: 15, backgroundColor: .clear)
+        let penIconStackView = HorizontalStackView(arrangedSubviews: [penIconImageView, paddingView], alignment: .center)
+        textField.do {
+            $0.padding = ._init(top: 0, left: 15, bottom: 0, right: 45)
+            $0.rightView = penIconStackView
+            $0.rightViewMode = .always
+            $0.setNeedsLayout()
+            $0.layoutIfNeeded()
+        }
+    }
+    
+    func setupUploadProfilePicture() {
+        let paddingView = UIView(size: 15, backgroundColor: .clear)
+        let uploadIconStackView = HorizontalStackView(arrangedSubviews: [UIView.spacer().withWidth(10), uploadIconImageView, paddingView], alignment: .center)
+        textField.do {
+//            $0.isEnabled = false
+            $0.padding = ._init(top: 0, left: 95, bottom: 0, right: 45)
+            $0.leftView = uploadIconStackView
+            $0.leftViewMode = .always
+            $0.setNeedsLayout()
+            $0.layoutIfNeeded()
+        }
+        uploadIconImageView.animateViewOnTapGesture { [weak self] in
+            print("upload button tapped")
+        }
+    }
+    
     func togglePasswordVisibility() {
         if !passwordVisible && text.isNotEmpty {
             textField.isSecureTextEntry = false
@@ -141,7 +179,7 @@ class TBTextField: BaseView {
     fileprivate func addDropDownChevron() {
         let dropButton = UIButton(type: .system)
         dropButton.frame = CGRect(x: 0, y: 5, width: frame.height, height: frame.height)
-        dropButton.setImage(R.image.launch_screen_logo(), for: .normal)
+        dropButton.setImage(R.image.arrow_down_icon(), for: .normal)
         dropButton.tintColor = .primaryTextColor
         dropButton.contentEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 10)
         dropButton.addTarget(self, action: #selector(dropdownButtonSelected), for: .touchUpInside)

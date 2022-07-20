@@ -25,7 +25,7 @@ class SignInView: BaseScrollView {
     fileprivate lazy var accoutActionsStackView = HorizontalStackView(arrangedSubviews: [dontHaveAnAccountLabel, createAnAccountButton]).withWidth(220)
     
     fileprivate lazy var signinWithAppleButton = TBButton(backgroundColor: .black.withAlphaComponent(0.03), cornerRadius: 25, height: 50, width: 50, image: R.image.apple_icon(), tapAction: signinWithAppleTapped)
-    fileprivate lazy var signinWithGoogleButton = TBButton(backgroundColor: .black.withAlphaComponent(0.03), cornerRadius: 25, height: 50, width: 50, image: R.image.google_icon(), tapAction: signinWithAppleTapped)
+    fileprivate lazy var signinWithGoogleButton = TBButton(backgroundColor: .black.withAlphaComponent(0.03), cornerRadius: 25, height: 50, width: 50, image: R.image.google_icon(), tapAction: signinWithGoogleTapped)
     fileprivate lazy var socialAccountsStackView = HorizontalStackView(arrangedSubviews: [signinWithAppleButton, signinWithGoogleButton], spacing: 50).withWidth(150)
     
     override func addConstraints() {
@@ -72,5 +72,8 @@ class SignInView: BaseScrollView {
     }
     
     fileprivate func signinWithAppleTapped() {
+    }
+    
+    fileprivate func signinWithGoogleTapped() {
     }
 }
