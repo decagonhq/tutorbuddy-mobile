@@ -1,8 +1,6 @@
 //
 //  SignInErrorViewController.swift
-//  Autocheck Partner
-//
-//  Created by Isaac Iniongun on 09/04/2022.
+//  TutorBuddy
 //
 
 import UIKit

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		4CAFE625BCF634DA3B926E7F /* Pods_TutorBuddy_TutorBuddyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922CBCC9C5E81DE88A688B13 /* Pods_TutorBuddy_TutorBuddyUITests.framework */; };
 		70B5F16028880356008BD901 /* TBDashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F15F28880356008BD901 /* TBDashBoardViewController.swift */; };
+		70B5F16A28881A36008BD901 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F16928881A36008BD901 /* AccountViewController.swift */; };
+		70B5F16C28881A79008BD901 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F16B28881A79008BD901 /* NotificationViewController.swift */; };
+		70B5F16E28881AAC008BD901 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F16D28881AAC008BD901 /* ReminderViewController.swift */; };
+		70B5F17028881ADB008BD901 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F16F28881ADB008BD901 /* HomeViewController.swift */; };
+		70B5F17228883431008BD901 /* DashBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F17128883431008BD901 /* DashBoardViewModel.swift */; };
+		70B5F174288834FC008BD901 /* DashBoardViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F173288834FC008BD901 /* DashBoardViewModelImpl.swift */; };
 		A39CC394D2F012F416F62F74 /* Pods_TutorBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DC1360A0688C72A0395964 /* Pods_TutorBuddy.framework */; };
 		BC533A8C2885CA5500D2A6DA /* StudentSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A8B2885CA5500D2A6DA /* StudentSignUpViewController.swift */; };
 		BC533A8E2885CA8500D2A6DA /* StudentSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A8D2885CA8500D2A6DA /* StudentSignUpView.swift */; };
@@ -144,6 +150,12 @@
 		35F57C9753F37B3EBC5F68AB /* Pods_TutorBuddyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorBuddyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3E100320B04753424DF533 /* Pods-TutorBuddyTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorBuddyTests.staging.xcconfig"; path = "Target Support Files/Pods-TutorBuddyTests/Pods-TutorBuddyTests.staging.xcconfig"; sourceTree = "<group>"; };
 		70B5F15F28880356008BD901 /* TBDashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBDashBoardViewController.swift; sourceTree = "<group>"; };
+		70B5F16928881A36008BD901 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		70B5F16B28881A79008BD901 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		70B5F16D28881AAC008BD901 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
+		70B5F16F28881ADB008BD901 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		70B5F17128883431008BD901 /* DashBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewModel.swift; sourceTree = "<group>"; };
+		70B5F173288834FC008BD901 /* DashBoardViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewModelImpl.swift; sourceTree = "<group>"; };
 		70DC1360A0688C72A0395964 /* Pods_TutorBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E25B395684D482921858AA /* Pods-TutorBuddy.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorBuddy.staging.xcconfig"; path = "Target Support Files/Pods-TutorBuddy/Pods-TutorBuddy.staging.xcconfig"; sourceTree = "<group>"; };
 		922CBCC9C5E81DE88A688B13 /* Pods_TutorBuddy_TutorBuddyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorBuddy_TutorBuddyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,9 +324,79 @@
 		70B5F15E2887ED2A008BD901 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				70B5F16428881971008BD901 /* Account */,
+				70B5F16328881959008BD901 /* Notification */,
+				70B5F16228881943008BD901 /* Reminder */,
+				70B5F16128881935008BD901 /* Home */,
 				70B5F15F28880356008BD901 /* TBDashBoardViewController.swift */,
+				70B5F17128883431008BD901 /* DashBoardViewModel.swift */,
+				70B5F173288834FC008BD901 /* DashBoardViewModelImpl.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		70B5F16128881935008BD901 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				70B5F168288819C4008BD901 /* Controllers */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		70B5F16228881943008BD901 /* Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				70B5F167288819B7008BD901 /* Controllers */,
+			);
+			path = Reminder;
+			sourceTree = "<group>";
+		};
+		70B5F16328881959008BD901 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				70B5F16628881998008BD901 /* Controllers */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		70B5F16428881971008BD901 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				70B5F16528881983008BD901 /* Controllers */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		70B5F16528881983008BD901 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				70B5F16928881A36008BD901 /* AccountViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		70B5F16628881998008BD901 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				70B5F16B28881A79008BD901 /* NotificationViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		70B5F167288819B7008BD901 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				70B5F16D28881AAC008BD901 /* ReminderViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		70B5F168288819C4008BD901 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				70B5F16F28881ADB008BD901 /* HomeViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		851D7ED1D11AAA3A76C1FED4 /* Pods */ = {
@@ -1030,6 +1112,7 @@
 			files = (
 				BCFB81B6288311ED00C50982 /* BaseResponse.swift in Sources */,
 				BCFB81EA2883127800C50982 /* OnboardingViewModelImpl.swift in Sources */,
+				70B5F16E28881AAC008BD901 /* ReminderViewController.swift in Sources */,
 				BCFB82982883155000C50982 /* UIView+Utils.swift in Sources */,
 				BCFB82882883155000C50982 /* ScopeFunctions.swift in Sources */,
 				BCFB8214288312A900C50982 /* PreferencConstants.swift in Sources */,
@@ -1043,6 +1126,7 @@
 				BCFB8266288314FB00C50982 /* BaseTableViewCell.swift in Sources */,
 				BCFB8215288312A900C50982 /* Preference+Utils.swift in Sources */,
 				BCFB8263288314FB00C50982 /* TBTextField.swift in Sources */,
+				70B5F174288834FC008BD901 /* DashBoardViewModelImpl.swift in Sources */,
 				BCFB8261288314FB00C50982 /* NumberProgressView.swift in Sources */,
 				BCFB8267288314FB00C50982 /* Toast.swift in Sources */,
 				BCFB82AF2884235E00C50982 /* DocumentUploadResponse.swift in Sources */,
@@ -1052,6 +1136,7 @@
 				BCFB81EC2883127800C50982 /* OnboardingViewController.swift in Sources */,
 				BCFB82952883155000C50982 /* UIFont+Utils.swift in Sources */,
 				BCFB815A2882C7CA00C50982 /* ViewController.swift in Sources */,
+				70B5F16A28881A36008BD901 /* AccountViewController.swift in Sources */,
 				BCFB82922883155000C50982 /* UIView+AutoLayout+Utils.swift in Sources */,
 				BCFB8269288314FB00C50982 /* BaseScrollView.swift in Sources */,
 				BCFB825B288314FB00C50982 /* BaseView.swift in Sources */,
@@ -1099,8 +1184,10 @@
 				BCFB82872883155000C50982 /* DeviceManager.swift in Sources */,
 				BCFB826C288314FB00C50982 /* FilterableItemsViewController.swift in Sources */,
 				BCFB81DE2883127800C50982 /* SignInErrorViewController.swift in Sources */,
+				70B5F17028881ADB008BD901 /* HomeViewController.swift in Sources */,
 				BCFB8260288314FB00C50982 /* AlertMessage.swift in Sources */,
 				70B5F16028880356008BD901 /* TBDashBoardViewController.swift in Sources */,
+				70B5F16C28881A79008BD901 /* NotificationViewController.swift in Sources */,
 				BCFB828F2883155000C50982 /* Code+Utils.swift in Sources */,
 				BCFB8213288312A900C50982 /* PreferenceImpl.swift in Sources */,
 				BCFB828C2883155000C50982 /* IInputValidator.swift in Sources */,
@@ -1112,6 +1199,7 @@
 				BCFB81982882F47200C50982 /* DependencyContainer.swift in Sources */,
 				BCFB8264288314FB00C50982 /* PickerManager.swift in Sources */,
 				BC533AA42887E54B00D2A6DA /* WelcomeViewController.swift in Sources */,
+				70B5F17228883431008BD901 /* DashBoardViewModel.swift in Sources */,
 				BCFB821E288312A900C50982 /* IAuthRemoteDatasource.swift in Sources */,
 				BCFB82862883155000C50982 /* DateType.swift in Sources */,
 				BCFB81582882C7CA00C50982 /* SceneDelegate.swift in Sources */,

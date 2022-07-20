@@ -1,10 +1,7 @@
 //
 //  BaseViewModel.swift
-//  Autocheck Partner
+//  TutorBuddy
 //
-//  Created by Isaac Iniongun on 30/12/2021.
-//
-
 import Foundation
 import RxSwift
 

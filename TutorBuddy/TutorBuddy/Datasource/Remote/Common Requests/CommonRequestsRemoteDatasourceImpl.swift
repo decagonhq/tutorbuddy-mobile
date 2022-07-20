@@ -1,8 +1,6 @@
 //
 //  CommonRequestsRemoteDatasourceImpl.swift
-//  Autocheck Partner
-//
-//  Created by Isaac Iniongun on 30/03/2022.
+//  TutorBuddy
 //
 
 import Foundation

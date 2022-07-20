@@ -1,8 +1,6 @@
 //
 //  ACTextView.swift
-//  Autocheck Partner
-//
-//  Created by Isaac Iniongun on 01/04/2022.
+//  TutorBuddy
 //
 
 import UIKit
