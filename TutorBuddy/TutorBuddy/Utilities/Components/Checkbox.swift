@@ -1,8 +1,6 @@
 //
 //  Checkbox.swift
-//  Autocheck Partner
-//
-//  Created by Isaac Iniongun on 11/03/2022.
+//  TutorBuddy
 //
 
 import Foundation

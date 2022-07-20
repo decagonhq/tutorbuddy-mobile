@@ -18,7 +18,7 @@ class WelcomeViewController: BaseViewController<WelcomeView, IAuthViewModel> {
         
         kview.do {
             $0.letsGoHandler = {[weak self] in
-                self?.setViewControllers(using: ViewController())
+                self?.setViewControllers(using: AppDelegate.dependencyContainer.dashBoardController)
             }
         }
     }

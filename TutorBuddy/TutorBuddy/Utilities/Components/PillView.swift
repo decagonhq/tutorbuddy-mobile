@@ -1,8 +1,6 @@
 //
 //  PillView.swift
-//  Autocheck Partner
-//
-//  Created by Isaac Iniongun on 01/03/2022.
+//  TutorBuddy
 //
 
 import UIKit

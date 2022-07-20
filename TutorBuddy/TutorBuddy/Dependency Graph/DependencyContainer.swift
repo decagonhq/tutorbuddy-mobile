@@ -1,8 +1,6 @@
 //
 //  DependencyContainer.swift
-//  Autocheck Partner
-//
-//  Created by Isaac Iniongun on 31/12/2021.
+//  TutorBuddy
 //
 
 import Foundation
@@ -31,5 +29,7 @@ extension Container {
     var selectOptionsController: SelectOptionsViewController { resolve(SelectOptionsViewController.self)! }
     
     var welcomeController: WelcomeViewController { resolve(WelcomeViewController.self)! }
+    
+    var dashBoardController: TBDashBoardViewController { resolve(TBDashBoardViewController.self)! }
 
 }

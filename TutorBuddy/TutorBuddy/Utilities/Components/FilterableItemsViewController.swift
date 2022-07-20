@@ -1,8 +1,6 @@
 //
 //  FilterableItemsViewController.swift
-//  Autocheck Partner
-//
-//  Created by Isaac Iniongun on 12/03/2022.
+//  TutorBuddy
 //
 
 import UIKit

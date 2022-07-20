@@ -1,8 +1,6 @@
 //
 //  UnderlineSectionView.swift
-//  Autocheck Partner
-//
-//  Created by Isaac Iniongun on 07/03/2022.
+//  TutorBuddy
 //
 
 import UIKit

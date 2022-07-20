@@ -1,8 +1,6 @@
 //
 //  RemoteConfigKey.swift
-//  Autocheck Partner
-//
-//  Created by Isaac Iniongun on 22/04/2022.
+//  TutorBuddy
 //
 
 import Foundation

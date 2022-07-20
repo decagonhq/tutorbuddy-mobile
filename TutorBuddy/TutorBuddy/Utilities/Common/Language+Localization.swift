@@ -1,8 +1,6 @@
 //
 //  Language.swift
-//  Autocheck Partner
-//
-//  Created by Isaac Iniongun on 10/03/2022.
+//  TutorBuddy
 //
 
 import Foundation

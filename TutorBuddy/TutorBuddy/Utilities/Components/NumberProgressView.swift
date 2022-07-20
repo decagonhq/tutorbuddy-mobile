@@ -1,8 +1,6 @@
 //
 //  NumberProgressView.swift
-//  Autochek DSA
-//
-//  Created by Folahanmi Kolawole on 12/07/2022.
+//  TutorBuddy
 //
 
 import UIKit

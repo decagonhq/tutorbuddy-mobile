@@ -1,8 +1,6 @@
 //
 //  BaseView.swift
-//  Autocheck Partner
-//
-//  Created by Isaac Iniongun on 29/12/2021.
+//  TutorBuddy
 //
 
 import UIKit
