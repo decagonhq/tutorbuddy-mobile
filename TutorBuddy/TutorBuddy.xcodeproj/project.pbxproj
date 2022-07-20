@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4CAFE625BCF634DA3B926E7F /* Pods_TutorBuddy_TutorBuddyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922CBCC9C5E81DE88A688B13 /* Pods_TutorBuddy_TutorBuddyUITests.framework */; };
+		70B5F16028880356008BD901 /* TBDashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F15F28880356008BD901 /* TBDashBoardViewController.swift */; };
 		A39CC394D2F012F416F62F74 /* Pods_TutorBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DC1360A0688C72A0395964 /* Pods_TutorBuddy.framework */; };
 		BC533A8C2885CA5500D2A6DA /* StudentSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A8B2885CA5500D2A6DA /* StudentSignUpViewController.swift */; };
 		BC533A8E2885CA8500D2A6DA /* StudentSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A8D2885CA8500D2A6DA /* StudentSignUpView.swift */; };
@@ -140,6 +141,7 @@
 /* Begin PBXFileReference section */
 		35F57C9753F37B3EBC5F68AB /* Pods_TutorBuddyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorBuddyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3E100320B04753424DF533 /* Pods-TutorBuddyTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorBuddyTests.staging.xcconfig"; path = "Target Support Files/Pods-TutorBuddyTests/Pods-TutorBuddyTests.staging.xcconfig"; sourceTree = "<group>"; };
+		70B5F15F28880356008BD901 /* TBDashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBDashBoardViewController.swift; sourceTree = "<group>"; };
 		70DC1360A0688C72A0395964 /* Pods_TutorBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E25B395684D482921858AA /* Pods-TutorBuddy.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorBuddy.staging.xcconfig"; path = "Target Support Files/Pods-TutorBuddy/Pods-TutorBuddy.staging.xcconfig"; sourceTree = "<group>"; };
 		922CBCC9C5E81DE88A688B13 /* Pods_TutorBuddy_TutorBuddyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorBuddy_TutorBuddyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -303,6 +305,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		70B5F15E2887ED2A008BD901 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				70B5F15F28880356008BD901 /* TBDashBoardViewController.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 		851D7ED1D11AAA3A76C1FED4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +439,7 @@
 		BCFB81B92883122900C50982 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				70B5F15E2887ED2A008BD901 /* Dashboard */,
 				BCFB81BA2883127700C50982 /* Authentication */,
 				BCFB81CB2883127700C50982 /* Base */,
 				BCFB81CF2883127800C50982 /* Onboarding */,
@@ -1082,6 +1093,7 @@
 				BCFB826C288314FB00C50982 /* FilterableItemsViewController.swift in Sources */,
 				BCFB81DE2883127800C50982 /* SignInErrorViewController.swift in Sources */,
 				BCFB8260288314FB00C50982 /* AlertMessage.swift in Sources */,
+				70B5F16028880356008BD901 /* TBDashBoardViewController.swift in Sources */,
 				BCFB828F2883155000C50982 /* Code+Utils.swift in Sources */,
 				BCFB8213288312A900C50982 /* PreferenceImpl.swift in Sources */,
 				BCFB828C2883155000C50982 /* IInputValidator.swift in Sources */,
@@ -1293,6 +1305,7 @@
 				BASE_URL = "https://api.dev.myautochek.com/v1/";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8A3CL8858X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TutorBuddy/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1324,6 +1337,7 @@
 				BASE_URL = "https://api-prod.autochek.africa/v1/";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8A3CL8858X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TutorBuddy/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
