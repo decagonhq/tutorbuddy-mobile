@@ -18,6 +18,8 @@ typealias IntParamHandler = ((Double) -> Void)
 
 typealias DoubleStringParamHandler = ((String, String) -> Void)
 
+typealias TripleStringParamHandler = ((String, String, String) -> Void)
+
 typealias StringIntParamHandler = ((String, Int) -> Void)
 
 typealias IntStringParamHandler = ((Int, String) -> Void)

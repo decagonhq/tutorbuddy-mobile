@@ -39,13 +39,13 @@ class OnboardingViewController: BaseViewController<OnboardingView, IOnboardingVi
     }
     
     fileprivate func observeAuthNavRoute() {
-//        viewModel.authNavRoute.bind { [weak self] route in
-//            if route == .dashboard {
-//                self?.setViewControllers(using: NavigationContainerViewController())
-//            } else {
-//                self?.getStarted()
-//            }
-//        }.disposed(by: disposeBag)
+        viewModel.authNavRoute.bind { [weak self] route in
+            if route == .dashboard {
+                self?.setViewControllers(using: ViewController())
+            } else {
+                self?.getStarted()
+            }
+        }.disposed(by: disposeBag)
     }
 
 }

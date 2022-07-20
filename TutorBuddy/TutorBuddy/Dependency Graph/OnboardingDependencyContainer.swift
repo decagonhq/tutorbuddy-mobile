@@ -16,6 +16,8 @@ struct OnboardingDependencyContainer {
         container.register(OnboardingViewController.self) { OnboardingViewController(viewModel: $0.resolve(IOnboardingViewModel.self)!) }
         
         container.register(SelectOptionsViewController.self) { SelectOptionsViewController(viewModel: $0.resolve(IOnboardingViewModel.self)!) }
+        
+        container.register(WelcomeViewController.self) { WelcomeViewController(viewModel: $0.resolve(IAuthViewModel.self)!) }
     }
     
 }
