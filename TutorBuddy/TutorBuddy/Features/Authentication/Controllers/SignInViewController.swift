@@ -21,9 +21,9 @@ class SignInViewController: BaseViewController<SignInView, IAuthViewModel> {
         super.configureViews()
         kview.do {
 
-//            $0.forgotPasswordTapHandler = { [weak self] in
-//                self?._pushViewController(AppDelegate.dependencyContainer.requestOTPController)
-//            }
+            $0.forgotPasswordTapHandler = { [weak self] in
+                self?._pushViewController(AppDelegate.dependencyContainer.forgotPasswordController)
+            }
 
             $0.signinTapHandler = { [weak self] email, password in
                 self?.viewModel.signin(email: email, password: password)

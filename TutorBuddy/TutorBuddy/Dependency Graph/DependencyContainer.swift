@@ -31,5 +31,9 @@ extension Container {
     var welcomeController: WelcomeViewController { resolve(WelcomeViewController.self)! }
     
     var dashBoardController: TBDashBoardViewController { resolve(TBDashBoardViewController.self)! }
+    
+    var forgotPasswordController: ForgotPasswordViewController { resolve(ForgotPasswordViewController.self)! }
+    
+    var checkMailController: CheckMailViewController { resolve(CheckMailViewController.self)! }
 
 }

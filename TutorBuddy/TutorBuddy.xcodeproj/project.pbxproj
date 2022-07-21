@@ -15,6 +15,10 @@
 		70B5F17028881ADB008BD901 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F16F28881ADB008BD901 /* HomeViewController.swift */; };
 		70B5F17228883431008BD901 /* DashBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F17128883431008BD901 /* DashBoardViewModel.swift */; };
 		70B5F174288834FC008BD901 /* DashBoardViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F173288834FC008BD901 /* DashBoardViewModelImpl.swift */; };
+		70B5F176288933E2008BD901 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F175288933E2008BD901 /* ForgotPasswordViewController.swift */; };
+		70B5F17828893430008BD901 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F17728893430008BD901 /* ForgotPasswordView.swift */; };
+		70B5F17A28894768008BD901 /* CheckMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F17928894768008BD901 /* CheckMailViewController.swift */; };
+		70B5F17C28894870008BD901 /* CheckMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F17B28894870008BD901 /* CheckMailView.swift */; };
 		A39CC394D2F012F416F62F74 /* Pods_TutorBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DC1360A0688C72A0395964 /* Pods_TutorBuddy.framework */; };
 		BC533A8C2885CA5500D2A6DA /* StudentSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A8B2885CA5500D2A6DA /* StudentSignUpViewController.swift */; };
 		BC533A8E2885CA8500D2A6DA /* StudentSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A8D2885CA8500D2A6DA /* StudentSignUpView.swift */; };
@@ -156,6 +160,10 @@
 		70B5F16F28881ADB008BD901 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		70B5F17128883431008BD901 /* DashBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewModel.swift; sourceTree = "<group>"; };
 		70B5F173288834FC008BD901 /* DashBoardViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewModelImpl.swift; sourceTree = "<group>"; };
+		70B5F175288933E2008BD901 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		70B5F17728893430008BD901 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		70B5F17928894768008BD901 /* CheckMailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMailViewController.swift; sourceTree = "<group>"; };
+		70B5F17B28894870008BD901 /* CheckMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMailView.swift; sourceTree = "<group>"; };
 		70DC1360A0688C72A0395964 /* Pods_TutorBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E25B395684D482921858AA /* Pods-TutorBuddy.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorBuddy.staging.xcconfig"; path = "Target Support Files/Pods-TutorBuddy/Pods-TutorBuddy.staging.xcconfig"; sourceTree = "<group>"; };
 		922CBCC9C5E81DE88A688B13 /* Pods_TutorBuddy_TutorBuddyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorBuddy_TutorBuddyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -569,6 +577,8 @@
 				BC533A8B2885CA5500D2A6DA /* StudentSignUpViewController.swift */,
 				BC533A9F2886967600D2A6DA /* TutorSignUpViewController.swift */,
 				BC533AA32887E54B00D2A6DA /* WelcomeViewController.swift */,
+				70B5F175288933E2008BD901 /* ForgotPasswordViewController.swift */,
+				70B5F17928894768008BD901 /* CheckMailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -580,6 +590,8 @@
 				BC533A8D2885CA8500D2A6DA /* StudentSignUpView.swift */,
 				BC533AA1288696D600D2A6DA /* TutorSignUpView.swift */,
 				BC533AA52887E56500D2A6DA /* WelcomeView.swift */,
+				70B5F17728893430008BD901 /* ForgotPasswordView.swift */,
+				70B5F17B28894870008BD901 /* CheckMailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1182,12 +1194,14 @@
 				BCFB826B288314FB00C50982 /* BaseCollectionView.swift in Sources */,
 				BCFB821D288312A900C50982 /* AuthRemoteDatasourceImpl.swift in Sources */,
 				BCFB82872883155000C50982 /* DeviceManager.swift in Sources */,
+				70B5F17A28894768008BD901 /* CheckMailViewController.swift in Sources */,
 				BCFB826C288314FB00C50982 /* FilterableItemsViewController.swift in Sources */,
 				BCFB81DE2883127800C50982 /* SignInErrorViewController.swift in Sources */,
 				70B5F17028881ADB008BD901 /* HomeViewController.swift in Sources */,
 				BCFB8260288314FB00C50982 /* AlertMessage.swift in Sources */,
 				70B5F16028880356008BD901 /* TBDashBoardViewController.swift in Sources */,
 				70B5F16C28881A79008BD901 /* NotificationViewController.swift in Sources */,
+				70B5F17828893430008BD901 /* ForgotPasswordView.swift in Sources */,
 				BCFB828F2883155000C50982 /* Code+Utils.swift in Sources */,
 				BCFB8213288312A900C50982 /* PreferenceImpl.swift in Sources */,
 				BCFB828C2883155000C50982 /* IInputValidator.swift in Sources */,
@@ -1198,6 +1212,7 @@
 				BCFB82942883155000C50982 /* Numeric+Utils.swift in Sources */,
 				BCFB81982882F47200C50982 /* DependencyContainer.swift in Sources */,
 				BCFB8264288314FB00C50982 /* PickerManager.swift in Sources */,
+				70B5F17C28894870008BD901 /* CheckMailView.swift in Sources */,
 				BC533AA42887E54B00D2A6DA /* WelcomeViewController.swift in Sources */,
 				70B5F17228883431008BD901 /* DashBoardViewModel.swift in Sources */,
 				BCFB821E288312A900C50982 /* IAuthRemoteDatasource.swift in Sources */,
@@ -1214,6 +1229,7 @@
 				BCFB825D288314FB00C50982 /* SectionsView.swift in Sources */,
 				BCFB81DC2883127800C50982 /* AuthNavRoute.swift in Sources */,
 				BCFB828B2883155000C50982 /* InputValidatorImpl.swift in Sources */,
+				70B5F176288933E2008BD901 /* ForgotPasswordViewController.swift in Sources */,
 				BCFB8228288312A900C50982 /* BaseRemoteDatasource.swift in Sources */,
 				BCFB81EB2883127800C50982 /* OnboardingItem.swift in Sources */,
 				BCFB826E288314FB00C50982 /* Checkbox.swift in Sources */,
