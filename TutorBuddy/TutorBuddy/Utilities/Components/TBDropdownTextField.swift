@@ -11,7 +11,7 @@ public class TBDropdownTextField: BaseView {
     
     fileprivate let hintText: String = .CHOOSE
     
-    fileprivate let floatingLabel = UILabel(text: "Title", font: .interRegular(size: 14), numberOfLines: 1, color: .primaryTextColor, alignment: .left)
+    fileprivate let floatingLabel = UILabel(text: .TITLE, font: .interRegular(size: 14), numberOfLines: 1, color: .primaryTextColor, alignment: .left)
     fileprivate lazy var valueLabel: UILabel = {
         UILabel(text: hintText, font: .interRegular(size: 15), numberOfLines: 1, color: .aPlaceholderText, alignment: .left)
     }()

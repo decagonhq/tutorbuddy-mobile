@@ -17,9 +17,9 @@ class SignInView: BaseScrollView {
     fileprivate lazy var signInButton = TBButton(title: .LOGIN, height: 50, tapAction: handleSignInButtonTapped)
     fileprivate lazy var inputStackView = VerticalStackView(arrangedSubviews: [emailTextfield, passwordTextField, signInButton], spacing: 30)
     
-    fileprivate lazy var forgotPasswordButton = TBButton(title: .FORGOT_PASSWORD+"?", font: .interRegular(size: 15), backgroundColor: .clear, textColor: .link, tapAction: handleForgotPasswordButtonTapped)
-    fileprivate let dontHaveAnAccountLabel = UILabel(text: "Don't have an account?", font: .interRegular(size: 14), color: .primaryTextColor)
-    fileprivate lazy var createAnAccountButton = TBButton(title: "Sign Up", font: .interExtraBold(size: 14), backgroundColor: .appBackground, textColor: .primaryColor, tapAction: handleCreateAnAccountTapped)
+    fileprivate lazy var forgotPasswordButton = TBButton(title: .FORGOT_PASSWORD, font: .interRegular(size: 15), backgroundColor: .clear, textColor: .link, tapAction: handleForgotPasswordButtonTapped)
+    fileprivate let dontHaveAnAccountLabel = UILabel(text: .DONT_HAVE_AN_ACCOUNT, font: .interRegular(size: 14), color: .primaryTextColor)
+    fileprivate lazy var createAnAccountButton = TBButton(title: .SIGN_UP, font: .interExtraBold(size: 14), backgroundColor: .appBackground, textColor: .primaryColor, tapAction: handleCreateAnAccountTapped)
     fileprivate lazy var accoutActionsStackView = HorizontalStackView(arrangedSubviews: [dontHaveAnAccountLabel, createAnAccountButton]).withWidth(220)
     
     fileprivate lazy var signinWithAppleButton = TBButton(backgroundColor: .black.withAlphaComponent(0.03), cornerRadius: 25, height: 50, width: 50, image: R.image.apple_icon(), tapAction: signinWithAppleTapped)

@@ -29,13 +29,14 @@ class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
     }
     
     func signin(email: String, password: String) {
-        let params = [
-            "email": email,
-            "password": password
-        ]
-        subscribe(authRemote.signin(params: params), success: { [weak self] authRes in
-            self?.handleAuthenticationResponse(authRes)
-        })
+//        let params = [
+//            "email": email,
+//            "password": password
+//        ]
+//        subscribe(authRemote.signin(params: params), success: { [weak self] authRes in
+//            self?.handleAuthenticationResponse(authRes)
+//        })
+        handleAuthenticationResponse(AnyStruct())
     }
     
     fileprivate func handleAuthenticationResponse(_ authRes: AnyStruct) {
@@ -47,7 +48,7 @@ class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
 //        } else {
 //            preference.user = authRes.user
 //            preference.accessToken = authRes.token.orEmpty
-//            authNavRoute.onNext(.dashboard)
+            authNavRoute.onNext(.dashboard)
 //        }
     }
     

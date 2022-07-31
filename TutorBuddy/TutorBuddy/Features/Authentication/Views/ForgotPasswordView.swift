@@ -14,12 +14,12 @@ class ForgotPasswordView: BaseScrollView {
     var backButtonTapHandler: NoParamHandler?
     
     fileprivate lazy var backButton = TBButton(backgroundColor: .appBackground, height: 28, width: 28, image: R.image.back_icon(), tintColor: .black,tapAction: handleBackButtonTapped)
-    fileprivate let welcomeLabel = UILabel(text: "Reset Password", font: .interExtraBold(size: 25), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
-    fileprivate let subtitleLabel = UILabel(text: "Enter the email associated with your account and  we’ll send an email with instruction to reset your password", font: .interRegular(size: 16), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
+    fileprivate let welcomeLabel = UILabel(text: .RESET_PASSWORD, font: .interExtraBold(size: 25), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
+    fileprivate let subtitleLabel = UILabel(text: .ENTER_THE_EMAIL_ASSOCIATED_WITH_YOUR_ACCOUNT, font: .interRegular(size: 16), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate lazy var labelsStackView = VerticalStackView(arrangedSubviews: [welcomeLabel, subtitleLabel], spacing: 15)
-    fileprivate let emailTextfield = TBTextField(title: .EMAIL, placeholder: "enter your decagon email", validationType: .email)
+    fileprivate let emailTextfield = TBTextField(title: .EMAIL, placeholder: .ENTER_YOUR_EMAIL, validationType: .email)
     
-    fileprivate lazy var resetPasswordButton = TBButton(title: "Reset Password", height: 50, tapAction: handleResetPasswordButtonTapped)
+    fileprivate lazy var resetPasswordButton = TBButton(title: .RESET_PASSWORD, height: 50, tapAction: handleResetPasswordButtonTapped)
     
     override func setup() {
         super.setup()

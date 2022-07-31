@@ -33,14 +33,6 @@ class OnboardingView: BaseView {
     fileprivate lazy var pageControls: UIPageControl = {
         UIPageControl(indicatorColor: .aTertiaryLabel, currentPageColor: .primaryColor, numberOfItems: onboardingItems.count)
     }()
-//    fileprivate lazy var skipButton: TBButton = {
-//        TBButton(title: .SKIP, font: .interBold(size: 16), backgroundColor: .clear, textColor: .primaryTextColor, width: 70, tapAction: handleSkipButtonTapped)
-//    }()
-//    fileprivate lazy var nextButton: TBButton = {
-//        TBButton(backgroundColor: .primaryColor, cornerRadius: 10, size: 50, image: R.image.launch_screen_logo(), tintColor: .white, tapAction: handleNextButtonTapped).apply {
-//            $0.imageEdgeInsets = ._init(allEdges: 10)
-//        }
-//    }()
     fileprivate lazy var getStartedButton: TBButton = {
         TBButton(title: .GET_STARTED, textColor: .white, height: 50, tapAction: handleGetStartedButtonTapped)
     }()
@@ -87,17 +79,10 @@ class OnboardingView: BaseView {
 
     fileprivate func handleNextButtonTapped() {
         if currentPage == onboardingItems.count - 2 {
-            updateBottomViews(showGetStarted: true)
             showNextItem()
         } else {
-            updateBottomViews(showGetStarted: false)
             showNextItem()
         }
-    }
-
-    fileprivate func updateBottomViews(showGetStarted: Bool) {
-//        [skipButton, pageControls, nextButton].showViews(!showGetStarted)
-//        getStartedButton.showView(showGetStarted)
     }
 
     fileprivate func showNextItem() {
@@ -110,7 +95,6 @@ class OnboardingView: BaseView {
             guard let self = self else { return }
             if let indexPath = self.onboardingItemsCollectionView.indexPathsForVisibleItems.first {
                 self.currentPage = indexPath.item
-                self.updateBottomViews(showGetStarted: self.currentPage == self.onboardingItems.count - 1)
             }
         }
     }

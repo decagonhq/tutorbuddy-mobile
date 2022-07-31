@@ -32,6 +32,42 @@ extension String {
     static var EMAIL: String { "EmailKey".localized }
     static var ENTER_EMAIL: String { "EnterEmailKey".localized }
     static var ENTER_PASSWORD: String { "EnterPasswordKey".localized }
+    static var TITLE: String { "TitleKey".localized }
+    static var WHAT_WOULD_YOU_LIKE_TO_LEARN_TODAY: String { "WhatWouldYouLikeToLearnTodayKey".localized }
+    static var SEARCH: String { "SearchKey".localized }
+    static var FORGOT_PASSWORD: String { "ForgotPasswordKey".localized }
+    static var DONT_HAVE_AN_ACCOUNT: String { "DontHaveAnAccountKey".localized }
+    static var SIGN_UP: String { "SignUpKey".localized }
+    static var CREATE_AN_ACCOUNT: String { "CreateAnAccountKey".localized }
+    static var CREATE_AN_ACCOUNT_SO_THAT_YOUR_LEARNING_AND_PROGRESS_ARE_NEVER_LOST: String { "CreateAnAccountSoThatYourLearningAndProgressAreNeverLostKey".localized }
+    static var YOUR_FULL_NAME: String { "YourFullNameKey".localized }
+    static var YOUR_EMAIL_ADDRESS: String { "YourEmailAddressKey".localized }
+    static var YOUR_PASSWORD: String { "YourPasswordKey".localized }
+    static var ALREADY_HAVE_AN_ACCOUNT: String { "AlreadyHaveAnAccountKey".localized }
+    static var CREATE_YOUR_ACCOUNT_TO_CONNECT_WITH_STUDENTS: String { "CreateYourAccountToConnectWithStudentsKey".localized }
+    static var TELL_US_ABOUT_YOURSELF: String { "TellUsAboutYourselfKey".localized }
+    static var SELECT: String { "SelectKey".localized }
+    static var UPLOAD_PROFILE_PICTURE: String { "UploadProfilePictureKey".localized }
+    static var CHOOSE: String { "ChooseKey".localized }
+    static var AVAILABILITY: String { "AvailabilityKey".localized }
+    static var SUBJECTS: String { "SubjectsKey".localized }
+    static var WELCOME_TO_TUTOR_BUDDY: String { "WelcomeToTutorBuddyKey".localized }
+    static var WE_CREATED_A_PERSONAL_ACCOUNT_FOR_YOU: String { "WeCreatedAPersonalAccountForYouKey".localized }
+    static var LETS_GO: String { "LetsGoKey".localized }
+    static var RESET_PASSWORD: String { "ResetPasswordKey".localized }
+    static var ENTER_THE_EMAIL_ASSOCIATED_WITH_YOUR_ACCOUNT: String { "EnterTheEmailAssociatedWithYourAccountKey".localized }
+    static var ENTER_YOUR_EMAIL: String { "EnterYourEmailKey".localized }
+    static var CHECK_YOUR_MAIL: String { "CheckYourMailKey".localized }
+    static var WE_HAVE_SENT_PASSWORD_RECOVERY_INSTRUCTIONS: String { "WeHaveSentPasswordRecoveryInstructionsKey".localized }
+    static var OPEN_EMAIL_APP: String { "OpenEmailAppKey".localized }
+    static var CREATE_NEW_PASSWORD: String { "CreateNewPasswordKey".localized }
+    static var NEW_PASSWORD: String { "NewPasswordKey".localized }
+    static var CONFIRM_PASSWORD: String { "ConfirmPasswordKey".localized }
+    static var HOW_WOULD_YOU_WANT_TO_USE_THIS_APP : String { "HowWouldYouWantToUseThisAppKey".localized }
+    static var PLEASE_SELECT_AN_OPTION: String { "PleaseSelectAnOptionKey".localized }
+    static var EXPLORE: String { "ExploreKey".localized }
+    static var STUDENT: String { "StudentKey".localized }
+    static var TUTOR: String { "TutorKey".localized }
     
     
     
@@ -70,8 +106,6 @@ extension String {
     static var NO_INVENTORIES_FOUND: String { "NoInventoriesFoundKey".localized }
     static var FILTERS: String { "FiltersKey".localized }
     static var APPLY_FILTERS: String { "ApplyFiltersKey".localized }
-    static var CHOOSE: String { "ChooseKey".localized }
-    static var SEARCH: String { "SearchKey".localized }
     static var UNABLE_TO_GET_MAKES: String { "UnableToGetMakesKey".localized }
     static var INVALID_YEAR: String { "InvalidYearKey".localized }
     static var APPLIED_FILTER: String { "AppliedFilterKey".localized }
@@ -321,7 +355,6 @@ extension String {
     static var SIGN_IN_TO_CONTINUE: String { "SignInToContinueKey".localized }
     static var EMAIL_OR_PHONENUMBER: String { "EmailOrPhoneKey".localized }
     static var PASSWORD: String { "PasswordKey".localized }
-    static var FORGOT_PASSWORD: String { "ForgotPasswordKey".localized }
     static var SIGN_IN: String { "SignInKey".localized }
     static var ENTER_YOUR_EMAIL_ADDRESS_BELOW: String { "EnterYourEmailAddressBelowKey".localized }
     static var ENTER_OTP: String { "EnterOtpKey".localized }
@@ -330,10 +363,7 @@ extension String {
     static var DIDNT_RECEIVE: String { "DidntReceiveKey".localized }
     static var CLICK_HERE: String { "ClickHereKey".localized }
     static var OTP_IS_REQUIRED: String { "OtpIsRequiredKey".localized }
-    static var RESET_PASSWORD: String { "ResetPasswordKey".localized }
     static var KINDLY_ENTER_NEW_PASSWORD: String { "KindlyEnterNewPasswordKey".localized }
-    static var NEW_PASSWORD: String { "NewPasswordKey".localized }
-    static var CONFIRM_PASSWORD: String { "ConfirmPasswordKey".localized }
     static var RESET: String { "ResetKey".localized }
     static var RESET_SUCCESSFUL: String { "ResetSuccessfulKey".localized }
     static var YOU_HAVE_RESET_PASSWORD: String { "YouHaveResetPasswordKey".localized }

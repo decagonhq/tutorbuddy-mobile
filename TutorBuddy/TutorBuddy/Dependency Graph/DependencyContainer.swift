@@ -35,5 +35,7 @@ extension Container {
     var forgotPasswordController: ForgotPasswordViewController { resolve(ForgotPasswordViewController.self)! }
     
     var checkMailController: CheckMailViewController { resolve(CheckMailViewController.self)! }
+    
+    var dashboardHomeController: HomeViewController { resolve(HomeViewController.self)! }
 
 }

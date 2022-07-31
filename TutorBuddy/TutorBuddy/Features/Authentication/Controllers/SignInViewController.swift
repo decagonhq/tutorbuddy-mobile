@@ -42,11 +42,11 @@ class SignInViewController: BaseViewController<SignInView, IAuthViewModel> {
     }
     
     fileprivate func observeAuthNavRoute() {
-//        viewModel.authNavRoute.bind { [weak self] route in
-//            if route == .dashboard {
-//                self?.setViewControllers(using: NavigationContainerViewController())
-//            }
-//        }.disposed(by: disposeBag)
+        viewModel.authNavRoute.bind { [weak self] route in
+            if route == .dashboard {
+                self?.setViewControllers(using: TBDashBoardViewController())
+            }
+        }.disposed(by: disposeBag)
     }
     
     fileprivate func observeAuthErrorMessage() {

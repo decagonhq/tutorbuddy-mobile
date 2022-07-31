@@ -22,6 +22,7 @@
 		70B5F17E28898A6E008BD901 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F17D28898A6E008BD901 /* ResetPasswordViewController.swift */; };
 		70B5F18028898B0C008BD901 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F17F28898B0C008BD901 /* ResetPasswordView.swift */; };
 		A39CC394D2F012F416F62F74 /* Pods_TutorBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DC1360A0688C72A0395964 /* Pods_TutorBuddy.framework */; };
+		BC45DD37289168ED00FD1E0D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45DD36289168ED00FD1E0D /* HomeView.swift */; };
 		BC533A8C2885CA5500D2A6DA /* StudentSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A8B2885CA5500D2A6DA /* StudentSignUpViewController.swift */; };
 		BC533A8E2885CA8500D2A6DA /* StudentSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A8D2885CA8500D2A6DA /* StudentSignUpView.swift */; };
 		BC533A9C288684D100D2A6DA /* SelectOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A9B288684D100D2A6DA /* SelectOptionsViewController.swift */; };
@@ -173,6 +174,7 @@
 		922CBCC9C5E81DE88A688B13 /* Pods_TutorBuddy_TutorBuddyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorBuddy_TutorBuddyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FE60279A0906AC8C586B5D /* Pods-TutorBuddy-TutorBuddyUITests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorBuddy-TutorBuddyUITests.staging.xcconfig"; path = "Target Support Files/Pods-TutorBuddy-TutorBuddyUITests/Pods-TutorBuddy-TutorBuddyUITests.staging.xcconfig"; sourceTree = "<group>"; };
 		BB42BAEE00FC7683FA60C693 /* Pods-TutorBuddyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorBuddyTests.release.xcconfig"; path = "Target Support Files/Pods-TutorBuddyTests/Pods-TutorBuddyTests.release.xcconfig"; sourceTree = "<group>"; };
+		BC45DD36289168ED00FD1E0D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BC533A8B2885CA5500D2A6DA /* StudentSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSignUpViewController.swift; sourceTree = "<group>"; };
 		BC533A8D2885CA8500D2A6DA /* StudentSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSignUpView.swift; sourceTree = "<group>"; };
 		BC533A9B288684D100D2A6DA /* SelectOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewController.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 		70B5F16128881935008BD901 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BC45DD35289168BB00FD1E0D /* Views */,
 				70B5F168288819C4008BD901 /* Controllers */,
 			);
 			path = Home;
@@ -422,6 +425,14 @@
 				BB42BAEE00FC7683FA60C693 /* Pods-TutorBuddyTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BC45DD35289168BB00FD1E0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC45DD36289168ED00FD1E0D /* HomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BCFB81492882C7C900C50982 = {
@@ -1241,6 +1252,7 @@
 				BCFB8228288312A900C50982 /* BaseRemoteDatasource.swift in Sources */,
 				BCFB81EB2883127800C50982 /* OnboardingItem.swift in Sources */,
 				BCFB826E288314FB00C50982 /* Checkbox.swift in Sources */,
+				BC45DD37289168ED00FD1E0D /* HomeView.swift in Sources */,
 				BCFB81E82883127800C50982 /* IBaseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
