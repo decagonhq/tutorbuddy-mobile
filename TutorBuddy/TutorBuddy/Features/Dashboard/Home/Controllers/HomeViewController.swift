@@ -7,23 +7,37 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController<HomeView, IDashBoardViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setBackgroundColor(.appBackground)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        (parent as? TBDashBoardViewController)?.showNavBar(false)
     }
-    */
-
+    
+    override func configureViews() {
+        super.configureViews()
+        with(kview) {
+            $0.seeAllButtonTapHandler = { [weak self] in
+                self?.tabBarController?.selectedIndex = 1
+            }
+            
+            $0.showtutorDetailsHandler = { [weak self] tutor, index in
+                self?.present(TutorDetailsViewController().apply { $0.tutor = tutor }, animated: true)
+            }
+            
+            $0.showCourseDetailsHandler = { [weak self] course, index in
+                with(AppDelegate.dependencyContainer.courseDetailsController.apply { $0.course = course }) {
+                    $0.modalPresentationStyle = .overFullScreen
+                    $0.setBackgroundColor()
+                    self?.present($0, animated: true)
+                }
+            }
+        }
+    }
+    
 }

@@ -11,7 +11,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        UILabel().apply {
+            $0.text = "hello world"
+            $0.animateViewOnTapGesture { [weak self] in
+                self?.dismissViewController()
+            }
+            with($0) {
+                addSubview($0)
+                $0.centerInSuperview()
+            }
+        }
     }
 
 

@@ -36,7 +36,7 @@ extension UIViewController {
         viewController.removeFromParent()
     }
     
-    func configureNavBar(title: String, barBgColor: UIColor = .primaryColor, font: UIFont = .interBold(size: 16), barTextColor: UIColor = .primaryTextColor, prefersLargeTitle: Bool = false) {
+    func configureNavBar(title: String, barBgColor: UIColor = .appBackground, font: UIFont = .interBold(size: 16), barTextColor: UIColor = .primaryTextColor, prefersLargeTitle: Bool = false) {
         self.title = title
         navigationController?.navigationBar.apply {
             $0.prefersLargeTitles = prefersLargeTitle
@@ -47,7 +47,7 @@ extension UIViewController {
         }
     }
     
-    func configureNavBar(centerImage: UIImage? = R.image.launch_screen_logo(), barTintColor: UIColor = .primaryColor, tintColor: UIColor = UIColor("#31355B"), height: CGFloat? = nil, width: CGFloat? = nil) {
+    func configureNavBar(centerImage: UIImage? = R.image.nav_logo_icon(), barTintColor: UIColor = .primaryColor, tintColor: UIColor = UIColor("#31355B"), height: CGFloat? = nil, width: CGFloat? = nil) {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.do {
             $0.barTintColor = barTintColor
@@ -249,15 +249,15 @@ extension UIViewController {
 //        }, animated: true)
 //    }
     
-//    func showConfirmationDialogViewController(confirmationText: String = .ARE_YOU_SURE_TO_PERFORM_ACTION, yestText: String = .YES, noText: String = .NO, tapToDismiss: Bool = true, noHandler: NoParamHandler? = nil, dismissHandler: NoParamHandler? = nil, yesHandler: NoParamHandler?) {
-//        showDialog(for: ConfirmationDialogViewController().apply {
-//            $0.confirmationText = confirmationText
-//            $0.yesText = yestText
-//            $0.noText = noText
-//            $0.noHandler = noHandler
-//            $0.yesHandler = yesHandler
-//        }, tapToDismiss: tapToDismiss, dismissCompletionHandler: dismissHandler)
-//    }
+    func showConfirmationDialogViewController(confirmationText: String = .ARE_YOU_SURE_TO_PERFORM_ACTION, yestText: String = .YES, noText: String = .NO, tapToDismiss: Bool = true, noHandler: NoParamHandler? = nil, dismissHandler: NoParamHandler? = nil, yesHandler: NoParamHandler?) {
+        showDialog(for: ConfirmationDialogViewController().apply {
+            $0.confirmationText = confirmationText
+            $0.yesText = yestText
+            $0.noText = noText
+            $0.noHandler = noHandler
+            $0.yesHandler = yesHandler
+        }, tapToDismiss: tapToDismiss, dismissCompletionHandler: dismissHandler)
+    }
     
 //    func showUploadCarDocumentsOptionsViewController() {
 //        present(UploadCarDocumentsOptionsViewController().apply {_ in

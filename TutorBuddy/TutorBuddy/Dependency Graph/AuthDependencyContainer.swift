@@ -16,9 +16,11 @@ struct AuthDependencyContainer {
         
         container.register(SignInViewController.self) { SignInViewController(viewModel: $0.resolve(IAuthViewModel.self)!) }
         
-        container.register(StudentSignUpViewController.self) { StudentSignUpViewController(viewModel: $0.resolve(IAuthViewModel.self)!) }
+        container.register(SignUpViewController.self) { SignUpViewController(viewModel: $0.resolve(IAuthViewModel.self)!) }
         
-        container.register(TutorSignUpViewController.self) { TutorSignUpViewController(viewModel: $0.resolve(IAuthViewModel.self)!) }
+        container.register(VerifyOTPViewController.self) { VerifyOTPViewController(viewModel: $0.resolve(IAuthViewModel.self)!) }
+        
+        container.register(ResetPasswordViewController.self) { ResetPasswordViewController(viewModel: $0.resolve(IAuthViewModel.self)!) }
         
         container.register(ForgotPasswordViewController.self) { ForgotPasswordViewController(viewModel: $0.resolve(IAuthViewModel.self)! )}
         

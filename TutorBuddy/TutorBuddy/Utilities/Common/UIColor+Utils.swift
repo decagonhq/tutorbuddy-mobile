@@ -20,7 +20,13 @@ extension UIColor {
     
     static var appGreen: UIColor { UIColor("#21B51E").withAlphaComponent(0.8) }
     
-    static var appBackground: UIColor { UIColor("#F0F0F0") }
+    static var appBackground: UIColor { UIColor("#FFFFFF") }
+    
+    static var onboardingBackgroundOne: UIColor { UIColor("#FBF8F1") }
+    
+    static var onboardingBackgroundTwo: UIColor { UIColor("#F7ECDE") }
+    
+    static var onboardingBackgroundThree: UIColor { UIColor("#E9DAC1") }
     
     static var aLabel: UIColor {
         if #available(iOS 13, *) {

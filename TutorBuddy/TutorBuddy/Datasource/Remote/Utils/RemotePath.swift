@@ -7,7 +7,7 @@ import Foundation
 
 enum RemotePath {
     
-    case login, requestOTP, verifyOTP, updatePassword
+    case login, register, requestOTP, verifyOTP, resetPassword
     case documentUpload, imageUpload
     case carMakes, carModels, auctionDetails(String)
     case user, myLocation, colors, states, cities, bodyTypes, franchise
@@ -16,13 +16,15 @@ enum RemotePath {
     var desc: String {
         switch self {
         case .login:
-            return "auth/login"
+            return "Auth/login"
+        case .register:
+            return "Auth/register"
         case .requestOTP:
-            return "auth/login/otp"
+            return "Auth/forgot-password"
         case .verifyOTP:
-            return "auth/login/otp/verify"
-        case .updatePassword:
-            return "auth/update-password"
+            return "Auth/verify-email"
+        case .resetPassword:
+            return "Auth/reset-password"
         case .documentUpload:
             return "document/upload"
         case .imageUpload:

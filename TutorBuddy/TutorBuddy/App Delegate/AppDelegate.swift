@@ -32,11 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let SVGCoder = SDImageSVGKCoder.shared
         SDImageCodersManager.shared.addCoder(SVGCoder)
         
-        setupTabbarController()
+//        setupTabbarController()
         
         IQKeyboardManager.shared.enable = true
         
-        runRealmMigrations()
+//        runRealmMigrations()
         
 //        FirebaseApp.configure()
         

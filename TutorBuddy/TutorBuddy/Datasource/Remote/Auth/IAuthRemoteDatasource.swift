@@ -8,11 +8,13 @@ import RxSwift
 import Alamofire
 
 protocol IAuthRemoteDatasource {
-    func signin(params: Parameters) -> Observable<AnyStruct>
+    func signin(params: Parameters) -> Observable<TBBaseResponse>
     
-    func requestOTP(params: Parameters) -> Observable<AnyStruct>
+    func signup(params: Parameters) -> Observable<TBRegisterResponse>
     
-    func verifyOTP(params: Parameters) -> Observable<AnyStruct>
+    func requestOTP(params: Parameters) -> Observable<TBRegisterResponse>
     
-    func updatePassword(params: Parameters) -> Observable<AnyStruct>
+    func verifyOTP(params: Parameters) -> Observable<TBRegisterResponse>
+    
+    func resetPassword(params: Parameters) -> Observable<TBRegisterResponse>
 }

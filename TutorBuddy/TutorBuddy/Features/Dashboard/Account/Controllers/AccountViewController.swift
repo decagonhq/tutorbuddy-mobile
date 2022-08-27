@@ -7,23 +7,37 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class AccountViewController: BaseViewController<AccountView, IDashBoardViewModel> {
+    
+    fileprivate let diContainer = AppDelegate.dependencyContainer
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setBackgroundColor(.appBackground)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        (parent as? TBDashBoardViewController)?.showNavBar()
+        (parent as? TBDashBoardViewController)?.configureNavBar(title: "Profile")
     }
-    */
+    
+    override func configureViews() {
+        super.configureViews()
+        with(kview) {
+            $0.signoutHandler = signOut
+        }
+    }
+    
+    fileprivate func signOut() {
+        showConfirmationDialogViewController(confirmationText: .LOGOUT_CONFIRMATION_MESSAGE, yesHandler: { [weak self] in
+            guard let self = self else { return }
+            self.preference.user = nil
+            self.preference.accessToken = ""
+            self.preference.userID = ""
+            self.preference.refreshToken = ""
+            self.setViewControllers(using: self.diContainer.signInController)
+        })
+    }
 
 }

@@ -37,7 +37,11 @@ class BaseRemoteDatasource {
                 do {
                     _print(responseString)
                     
-                    if let error = try? ACError.mapFrom(jsonString: responseString), error.code.isNotNil {
+                    if let error = try? TBError.mapFrom(jsonString: responseString), error.statusCode.isNotNil, error.success == false {
+                        return Observable.error(error)
+                    }
+                    
+                    if let error = try? _TBError.mapFrom(jsonString: responseString), error.status.isNotNil, error.errors.isNotNil {
                         return Observable.error(error)
                     }
                     
@@ -74,7 +78,11 @@ class BaseRemoteDatasource {
                 do {
                     _print(responseString)
                     
-                    if let error = try? ACError.mapFrom(jsonString: responseString), error.code.isNotNil {
+                    if let error = try? TBError.mapFrom(jsonString: responseString), error.statusCode.isNotNil, error.success == false {
+                        return Observable.error(error)
+                    }
+                    
+                    if let error = try? _TBError.mapFrom(jsonString: responseString), error.status.isNotNil, error.errors.isNotNil {
                         return Observable.error(error)
                     }
                     

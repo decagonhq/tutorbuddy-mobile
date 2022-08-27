@@ -12,8 +12,8 @@ final class SelectOptionsView: BaseScrollView {
     var exploreButtonHandler: StringParamHandler?
     var role: String?
     
-    fileprivate let howWouldYouUseThisAppLabel = UILabel(text: "How would you want to use this app?", font: .interExtraBold(size: 25), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
-    fileprivate let selectOptionLabel = UILabel(text: "Please select an option", font: .interRegular(size: 15), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
+    fileprivate let howWouldYouUseThisAppLabel = UILabel(text: .HOW_WOULD_YOU_WANT_TO_USE_THIS_APP, font: .interExtraBold(size: 25), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
+    fileprivate let selectOptionLabel = UILabel(text: .PLEASE_SELECT_AN_OPTION, font: .interRegular(size: 15), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate lazy var labelsStackView = VerticalStackView(arrangedSubviews: [howWouldYouUseThisAppLabel, selectOptionLabel], spacing: 16)
     
     fileprivate let studentLabel = UILabel(text: "Student", font: .interExtraBold(size: 17), numberOfLines: 1, color: .white, alignment: .center, adjustsFontSizeToFitWidth: false)

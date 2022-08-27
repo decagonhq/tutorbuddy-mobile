@@ -12,11 +12,11 @@ class CheckMailView: BaseScrollView {
     var checkMailHandler: NoParamHandler?
     
     fileprivate let checkMailImageView = UIImageView(image: R.image.check_mail(), height: 160)
-    fileprivate let welcomeLabel = UILabel(text: "Check your mail", font: .interExtraBold(size: 25), color: .primaryTextColor, alignment: .center, adjustsFontSizeToFitWidth: false)
-    fileprivate let subtitleLabel = UILabel(text: "We have sent a password recover instruction to your account.", font: .interRegular(size: 16), numberOfLines: 0, color: .primaryTextColor, alignment: .center, adjustsFontSizeToFitWidth: false)
+    fileprivate let welcomeLabel = UILabel(text: .CHECK_YOUR_MAIL, font: .interExtraBold(size: 25), color: .primaryTextColor, alignment: .center, adjustsFontSizeToFitWidth: false)
+    fileprivate let subtitleLabel = UILabel(text: .WE_HAVE_SENT_PASSWORD_RECOVERY_INSTRUCTIONS, font: .interRegular(size: 16), numberOfLines: 0, color: .primaryTextColor, alignment: .center, adjustsFontSizeToFitWidth: false)
     fileprivate lazy var labelsStackView = VerticalStackView(arrangedSubviews: [welcomeLabel, subtitleLabel], spacing: 15)
     
-    fileprivate lazy var letsGoButton = TBButton(title: "Open email app", height: 50, tapAction: handleLeOPenMailButtonTapped)
+    fileprivate lazy var letsGoButton = TBButton(title: .OPEN_EMAIL_APP, height: 50, tapAction: handleLeOPenMailButtonTapped)
     
     override func setup() {
         super.setup()

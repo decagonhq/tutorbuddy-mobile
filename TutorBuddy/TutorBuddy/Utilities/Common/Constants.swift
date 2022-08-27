@@ -35,7 +35,27 @@ struct Constants {
         }
     }
     
-    static let CAR_ENGINE_TYPES = ["2-cylinder(I2)", "3-cylinder(I3)", "4-cylinder(I4)", "5-cylinder(I5)", "6-cylinder(I6)", "6-cylinder(V6)", "8-cylinder(V8)", "10-cylinder(V10)", "12-cylinder(V12)", "4-cylinder(H4)", "6-cylinder(H6)", "8-cylinder(I8)", "12-cylinder(V12)", "18-cylinder(V18)", "24-cylinder(V24)", "48-cylinder(V48)"]
-    
     static let YEARS = Array(2000...currentYear().int!).reversed().map { $0.string }
+    
+    static let COURSES = [
+        Course(avatarImage: R.image.physics_banner(), courseName: "The complete tutorial on physics", courseRating: "4.7"),
+        Course(avatarImage: R.image.chemistry_banner(), courseName: "Chemistry for beginners: 30 days perfection", courseRating: "4.8"),
+        Course(avatarImage: R.image.maths_banner(), courseName: "Everything about mathematics & algebra", courseRating: "4.3"),
+        Course(avatarImage: R.image.python_banner(), courseName: "Learning Python for Data analysis", courseRating: "5.0"),
+        Course(avatarImage: R.image.chemistry_banner(), courseName: "Chemistry for beginners: 30 days perfection", courseRating: "4.8"),
+        Course(avatarImage: R.image.maths_banner(), courseName: "Everything about mathematics & algebra", courseRating: "4.3"),
+        Course(avatarImage: R.image.python_banner(), courseName: "Learning Python for Data analysis", courseRating: "5.0"),
+        Course(avatarImage: R.image.physics_banner(), courseName: "The complete tutorial on physics", courseRating: "4.7")
+    ]
+    
+    static let TUTORS = [
+        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.7"),
+        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.8"),
+        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.3"),
+        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "5.0"),
+        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.8"),
+        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.3"),
+        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "5.0"),
+        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.7")
+    ]
 }

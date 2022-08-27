@@ -28,7 +28,7 @@ def utilityPods
   #Rx Datasources for TableViews and UICollectionViews
   pod 'RxDataSources', '~> 4.0'
 #  pod 'RangeSeekSlider'
-#  pod 'SVPinView', '~> 1.0'
+  pod 'SVPinView', '~> 1.0'
   pod "AttributedStringBuilder"
   pod 'PopupDialog'
 #  pod 'MarqueeLabel'

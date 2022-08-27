@@ -204,6 +204,7 @@ PODS:
     - SVGKit (~> 3.0)
   - SVGKit (3.0.0):
     - CocoaLumberjack (~> 3.0)
+  - SVPinView (1.0.11)
   - SwiftyJSON (4.3.0)
   - SwiftyStarRatingView (1.0.4)
   - Swinject (2.8.1)
@@ -236,6 +237,7 @@ DEPENDENCIES:
   - RxSwift (= 5.1.1)
   - SDWebImage (~> 5.0)
   - SDWebImageSVGKitPlugin
+  - SVPinView (~> 1.0)
   - SwiftyJSON (~> 4.0)
   - SwiftyStarRatingView (~> 1.0)
   - Swinject
@@ -288,6 +290,7 @@ SPEC REPOS:
     - SDWebImage
     - SDWebImageSVGKitPlugin
     - SVGKit
+    - SVPinView
     - SwiftyJSON
     - SwiftyStarRatingView
     - Swinject
@@ -339,11 +342,12 @@ SPEC CHECKSUMS:
   SDWebImage: 0327043dbb9533e75f2eff8445b3df0f2ceca6ac
   SDWebImageSVGKitPlugin: 7542dd07c344ec3415ded0461a1161a6f087e0c9
   SVGKit: 1ad7513f8c74d9652f94ed64ddecda1a23864dea
+  SVPinView: 9b538d0ba68cdb092afe4f0f67ec84cbed079466
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   SwiftyStarRatingView: a2b0057700e0adeb8e7442c55d99cb53b531d2f4
   Swinject: 97112918bd7e0785dc2df7036213f3c8cbba6586
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: e653da29ba83f30c5f721d301c65ce06a8c57998
+PODFILE CHECKSUM: 53d1a0a30ac07459f8a7d554c0241d0212a95297
 
 COCOAPODS: 1.11.2

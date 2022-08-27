@@ -18,10 +18,12 @@ protocol IAuthViewModel {
     
     func signin(email: String, password: String)
     
+    func signup(name: String, email: String, password: String, userType: String)
+    
     func requestOTP(for emailOrPhone: String, navigate: Bool)
     
-    func verifyOTP(_ otp: String)
+    func verifyOTP(_ otp: String, for email: String)
     
-    func resetPassword(to password: String)
+    func resetPassword(for: String, from: String, to: String, with: String)
     
 }

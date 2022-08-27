@@ -20,7 +20,7 @@ class BaseViewController<VW: UIView, VM: Any>: UIViewController {
     
     var horizontalProgressBarYPosition: CGFloat { notchHeight }
     
-    var progressBarColor: UIColor { .primaryTextColor }
+    var progressBarColor: UIColor { .primaryColor }
     
     init(viewModel: VM, preference: IPreference = PreferenceImpl()) {
         self.baseViewModel = viewModel as! BaseViewModel
@@ -36,7 +36,7 @@ class BaseViewController<VW: UIView, VM: Any>: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backgroundColor = .appBackground // .aSystemBackground
+        backgroundColor = .appBackground
         addSubview(kview)
         addSubviewConstraints()
         setObservers()
