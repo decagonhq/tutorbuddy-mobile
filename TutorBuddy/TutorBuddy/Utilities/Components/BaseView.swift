@@ -13,7 +13,7 @@ open class BaseView: UIView {
     var viewMessage = PublishSubject<AlertMessage>()
 
     open func setup() {
-        backgroundColor = .appBackground // .aSystemBackground
+        backgroundColor = .appBackground
     }
     
     open func layout() {}

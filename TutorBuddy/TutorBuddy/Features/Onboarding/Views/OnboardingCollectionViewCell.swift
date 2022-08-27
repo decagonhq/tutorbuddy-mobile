@@ -7,8 +7,8 @@ import UIKit
 
 class OnboardingCollectionViewCell: BaseCollectionViewCell {
     
-    fileprivate let iconImageView = UIImageView(contentMode: .scaleAspectFit, backgroundColor: .primaryColor.withAlphaComponent(0.1))
-    fileprivate let titleLabel = UILabel(text: "", font: .interExtraBold(size: 25), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
+    fileprivate let iconImageView = UIImageView(contentMode: .scaleAspectFit)
+    fileprivate let titleLabel = UILabel(text: "", font: .interExtraBold(size: 34), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate let subtitleLabel = UILabel(text: "", font: .interRegular(size: 16), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     
     override func setup() {
@@ -19,12 +19,12 @@ class OnboardingCollectionViewCell: BaseCollectionViewCell {
         NSLayoutConstraint.activate([
             iconImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.65),
             iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            iconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            iconImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            iconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+            iconImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
         ])
         
-        titleLabel.anchor(top: iconImageView.bottomAnchor, leading: iconImageView.leadingAnchor, trailing: iconImageView.trailingAnchor, padding: ._init(top: 20, left: 20, right: 20))
-        subtitleLabel.anchor(top: titleLabel.bottomAnchor, leading: titleLabel.leadingAnchor, bottom: contentView.bottomAnchor, trailing: titleLabel.trailingAnchor, padding: ._init(top: 20))
+        titleLabel.anchor(top: iconImageView.bottomAnchor, leading: contentView.leadingAnchor, trailing: contentView.trailingAnchor, padding: ._init(top: 20, left: 20, right: 20))
+        subtitleLabel.anchor(top: titleLabel.bottomAnchor, leading: titleLabel.leadingAnchor, bottom: contentView.bottomAnchor, trailing: titleLabel.trailingAnchor, padding: ._init(top: 10))
     }
     
     func configure(item: OnboardingItem) {

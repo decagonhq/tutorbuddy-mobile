@@ -23,40 +23,61 @@ class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
     
     override func didAppear() {
         super.didAppear()
-        if preference.user.isNotNil {
+        if preference.accessToken.isNotEmpty {
             authNavRoute.onNext(.dashboard)
         }
     }
     
     func signin(email: String, password: String) {
-//        let params = [
-//            "email": email,
-//            "password": password
-//        ]
-//        subscribe(authRemote.signin(params: params), success: { [weak self] authRes in
-//            self?.handleAuthenticationResponse(authRes)
-//        })
-        handleAuthenticationResponse(AnyStruct())
+        let params = [
+            "emailAddress": email,
+            "password": password
+        ]
+        subscribe(authRemote.signin(params: params), success: { [weak self] authRes in
+            self?.handleAuthenticationResponse(authRes)
+        })
     }
     
-    fileprivate func handleAuthenticationResponse(_ authRes: AnyStruct) {
-//        let roles = authRes.authority?.roles ?? []
-//        if roles.isEmpty || !roles.contains(where: { $0.insensitiveEquals("DSA_AGENT") || $0.insensitiveEquals("SALES_OFFICER") }) {
-//            authErrorMessage.onNext(.AUTHENTICATION_ROLES_ERROR)
-//        } else if authRes.user?.company.isNil ?? false {
-//            authErrorMessage.onNext(.AUTHENTICATION_COMPANY_ERROR)
-//        } else {
-//            preference.user = authRes.user
-//            preference.accessToken = authRes.token.orEmpty
+    func signup(name: String, email: String, password: String, userType: String) {
+        let fullName = name
+        var components = fullName.components(separatedBy: " ")
+        if components.count > 0 {
+            let firstName = components.removeFirst()
+            let lastName = components.joined(separator: " ")
+            let params = [
+                "firstName": firstName,
+                "lastName": lastName,
+                "email": email,
+                "password": password,
+                "role": userType
+            ]
+            subscribe(authRemote.signup(params: params), success: { [weak self] authRes in
+                if authRes.success == true && authRes.data?.isEmpty == false {
+                    self?.preference.userID = authRes.data ?? ""
+                    self?.authNavRoute.onNext(.verifyOTP)
+                } else {
+                    self?.showMessage("an error occured, try again", type: .error)
+                }
+            }, error: { [weak self] error in
+                self?.showMessage("error: \((error as? TBError)?.message ?? "an error occured, try again.")", type: .error)
+            })
+        }
+    }
+    
+    fileprivate func handleAuthenticationResponse(_ authRes: TBBaseResponse) {
+        if authRes.success == true && authRes.data.isNotNil {
+            preference.accessToken = authRes.data?.token.orEmpty ?? ""
+            preference.userID = authRes.data?.id.orEmpty ?? ""
+            preference.refreshToken = authRes.data?.refreshToken.orEmpty ?? ""
             authNavRoute.onNext(.dashboard)
-//        }
+        }
     }
     
     func requestOTP(for emailOrPhone: String, navigate: Bool) {
         requestOTPEmailOrPhone = emailOrPhone
-        subscribe(authRemote.requestOTP(params: ["payload": emailOrPhone]), success: { [weak self] msgRes in
+        subscribe(authRemote.requestOTP(params: ["emailAddress": emailOrPhone]), success: { [weak self] msgRes in
             if navigate {
-                self?.authNavRoute.onNext(.verifyOTP)
+                self?.authNavRoute.onNext(.resetPassword)
             } else {
                 self?.showCountdownTimer.onNext(true)
                 self?.showMessage("OTP sent successfully")
@@ -64,22 +85,33 @@ class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
         })
     }
     
-    func verifyOTP(_ otp: String) {
-        subscribe(authRemote.verifyOTP(params: ["otp": otp]), success: { [weak self] authRes in
-//            self?.preference.user = authRes.user
-//            self?.preference.accessToken = authRes.token.orEmpty
-            self?.authNavRoute.onNext(.resetPassword)
+    func verifyOTP(_ otp: String, for email: String) {
+        let params = [
+            "emailAddress": email,
+            "token": otp
+        ]
+        subscribe(authRemote.verifyOTP(params: params), success: { [weak self] authRes in
+            if authRes.success == true && authRes.data?.isEmpty == false {
+                self?.preference.userID = authRes.data ?? ""
+                self?.authNavRoute.onNext(.dashboard)
+            }
         })
     }
     
-    func resetPassword(to password: String) {
+    func resetPassword(for email: String, from password: String, to newPassword: String, with otp: String) {
         let params = [
-            "password": password,
-//            "id": preference.user!.id!,
+            "emailAddress": email,
+            "token": otp,
+            "newPassword": password,
+            "confirmPassword": newPassword
         ]
-        subscribe(authRemote.updatePassword(params: params), success: { [weak self] user in
-            self?.preference.user = user
-            self?.authNavRoute.onNext(.resetSuccess)
+        subscribe(authRemote.resetPassword(params: params), success: { [weak self] authRes in
+            if authRes.success == true && authRes.data?.isEmpty == false {
+                self?.authNavRoute.onNext(.resetSuccess)
+                self?.showMessage(.RESET_SUCCESSFUL, type: .success)
+            }
+        }, error: { [weak self] error in
+            self?.showMessage("error: make sure otp is correct and try again.", type: .error)
         })
     }
     

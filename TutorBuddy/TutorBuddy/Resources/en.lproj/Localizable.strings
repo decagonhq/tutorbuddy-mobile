@@ -31,7 +31,7 @@
 "AvailabilityKey" = "Availability";
 "SubjectsKey" = "Subjects";
 "UploadProfilePictureKey" = "Upload profile picture";
-"WelcomeToTutorBuddyKey" = "Welcome to TutorBuddy";
+"WelcomeToKey" = "Welcome to";
 "WeCreatedAPersonalAccountForYouKey" = "We created a personal account for you. You can now start exploring all the features we have for you.";
 "LetsGoKey" = "Let's Go";
 "ResetPasswordKey" = "Reset Password";
@@ -43,6 +43,9 @@
 "CreateNewPasswordKey" = "Create New Password";
 "NewPasswordKey" = "New Password";
 "ConfirmPasswordKey" = "Confirm Password";
+"TutorBuddyKey" = "TutorBuddy";
+"AreaOfInterestKey" = "Area of Interest";
+"UserTypeKey" = "User Type";
 "AllCarsKey" = "All Cars";
 "OnlineKey" = "Online";
 "OfflineKey" = "Offline";

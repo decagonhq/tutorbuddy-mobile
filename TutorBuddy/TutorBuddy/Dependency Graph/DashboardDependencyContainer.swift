@@ -17,11 +17,13 @@ struct DashboardDependencyContainer {
         
         container.register(HomeViewController.self) { HomeViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
         
-//        container.register(HomeViewController.self) { HomeViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
+        container.register(AllCoursesViewController.self) { AllCoursesViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
         
-//        container.register(HomeViewController.self) { HomeViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
+        container.register(MyCoursesViewController.self) { MyCoursesViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
         
-//        container.register(HomeViewController.self) { HomeViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
+        container.register(AccountViewController.self) { AccountViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
+        
+        container.register(CourseDetailsViewController.self) { CourseDetailsViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
     }
     
 }

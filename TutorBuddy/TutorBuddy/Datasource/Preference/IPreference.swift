@@ -8,6 +8,10 @@ import Foundation
 protocol IPreference {
     var accessToken: String { get set }
     
+    var userID: String { get set }
+    
+    var refreshToken: String { get set }
+    
     var hasOnboarded: Bool { get set }
     
     var user: AnyStruct? { get set }

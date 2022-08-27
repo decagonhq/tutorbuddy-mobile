@@ -429,7 +429,7 @@ func generateHapticFeedback(style: UIImpactFeedbackGenerator.FeedbackStyle = .li
 var notchHeight: CGFloat { UIApplication.shared.statusBarFrame.height }
 
 func _print(_ message: Any, _ messageType: ToastType = .error, isJsonResponse: Bool = false) {
-    #if DEV || STAGING
+//    #if DEV || STAGING
     switch messageType {
     case .error:
         print("🔴🔴🔴 " + String(describing: message))
@@ -441,7 +441,7 @@ func _print(_ message: Any, _ messageType: ToastType = .error, isJsonResponse: B
             print("🟢🟢🟢 " + String(describing: message))
         }
     }
-    #endif
+//    #endif
 }
 
 extension Array where Element: Equatable {

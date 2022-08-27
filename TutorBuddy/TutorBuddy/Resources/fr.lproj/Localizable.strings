@@ -31,7 +31,7 @@
 "ChooseKey" = "Choisir";
 "AvailabilityKey" = "Disponibilité";
 "SubjectsKey" = "Sujettes";
-"WelcomeToTutorBuddyKey" = "Bienvenue sur TutorBuddy";
+"WelcomeToKey" = "Bienvenue à";
 "WeCreatedAPersonalAccountForYouKey" = "Nous avons créé un compte personnel pour vous. Vous pouvez maintenant commencer à explorer toutes les fonctionnalités que nous avons pour vous.";
 "LetsGoKey" = "Allons-y";
 "ResetPasswordKey" = "réinitialiser le mot de passe";
@@ -43,6 +43,9 @@
 "CreateNewPasswordKey" = "Créer un nouveau mot de passe";
 "NewPasswordKey" = "nouveau mot de passe";
 "ConfirmPasswordKey" = "Confirmez le mot de passe";
+"TutorBuddyKey" = "TutorBuddy";
+"AreaOfInterestKey" = "Lieu d'intérêt";
+"UserTypeKey" = "Type d'utilisateur";
 "AllCarsKey" = "Toutes les voitures";
 "OnlineKey" = "En ligne";
 "OfflineKey" = "Hors ligne";

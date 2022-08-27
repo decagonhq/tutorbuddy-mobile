@@ -6,5 +6,5 @@
 import Foundation
 
 enum DateType {
-    case dob, issueDate, expiryDate
+    case scheduleTime
 }

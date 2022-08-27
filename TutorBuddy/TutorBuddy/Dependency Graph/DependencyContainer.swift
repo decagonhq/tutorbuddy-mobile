@@ -20,15 +20,15 @@ struct DependencyContainer {
 extension Container {
     var onboardingController: OnboardingViewController { resolve(OnboardingViewController.self)! }
     
-    var studentSignUpController: StudentSignUpViewController { resolve(StudentSignUpViewController.self)! }
+    var signupController: SignUpViewController { resolve(SignUpViewController.self)! }
     
-    var tutorSignUpController: TutorSignUpViewController { resolve(TutorSignUpViewController.self)! }
+    var resetPasswordController: ResetPasswordViewController { resolve(ResetPasswordViewController.self)! }
     
     var signInController: SignInViewController { resolve(SignInViewController.self)! }
     
-    var selectOptionsController: SelectOptionsViewController { resolve(SelectOptionsViewController.self)! }
+    var verifyOTPController: VerifyOTPViewController { resolve(VerifyOTPViewController.self)! }
     
-    var welcomeController: WelcomeViewController { resolve(WelcomeViewController.self)! }
+    var selectOptionsController: SelectOptionsViewController { resolve(SelectOptionsViewController.self)! }
     
     var dashBoardController: TBDashBoardViewController { resolve(TBDashBoardViewController.self)! }
     
@@ -37,5 +37,13 @@ extension Container {
     var checkMailController: CheckMailViewController { resolve(CheckMailViewController.self)! }
     
     var dashboardHomeController: HomeViewController { resolve(HomeViewController.self)! }
+    
+    var allCoursesController: AllCoursesViewController { resolve(AllCoursesViewController.self)! }
+    
+    var myCoursesController: MyCoursesViewController { resolve(MyCoursesViewController.self)! }
+    
+    var accountController: AccountViewController { resolve(AccountViewController.self)! }
+    
+    var courseDetailsController: CourseDetailsViewController { resolve(CourseDetailsViewController.self)! }
 
 }

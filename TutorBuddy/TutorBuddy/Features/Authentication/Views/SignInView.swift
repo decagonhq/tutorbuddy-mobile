@@ -69,9 +69,8 @@ class SignInView: BaseScrollView {
         createAnAccountTapHandler?()
     }
     
-    fileprivate func signinWithAppleTapped() {
-    }
+    fileprivate func signinWithAppleTapped() {}
     
-    fileprivate func signinWithGoogleTapped() {
-    }
+    fileprivate func signinWithGoogleTapped() {}
+    
 }

@@ -29,7 +29,7 @@ public class TBPhoneNumberTextField: BaseView {
     }()
 
     lazy var flagImageView: UIImageView = {
-        UIImageView(image: /*preference.country?.flag ??*/ R.image.homeIcon()).apply {
+        UIImageView(image: /*preference.country?.flag ??*/ R.image.home_icon()).apply {
             $0.setContentHuggingPriority(.defaultHigh, for: .horizontal)
             $0.constraintSize(constant: 22)
         }

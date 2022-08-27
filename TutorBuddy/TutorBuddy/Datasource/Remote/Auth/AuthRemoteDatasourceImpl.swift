@@ -9,20 +9,24 @@ import Alamofire
 
 class AuthRemoteDatasourceImpl: BaseRemoteDatasource, IAuthRemoteDatasource {
     
-    func signin(params: Parameters) -> Observable<AnyStruct> {
-        makeAPIRequest(path: .login, responseType: AnyStruct.self, method: .post, params: params)
+    func signin(params: Parameters) -> Observable<TBBaseResponse> {
+        makeAPIRequest(path: .login, responseType: TBBaseResponse.self, method: .post, params: params)
     }
     
-    func requestOTP(params: Parameters) -> Observable<AnyStruct> {
-        makeAPIRequest(path: .requestOTP, responseType: AnyStruct.self, method: .post, params: params)
+    func signup(params: Parameters) -> Observable<TBRegisterResponse> {
+        makeAPIRequest(path: .register, responseType: TBRegisterResponse.self, method: .post, params: params)
     }
     
-    func verifyOTP(params: Parameters) -> Observable<AnyStruct> {
-        makeAPIRequest(path: .verifyOTP, responseType: AnyStruct.self, method: .post, params: params)
+    func requestOTP(params: Parameters) -> Observable<TBRegisterResponse> {
+        makeAPIRequest(path: .requestOTP, responseType: TBRegisterResponse.self, method: .post, params: params)
     }
     
-    func updatePassword(params: Parameters) -> Observable<AnyStruct> {
-        makeAPIRequest(path: .updatePassword, responseType: AnyStruct.self, method: .post, params: params)
+    func verifyOTP(params: Parameters) -> Observable<TBRegisterResponse> {
+        makeAPIRequest(path: .verifyOTP, responseType: TBRegisterResponse.self, method: .post, params: params)
+    }
+    
+    func resetPassword(params: Parameters) -> Observable<TBRegisterResponse> {
+        makeAPIRequest(path: .resetPassword, responseType: TBRegisterResponse.self, method: .patch, params: params)
     }
     
 }

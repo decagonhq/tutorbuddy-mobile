@@ -57,15 +57,14 @@ class BaseViewModel: IBaseViewModel {
         showLoading(showLoadingAnimation, viewControllerType: viewControllerType, loaderType: loaderType)
         observable.subscribe(onNext: { [weak self] response in
             self?.showLoading(false, viewControllerType: viewControllerType, loaderType: loaderType)
-            
-            if let error = response as? ACError {
+            if let error = response as? TBError, let _error = response as? _TBError {
                 if showMessageAlerts {
-                    var resMessage = error.error.orEmpty
-                    if resMessage.isEmpty {
-                        resMessage = error.message.orEmpty
+                    let isSuccessful = error.success ?? false
+                    let resMessage = error.message.orEmpty
+                    let message = error.message.isNil ? _error.title : /*"\(isSuccessful)" + ". " + */resMessage
+                    if /*!isSuccessful && error?.data == nil*/ message?.isEmpty == false {
+                        self?.showMessage((message ?? errorMessage) ?? "An error occurred, please try again.", type: .error, viewControllerType: viewControllerType)
                     }
-                    let message = resMessage.isNotEmpty ? resMessage : (errorMessage ?? "An error occurred, please try again.")
-                    self?.showMessage(message, type: .error, viewControllerType: viewControllerType)
                 }
             } else {
                 success?(response)
@@ -74,17 +73,17 @@ class BaseViewModel: IBaseViewModel {
             
         }, onError: { [weak self] err in
             self?.showLoading(false, viewControllerType: viewControllerType, loaderType: loaderType)
-            
             if showMessageAlerts {
-                let error = err as? ACError
-                var resMessage = error?.error.orEmpty
-                if resMessage?.isEmpty ?? true {
-                    resMessage = error?.message.orEmpty
+                let error = err as? TBError
+                let _error = err as? _TBError
+                let isSuccessful = error?.success ?? false
+                let resMessage = error?.message.orEmpty
+                let message = error.isNil ? _error?.title : /*"\(isSuccessful)" + ". " + */((resMessage ?? errorMessage) ?? err.localizedDescription)
+                if /*!isSuccessful && error?.data == nil*/ message?.isEmpty == false {
+                    self?.showMessage(message ?? err.localizedDescription, type: .error, viewControllerType: viewControllerType)
                 }
-                let message = resMessage ?? (errorMessage ?? err.localizedDescription)
-                self?.showMessage(message + ". " + (error?.message?.orEmpty ?? ""), type: .error, viewControllerType: viewControllerType)
             }
-            
+
             error?(err)
             
         }).disposed(by: disposeBag)

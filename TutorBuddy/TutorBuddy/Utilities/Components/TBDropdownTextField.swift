@@ -26,7 +26,7 @@ public class TBDropdownTextField: BaseView {
             containerChildStackView.centerYInSuperview()
         }
     }()
-    fileprivate let iconImageView = UIImageView(image: R.image.launch_screen_logo(), tintColor: .primaryTextColor, size: 12)
+    fileprivate let iconImageView = UIImageView(image: R.image.arrow_down_icon(), tintColor: .primaryTextColor, size: 12)
     fileprivate lazy var containerStackView: VerticalStackView = {
         VerticalStackView(arrangedSubviews: [floatingLabel, containerView], spacing: 5)
     }()

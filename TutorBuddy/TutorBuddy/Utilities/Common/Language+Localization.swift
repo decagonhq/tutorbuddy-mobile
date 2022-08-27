@@ -51,7 +51,7 @@ extension String {
     static var CHOOSE: String { "ChooseKey".localized }
     static var AVAILABILITY: String { "AvailabilityKey".localized }
     static var SUBJECTS: String { "SubjectsKey".localized }
-    static var WELCOME_TO_TUTOR_BUDDY: String { "WelcomeToTutorBuddyKey".localized }
+    static var WELCOME_TO: String { "WelcomeToKey".localized }
     static var WE_CREATED_A_PERSONAL_ACCOUNT_FOR_YOU: String { "WeCreatedAPersonalAccountForYouKey".localized }
     static var LETS_GO: String { "LetsGoKey".localized }
     static var RESET_PASSWORD: String { "ResetPasswordKey".localized }
@@ -68,7 +68,9 @@ extension String {
     static var EXPLORE: String { "ExploreKey".localized }
     static var STUDENT: String { "StudentKey".localized }
     static var TUTOR: String { "TutorKey".localized }
-    
+    static var TUTOR_BUDDY: String { "TutorBuddyKey".localized }
+    static var AREA_OF_INTEREST: String { "AreaOfInterestKey".localized }
+    static var USER_TYPE: String { "UserTypeKey".localized }
     
     
     

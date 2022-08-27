@@ -17,7 +17,6 @@ class TutorSignUpView: BaseScrollView {
     fileprivate let createAccountLabel = UILabel(text: .CREATE_AN_ACCOUNT, font: .interExtraBold(size: 25), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate let createAccountSubtitleLabel = UILabel(text: .CREATE_YOUR_ACCOUNT_TO_CONNECT_WITH_STUDENTS, font: .interRegular(size: 15), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate lazy var labelsStackView = VerticalStackView(arrangedSubviews: [createAccountLabel, createAccountSubtitleLabel], spacing: 20)
-    
     fileprivate let nameTextfield = TBTextField(title: .NAME, placeholder: .YOUR_FULL_NAME, validationType: .name)
     fileprivate let tellUsAboutYourselfTextfield = TBTextField(title: .TELL_US_ABOUT_YOURSELF, placeholder: "Short bio...", isBio: true, validationType: .name)
     fileprivate let uploadProfilePictureTextfield = TBTextField(title: .UPLOAD_PROFILE_PICTURE, isUploadProfilePicture: true, validationType: .name)
@@ -26,7 +25,6 @@ class TutorSignUpView: BaseScrollView {
     fileprivate let passwordTextField = TBTextField(title: .PASSWORD, placeholder: .YOUR_PASSWORD, isPassword: true, validationType: .password)
     fileprivate lazy var signUpButton = TBButton(title: .SIGN_UP, height: 50, tapAction: handleSignUpButtonTapped)
     fileprivate lazy var inputStackView = VerticalStackView(arrangedSubviews: [nameTextfield, tellUsAboutYourselfTextfield, uploadProfilePictureTextfield, subjectsTextfield, availabilityTextfield, passwordTextField, signUpButton], spacing: 15)
-    
     fileprivate let alreadyHaveAnAccountLabel = UILabel(text: .ALREADY_HAVE_AN_ACCOUNT, font: .interRegular(size: 14), color: .primaryTextColor)
     fileprivate lazy var logintButton = TBButton(title: .LOGIN, font: .interExtraBold(size: 14), backgroundColor: .appBackground, textColor: .primaryColor, tapAction: handleLoginTapped)
     fileprivate lazy var accoutActionsStackView = HorizontalStackView(arrangedSubviews: [alreadyHaveAnAccountLabel, logintButton], spacing: 5).withWidth(240)
@@ -65,9 +63,6 @@ class TutorSignUpView: BaseScrollView {
             $0.centerXInSuperview()
         }
     }
-    
-    
-    
     
     fileprivate func handleBackButtonTapped() {
         backButtonTapHandler?()

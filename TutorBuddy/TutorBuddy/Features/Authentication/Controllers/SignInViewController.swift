@@ -6,16 +6,11 @@
 import UIKit
 
 class SignInViewController: BaseViewController<SignInView, IAuthViewModel> {
-
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        configureNavBar(centerImage: R.image.launch_screen_logo(), barTintColor: .aLabel, tintColor: .aLabel, height: 28)
-//    }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        setBackButtonText()
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        showNavBar(false)
+    }
     
     override func configureViews() {
         super.configureViews()
@@ -30,7 +25,7 @@ class SignInViewController: BaseViewController<SignInView, IAuthViewModel> {
             }
             
             $0.createAnAccountTapHandler = { [weak self] in
-                self?.setViewControllers(using: AppDelegate.dependencyContainer.selectOptionsController, animate: true)
+                self?._pushViewController(AppDelegate.dependencyContainer.signupController, animated: true)
             }
         }
     }
@@ -50,9 +45,9 @@ class SignInViewController: BaseViewController<SignInView, IAuthViewModel> {
     }
     
     fileprivate func observeAuthErrorMessage() {
-//        viewModel.authErrorMessage.bind { message in
-//            self.showDialog(for: SignInErrorViewController().apply { $0.messageText = message })
-//        }.disposed(by: disposeBag)
+        viewModel.authErrorMessage.bind { message in
+            self.showDialog(for: SignInErrorViewController().apply { $0.messageText = message })
+        }.disposed(by: disposeBag)
     }
 
 }

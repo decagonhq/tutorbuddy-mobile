@@ -10,16 +10,16 @@ import UIKit
 
 class ForgotPasswordView: BaseScrollView {
     
-    var resetPasswordHandler: NoParamHandler?
+    var nextTapHandler: StringParamHandler?
     var backButtonTapHandler: NoParamHandler?
     
     fileprivate lazy var backButton = TBButton(backgroundColor: .appBackground, height: 28, width: 28, image: R.image.back_icon(), tintColor: .black,tapAction: handleBackButtonTapped)
     fileprivate let welcomeLabel = UILabel(text: .RESET_PASSWORD, font: .interExtraBold(size: 25), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate let subtitleLabel = UILabel(text: .ENTER_THE_EMAIL_ASSOCIATED_WITH_YOUR_ACCOUNT, font: .interRegular(size: 16), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate lazy var labelsStackView = VerticalStackView(arrangedSubviews: [welcomeLabel, subtitleLabel], spacing: 15)
-    fileprivate let emailTextfield = TBTextField(title: .EMAIL, placeholder: .ENTER_YOUR_EMAIL, validationType: .email)
+    let emailTextfield = TBTextField(title: .EMAIL, placeholder: .ENTER_YOUR_EMAIL, validationType: .email)
     
-    fileprivate lazy var resetPasswordButton = TBButton(title: .RESET_PASSWORD, height: 50, tapAction: handleResetPasswordButtonTapped)
+    fileprivate lazy var nextButton = TBButton(title: .NEXT, height: 50, tapAction: handleResetPasswordButtonTapped)
     
     override func setup() {
         super.setup()
@@ -39,7 +39,7 @@ class ForgotPasswordView: BaseScrollView {
             $0.anchor(top: labelsStackView.bottomAnchor, leading: _leadingAnchor, trailing: _trailingAnchor, padding: ._init(top: 20, left: 20, right: 20))
         }
 
-        resetPasswordButton.do {
+        nextButton.do {
             _addSubview($0)
             $0.anchor(top: emailTextfield.bottomAnchor, leading: _leadingAnchor, trailing: _trailingAnchor, padding: ._init(top: 40, left: 20, right: 20))
         }
@@ -50,6 +50,8 @@ class ForgotPasswordView: BaseScrollView {
     }
     
     fileprivate func handleResetPasswordButtonTapped() {
-        resetPasswordHandler?()
+        if emailTextfield.isValid {
+            nextTapHandler?(emailTextfield.text)
+        }
     }
 }

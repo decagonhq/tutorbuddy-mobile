@@ -24,9 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = UINavigationController(rootViewController: AppDelegate.dependencyContainer.onboardingController).apply { $0.isNavigationBarHidden = true }
+        window?.rootViewController = UINavigationController(rootViewController: AppDelegate.dependencyContainer.onboardingController)//.apply { $0.isNavigationBarHidden = true }
         window?.makeKeyAndVisible()
-      
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {}

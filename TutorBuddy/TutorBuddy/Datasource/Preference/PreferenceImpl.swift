@@ -10,6 +10,12 @@ struct PreferenceImpl: IPreference {
     @UserDefaultPrimitive(key: PreferenceConstants.ACCESS_TOKEN, default: "")
     var accessToken: String
     
+    @UserDefaultPrimitive(key: PreferenceConstants.USER_ID, default: "")
+    var userID: String
+    
+    @UserDefaultPrimitive(key: PreferenceConstants.REFRESH_TOKEN, default: "")
+    var refreshToken: String
+    
     @UserDefaultPrimitive(key: PreferenceConstants.HAS_ONBOARDED, default: false)
     var hasOnboarded: Bool
     
