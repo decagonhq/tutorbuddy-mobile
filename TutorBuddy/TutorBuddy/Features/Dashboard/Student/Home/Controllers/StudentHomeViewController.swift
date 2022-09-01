@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController<HomeView, IDashBoardViewModel> {
+class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
