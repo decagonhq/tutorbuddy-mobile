@@ -6,5 +6,5 @@
 import Foundation
 
 enum AuthNavRoute {
-    case dashboard, signin, requestOTP, verifyOTP, resetPassword, resetSuccess
+    case studentDashboard, tutorDashboard, signin, requestOTP, verifyOTP, resetPassword, resetSuccess
 }

@@ -28,8 +28,6 @@ extension Container {
     
     var verifyOTPController: VerifyOTPViewController { resolve(VerifyOTPViewController.self)! }
     
-    var selectOptionsController: SelectOptionsViewController { resolve(SelectOptionsViewController.self)! }
-    
     var dashBoardController: TBDashBoardViewController { resolve(TBDashBoardViewController.self)! }
     
     var forgotPasswordController: ForgotPasswordViewController { resolve(ForgotPasswordViewController.self)! }

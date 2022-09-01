@@ -38,7 +38,7 @@ class OnboardingViewModelImpl: BaseViewModel, IOnboardingViewModel {
     
     fileprivate func navigate() {
         if preference.user.isNotNil {
-            authNavRoute.onNext(.dashboard)
+            authNavRoute.onNext(.studentDashboard)
         } else if preference.hasOnboarded {
             authNavRoute.onNext(.signin)
         }

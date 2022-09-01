@@ -45,8 +45,8 @@ class VerifyOTPViewController: BaseViewController<VerifyOTPView, IAuthViewModel>
     
     fileprivate func observeAuthNavRoute() {
         viewModel.authNavRoute.bind { [weak self] route in
-            if route == .dashboard {
-                self?.setViewControllers(using: TBDashBoardViewController())
+            if route == .signin {
+                self?.setViewControllers(using: AppDelegate.dependencyContainer.signInController)
             }
         }.disposed(by: disposeBag)
     }

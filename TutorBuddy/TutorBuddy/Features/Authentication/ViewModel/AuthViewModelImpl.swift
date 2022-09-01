@@ -5,6 +5,7 @@
 
 import Foundation
 import RxSwift
+import Alamofire
 
 class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
     
@@ -12,6 +13,11 @@ class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
     var requestOTPEmailOrPhone = ""
     var showCountdownTimer: PublishSubject<Bool> = PublishSubject()
     var authErrorMessage = PublishSubject<String>()
+    var subjects = [Subject]()
+    var days = [Day]()
+    var selectedDays = [Day]()
+    var selectedSubjects = [Subject]()
+    var showRegisterResources = PublishSubject<Bool>()
     
     var preference: IPreference
     fileprivate let authRemote: IAuthRemoteDatasource
@@ -24,7 +30,11 @@ class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
     override func didAppear() {
         super.didAppear()
         if preference.accessToken.isNotEmpty {
-            authNavRoute.onNext(.dashboard)
+            if preference.roles.contains(where: { $0.insensitiveEquals("Student") }) {
+                authNavRoute.onNext(.studentDashboard)
+            } else if preference.roles.contains(where: { $0.insensitiveEquals("Tutor") }) {
+                authNavRoute.onNext(.tutorDashboard)
+            }
         }
     }
     
@@ -38,18 +48,21 @@ class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
         })
     }
     
-    func signup(name: String, email: String, password: String, userType: String) {
+    func signup(name: String, email: String, password: String, userType: String, bio: String?, selectedSubjects: [Subject]?, selectedDays: [Day]?) {
         let fullName = name
         var components = fullName.components(separatedBy: " ")
         if components.count > 0 {
             let firstName = components.removeFirst()
             let lastName = components.joined(separator: " ")
-            let params = [
+            let params: Parameters = [
                 "firstName": firstName,
                 "lastName": lastName,
                 "email": email,
                 "password": password,
-                "role": userType
+                "role": userType,
+                "bio": bio.orEmpty,
+                "subjects": selectedSubjects.dictionaryArray,
+                "avaliabilities": selectedDays.dictionaryArray
             ]
             subscribe(authRemote.signup(params: params), success: { [weak self] authRes in
                 if authRes.success == true && authRes.data?.isEmpty == false {
@@ -69,7 +82,14 @@ class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
             preference.accessToken = authRes.data?.token.orEmpty ?? ""
             preference.userID = authRes.data?.id.orEmpty ?? ""
             preference.refreshToken = authRes.data?.refreshToken.orEmpty ?? ""
-            authNavRoute.onNext(.dashboard)
+            preference.roles = authRes.data?.roles ?? []
+            
+            let roles = authRes.data?.roles ?? []
+            if roles.isNotEmpty && roles.contains(where: { $0.insensitiveEquals("Student") }) {
+                authNavRoute.onNext(.studentDashboard)
+            } else if roles.isNotEmpty && roles.contains(where: { $0.insensitiveEquals("Tutor") }) {
+                authNavRoute.onNext(.tutorDashboard)
+            }
         }
     }
     
@@ -93,7 +113,7 @@ class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
         subscribe(authRemote.verifyOTP(params: params), success: { [weak self] authRes in
             if authRes.success == true && authRes.data?.isEmpty == false {
                 self?.preference.userID = authRes.data ?? ""
-                self?.authNavRoute.onNext(.dashboard)
+                self?.authNavRoute.onNext(.signin)
             }
         })
     }
@@ -112,6 +132,16 @@ class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
             }
         }, error: { [weak self] error in
             self?.showMessage("error: make sure otp is correct and try again.", type: .error)
+        })
+    }
+    
+    func getRegisterResource(showRegisterResources: Bool) {
+        subscribe(authRemote.getRegisterResource(), success: { [weak self] authRes in
+            if authRes.success == true && authRes.data.isNotNil {
+                self?.subjects = authRes.data?.subjects ?? []
+                self?.days = authRes.data?.avaliabilities ?? []
+                self?.showRegisterResources.onNext(showRegisterResources)
+            }
         })
     }
     

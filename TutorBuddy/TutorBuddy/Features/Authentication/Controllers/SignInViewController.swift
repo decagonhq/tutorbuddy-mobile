@@ -38,8 +38,10 @@ class SignInViewController: BaseViewController<SignInView, IAuthViewModel> {
     
     fileprivate func observeAuthNavRoute() {
         viewModel.authNavRoute.bind { [weak self] route in
-            if route == .dashboard {
+            if route == .studentDashboard {
                 self?.setViewControllers(using: TBDashBoardViewController())
+            } else if route == .tutorDashboard {
+                self?.setViewControllers(using: ViewController())
             }
         }.disposed(by: disposeBag)
     }

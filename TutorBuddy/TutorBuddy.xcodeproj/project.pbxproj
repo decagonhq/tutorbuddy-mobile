@@ -27,7 +27,6 @@
 		BC45DD37289168ED00FD1E0D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45DD36289168ED00FD1E0D /* HomeView.swift */; };
 		BC533A8C2885CA5500D2A6DA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A8B2885CA5500D2A6DA /* SignUpViewController.swift */; };
 		BC533A8E2885CA8500D2A6DA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A8D2885CA8500D2A6DA /* SignUpView.swift */; };
-		BC533A9C288684D100D2A6DA /* SelectOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A9B288684D100D2A6DA /* SelectOptionsViewController.swift */; };
 		BC533A9E2886850600D2A6DA /* SelectOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A9D2886850600D2A6DA /* SelectOptionsView.swift */; };
 		BC533AA02886967600D2A6DA /* TutorSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533A9F2886967600D2A6DA /* TutorSignUpViewController.swift */; };
 		BC533AA2288696D600D2A6DA /* TutorSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533AA1288696D600D2A6DA /* TutorSignUpView.swift */; };
@@ -40,6 +39,10 @@
 		BC8299DE28A414E300021DF7 /* SuccessfulTutorRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8299DD28A414E300021DF7 /* SuccessfulTutorRequestViewController.swift */; };
 		BC8BA91028B58D9B0064E44B /* VerifyOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BA90F28B58D9B0064E44B /* VerifyOTPViewController.swift */; };
 		BC8BA91228B58DC90064E44B /* VerifyOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BA91128B58DC80064E44B /* VerifyOTPView.swift */; };
+		BC8BA91428BA696F0064E44B /* FormEntryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BA91328BA696E0064E44B /* FormEntryType.swift */; };
+		BC8BA91628BA7E740064E44B /* ChooseAvailabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BA91528BA7E740064E44B /* ChooseAvailabilityViewController.swift */; };
+		BC8BA91828BA7E8D0064E44B /* ChooseSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BA91728BA7E8D0064E44B /* ChooseSubjectsViewController.swift */; };
+		BC8BA91A28BC17FC0064E44B /* RegisterResourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BA91928BC17FC0064E44B /* RegisterResourceTableViewCell.swift */; };
 		BCF1536A28B2638A0003767F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1536928B2638A0003767F /* AccountView.swift */; };
 		BCF1536C28B282120003767F /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1536B28B282110003767F /* AccountTableViewCell.swift */; };
 		BCFB81562882C7CA00C50982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB81552882C7CA00C50982 /* AppDelegate.swift */; };
@@ -190,7 +193,6 @@
 		BC45DD36289168ED00FD1E0D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BC533A8B2885CA5500D2A6DA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BC533A8D2885CA8500D2A6DA /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		BC533A9B288684D100D2A6DA /* SelectOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewController.swift; sourceTree = "<group>"; };
 		BC533A9D2886850600D2A6DA /* SelectOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsView.swift; sourceTree = "<group>"; };
 		BC533A9F2886967600D2A6DA /* TutorSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorSignUpViewController.swift; sourceTree = "<group>"; };
 		BC533AA1288696D600D2A6DA /* TutorSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorSignUpView.swift; sourceTree = "<group>"; };
@@ -203,6 +205,10 @@
 		BC8299DD28A414E300021DF7 /* SuccessfulTutorRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulTutorRequestViewController.swift; sourceTree = "<group>"; };
 		BC8BA90F28B58D9B0064E44B /* VerifyOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewController.swift; sourceTree = "<group>"; };
 		BC8BA91128B58DC80064E44B /* VerifyOTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPView.swift; sourceTree = "<group>"; };
+		BC8BA91328BA696E0064E44B /* FormEntryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormEntryType.swift; sourceTree = "<group>"; };
+		BC8BA91528BA7E740064E44B /* ChooseAvailabilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvailabilityViewController.swift; sourceTree = "<group>"; };
+		BC8BA91728BA7E8D0064E44B /* ChooseSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSubjectsViewController.swift; sourceTree = "<group>"; };
+		BC8BA91928BC17FC0064E44B /* RegisterResourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResourceTableViewCell.swift; sourceTree = "<group>"; };
 		BCF1536928B2638A0003767F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		BCF1536B28B282110003767F /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		BCFB81522882C7CA00C50982 /* TutorBuddy Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TutorBuddy Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -432,6 +438,7 @@
 		70B5F168288819C4008BD901 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BC8299D528A25CAF00021DF7 /* TutorDetailsViewController.swift */,
 				70B5F16F28881ADB008BD901 /* HomeViewController.swift */,
 				BC8299D728A3842300021DF7 /* CourseDetailsViewController.swift */,
 				BC8299DD28A414E300021DF7 /* SuccessfulTutorRequestViewController.swift */,
@@ -458,7 +465,6 @@
 				BC45DD36289168ED00FD1E0D /* HomeView.swift */,
 				BC41C680289C6F4600E983A0 /* FeaturedTutorsCollectionViewCell.swift */,
 				BC41C682289FCF9900E983A0 /* RecommendedCoursesCollectionViewCell.swift */,
-				BC8299D528A25CAF00021DF7 /* TutorDetailsViewController.swift */,
 				BC8299D928A384EB00021DF7 /* CourseDetailsView.swift */,
 				BC8299DB28A39B3D00021DF7 /* RatingsTableViewCell.swift */,
 			);
@@ -619,6 +625,7 @@
 			isa = PBXGroup;
 			children = (
 				BCFB81BF2883127700C50982 /* AuthNavRoute.swift */,
+				BC8BA91328BA696E0064E44B /* FormEntryType.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -635,6 +642,8 @@
 				70B5F17928894768008BD901 /* CheckMailViewController.swift */,
 				70B5F17D28898A6E008BD901 /* ResetPasswordViewController.swift */,
 				BC8BA90F28B58D9B0064E44B /* VerifyOTPViewController.swift */,
+				BC8BA91528BA7E740064E44B /* ChooseAvailabilityViewController.swift */,
+				BC8BA91728BA7E8D0064E44B /* ChooseSubjectsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -650,6 +659,7 @@
 				70B5F17B28894870008BD901 /* CheckMailView.swift */,
 				70B5F17F28898B0C008BD901 /* ResetPasswordView.swift */,
 				BC8BA91128B58DC80064E44B /* VerifyOTPView.swift */,
+				BC8BA91928BC17FC0064E44B /* RegisterResourceTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -696,7 +706,6 @@
 			isa = PBXGroup;
 			children = (
 				BCFB81D62883127800C50982 /* OnboardingViewController.swift */,
-				BC533A9B288684D100D2A6DA /* SelectOptionsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1195,8 +1204,10 @@
 				BCFB826A288314FB00C50982 /* Loader.swift in Sources */,
 				BC533AA62887E56500D2A6DA /* WelcomeView.swift in Sources */,
 				BCFB8266288314FB00C50982 /* BaseTableViewCell.swift in Sources */,
+				BC8BA91628BA7E740064E44B /* ChooseAvailabilityViewController.swift in Sources */,
 				BCFB8215288312A900C50982 /* Preference+Utils.swift in Sources */,
 				BCFB8263288314FB00C50982 /* TBTextField.swift in Sources */,
+				BC8BA91428BA696F0064E44B /* FormEntryType.swift in Sources */,
 				70B5F174288834FC008BD901 /* DashBoardViewModelImpl.swift in Sources */,
 				BC8299DC28A39B3D00021DF7 /* RatingsTableViewCell.swift in Sources */,
 				BCFB8261288314FB00C50982 /* NumberProgressView.swift in Sources */,
@@ -1213,6 +1224,7 @@
 				BCFB8269288314FB00C50982 /* BaseScrollView.swift in Sources */,
 				BCFB825B288314FB00C50982 /* BaseView.swift in Sources */,
 				BCFB828A2883155000C50982 /* ValidationMessage.swift in Sources */,
+				BC8BA91A28BC17FC0064E44B /* RegisterResourceTableViewCell.swift in Sources */,
 				BCFB8259288314FB00C50982 /* BaseCollectionViewCell.swift in Sources */,
 				BCFB823E2883149D00C50982 /* IconTextView.swift in Sources */,
 				70B5F18028898B0C008BD901 /* ResetPasswordView.swift in Sources */,
@@ -1245,7 +1257,6 @@
 				BCFB8265288314FB00C50982 /* ViewControllerType.swift in Sources */,
 				BCFB8218288312A900C50982 /* RemoteConfigManager.swift in Sources */,
 				BCFB81DA2883127800C50982 /* AuthViewModelImpl.swift in Sources */,
-				BC533A9C288684D100D2A6DA /* SelectOptionsViewController.swift in Sources */,
 				BC533A8C2885CA5500D2A6DA /* SignUpViewController.swift in Sources */,
 				BCFB8216288312A900C50982 /* IPreference.swift in Sources */,
 				BCFB819C2882F47200C50982 /* DashboardDependencyContainer.swift in Sources */,
@@ -1275,6 +1286,7 @@
 				BCFB825A288314FB00C50982 /* AppDropdownView.swift in Sources */,
 				BCFB823D2883149D00C50982 /* IconUILabel.swift in Sources */,
 				BC8299D828A3842300021DF7 /* CourseDetailsViewController.swift in Sources */,
+				BC8BA91828BA7E8D0064E44B /* ChooseSubjectsViewController.swift in Sources */,
 				BC8BA91228B58DC90064E44B /* VerifyOTPView.swift in Sources */,
 				BCFB82392883149D00C50982 /* AttachmentManager.swift in Sources */,
 				BCFB82942883155000C50982 /* Numeric+Utils.swift in Sources */,
@@ -1503,7 +1515,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.decagonhq.tutorbuddy.staging;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.decagonhq.tutor-buddy.staging";
 				PRODUCT_NAME = "TutorBuddy Staging";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1535,7 +1547,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.decagonhq.tutorbuddy;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.decagonhq.tutor-buddy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

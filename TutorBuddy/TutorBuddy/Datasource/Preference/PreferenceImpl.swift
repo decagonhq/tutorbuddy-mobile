@@ -16,6 +16,9 @@ struct PreferenceImpl: IPreference {
     @UserDefaultPrimitive(key: PreferenceConstants.REFRESH_TOKEN, default: "")
     var refreshToken: String
     
+    @UserDefaultPrimitive(key: PreferenceConstants.ROLES, default: [])
+    var roles: [String]
+    
     @UserDefaultPrimitive(key: PreferenceConstants.HAS_ONBOARDED, default: false)
     var hasOnboarded: Bool
     
