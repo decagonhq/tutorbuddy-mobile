@@ -18,7 +18,6 @@ final class TBDashBoardViewController: UITabBarController {
     fileprivate lazy var myCoursesViewController = diContainer.myCoursesController
     fileprivate lazy var studentAccountViewController = diContainer.studentAccountController
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.tintColor = .primaryColor

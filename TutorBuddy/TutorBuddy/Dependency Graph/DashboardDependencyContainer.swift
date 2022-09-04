@@ -29,7 +29,7 @@ struct DashboardDependencyContainer {
         
         container.register(CourseDetailsViewController.self) { CourseDetailsViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
         
-//        container.register(TutorHomeViewController.self) { TutorHomeViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
+        container.register(TutorHomeViewController.self) { TutorHomeViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
 //        
 //        container.register(NotificationsViewController.self) { NotificationsViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
 //        
