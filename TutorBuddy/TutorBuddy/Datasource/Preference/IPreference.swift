@@ -12,6 +12,8 @@ protocol IPreference {
     
     var refreshToken: String { get set }
     
+    var roles: [String] { get set }
+    
     var hasOnboarded: Bool { get set }
     
     var user: AnyStruct? { get set }

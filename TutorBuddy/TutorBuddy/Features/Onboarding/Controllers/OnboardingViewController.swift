@@ -44,7 +44,7 @@ class OnboardingViewController: BaseViewController<OnboardingView, IOnboardingVi
     
     fileprivate func observeAuthNavRoute() {
         viewModel.authNavRoute.bind { [weak self] route in
-            if route == .dashboard {
+            if route == .studentDashboard {
                 self?.setViewControllers(using: TBDashBoardViewController())
             } else {
                 self?.getStarted()

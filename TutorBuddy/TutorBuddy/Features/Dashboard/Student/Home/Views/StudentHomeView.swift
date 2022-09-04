@@ -9,7 +9,7 @@ import UIKit
 import BottomPopup
 import RxSwift
 
-class HomeView: BaseScrollView {
+class StudentHomeView: BaseScrollView {
     
     var showtutorDetailsHandler: ((FeaturedTutor, Int) -> Void)?
     var showCourseDetailsHandler: ((Course, Int) -> Void)?
@@ -97,7 +97,7 @@ class HomeView: BaseScrollView {
 }
 
 
-extension HomeView: UICollectionViewConformable {
+extension StudentHomeView: UICollectionViewConformable {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == featuredTutorsCollectionView {
             return data.count

@@ -10,6 +10,7 @@ class SignInView: BaseScrollView {
     var createAnAccountTapHandler: NoParamHandler?
     var forgotPasswordTapHandler: NoParamHandler?
     var signinTapHandler: DoubleStringParamHandler?
+    var signinWithAppleTapHandler: NoParamHandler?
 
     fileprivate let loginLabel = UILabel(text: .LOGIN, font: .interExtraBold(size: 22), color: .primaryTextColor, alignment: .left)
     fileprivate let emailTextfield = TBTextField(title: .EMAIL, placeholder: .ENTER_EMAIL, validationType: .emailOrPhone)
@@ -69,7 +70,9 @@ class SignInView: BaseScrollView {
         createAnAccountTapHandler?()
     }
     
-    fileprivate func signinWithAppleTapped() {}
+    fileprivate func signinWithAppleTapped() {
+        signinWithAppleTapHandler?()
+    }
     
     fileprivate func signinWithGoogleTapped() {}
     

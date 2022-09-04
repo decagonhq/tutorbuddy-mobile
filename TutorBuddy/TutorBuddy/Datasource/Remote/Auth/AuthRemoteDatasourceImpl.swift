@@ -29,4 +29,8 @@ class AuthRemoteDatasourceImpl: BaseRemoteDatasource, IAuthRemoteDatasource {
         makeAPIRequest(path: .resetPassword, responseType: TBRegisterResponse.self, method: .patch, params: params)
     }
     
+    func getRegisterResource() -> Observable<TBRegisterResourceResponse> {
+        makeAPIRequest(path: .register, responseType: TBRegisterResourceResponse.self, encoding: URLEncoding.default)
+    }
+    
 }

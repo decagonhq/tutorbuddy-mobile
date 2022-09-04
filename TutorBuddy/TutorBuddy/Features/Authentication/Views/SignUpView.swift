@@ -10,7 +10,7 @@ import UIKit
 class SignUpView: BaseScrollView {
     
     var backButtonTapHandler: NoParamHandler?
-    var signupTapHandler: ((String, String, String, String) -> Void)?
+    var signupTapHandler: ((String, String, String, String, String?) -> Void)?
     var loginTapHandler: NoParamHandler?
 
     fileprivate lazy var backButton = TBButton(backgroundColor: .appBackground, height: 28, width: 28, image: R.image.back_icon(), tintColor: .black, tapAction: handleBackButtonTapped)
@@ -26,9 +26,9 @@ class SignUpView: BaseScrollView {
     fileprivate let nameTextfield = TBTextField(title: .NAME, placeholder: .YOUR_FULL_NAME, validationType: .name)
     let emailTextfield = TBTextField(title: .EMAIL, placeholder: .YOUR_EMAIL_ADDRESS, validationType: .email)
     fileprivate let tellUsAboutYourselfTextfield = TBTextField(title: .TELL_US_ABOUT_YOURSELF, placeholder: "Short bio...", isBio: true, validationType: .name).apply { $0.showView(false) }
-    fileprivate let availabilityTextfield = TBTextField(title: .AVAILABILITY, placeholder: .CHOOSE, items: [], validationType: .name).apply { $0.showView(false) }
+    let availabilityTextfield = TBDropdownTextField(floatingText: .AVAILABILITY).apply { $0.showView(false) }
     fileprivate let passwordTextField = TBTextField(title: .PASSWORD, placeholder: .YOUR_PASSWORD, isPassword: true, validationType: .password)
-    fileprivate let subjectsTextfield = TBTextField(title: .SUBJECTS, placeholder: .SELECT, items: [], validationType: .name).apply { $0.showView(false) }
+    let subjectsTextfield = TBDropdownTextField(floatingText: .SUBJECTS).apply { $0.showView(false) }
     fileprivate lazy var signUpButton = TBButton(title: .SIGN_UP, height: 50, tapAction: handleSignUpButtonTapped)
     fileprivate lazy var inputStackView = VerticalStackView(arrangedSubviews: [userTypeTextfield, nameTextfield, emailTextfield, passwordTextField, tellUsAboutYourselfTextfield, availabilityTextfield, subjectsTextfield, signUpButton], spacing: 15)
     
@@ -76,8 +76,22 @@ class SignUpView: BaseScrollView {
     }
     
     fileprivate func handleSignUpButtonTapped() {
-        if [nameTextfield, emailTextfield, passwordTextField].areValid {
-            signupTapHandler?(nameTextfield.text, emailTextfield.text, passwordTextField.text, userTypeTextfield.valueText)
+//        if [nameTextfield, emailTextfield, passwordTextField].areValid {
+//            if availabilityTextfield.isHidden && subjectsTextfield.isHidden {
+//                signupTapHandler?(nameTextfield.text, emailTextfield.text, passwordTextField.text, userTypeTextfield.valueText, tellUsAboutYourselfTextfield.text)
+//            } else if availabilityTextfield.isValid && subjectsTextfield.isValid && tellUsAboutYourselfTextfield.isValid {
+//                signupTapHandler?(nameTextfield.text, emailTextfield.text, passwordTextField.text, userTypeTextfield.valueText, tellUsAboutYourselfTextfield.text)
+//            }
+//        }
+        
+        if tellUsAboutYourselfTextfield.isHidden && availabilityTextfield.isHidden && subjectsTextfield.isHidden {
+            if [nameTextfield, emailTextfield, passwordTextField].areValid {
+                signupTapHandler?(nameTextfield.text, emailTextfield.text, passwordTextField.text, userTypeTextfield.valueText, tellUsAboutYourselfTextfield.text)
+            }
+        } else {
+            if [nameTextfield, emailTextfield, passwordTextField].areValid && tellUsAboutYourselfTextfield.isValid && availabilityTextfield.isValid && subjectsTextfield.isValid {
+                signupTapHandler?(nameTextfield.text, emailTextfield.text, passwordTextField.text, userTypeTextfield.valueText, tellUsAboutYourselfTextfield.text)
+            }
         }
     }
     

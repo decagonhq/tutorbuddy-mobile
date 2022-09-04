@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AccountViewController: BaseViewController<AccountView, IDashBoardViewModel> {
+class StudentAccountViewController: BaseViewController<AccountView, IDashBoardViewModel> {
     
     fileprivate let diContainer = AppDelegate.dependencyContainer
 

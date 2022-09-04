@@ -13,11 +13,10 @@ final class TBDashBoardViewController: UITabBarController {
     
     fileprivate let diContainer = AppDelegate.dependencyContainer
     fileprivate weak var currentlyVisibleViewController: UIViewController?
-    fileprivate lazy var dashboardHomeViewController = diContainer.dashboardHomeController
+    fileprivate lazy var studentDashboardHomeViewController = diContainer.studentDashboardHomeController
     fileprivate lazy var allCoursesViewController = diContainer.allCoursesController
     fileprivate lazy var myCoursesViewController = diContainer.myCoursesController
-    fileprivate lazy var accountViewController = diContainer.accountController
-    
+    fileprivate lazy var studentAccountViewController = diContainer.studentAccountController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +25,9 @@ final class TBDashBoardViewController: UITabBarController {
     }
     
     private func createHomeVC() -> UIViewController {
-        dashboardHomeViewController.tabBarItem.title = "Home"
-        dashboardHomeViewController.tabBarItem.image = R.image.home_icon()
-        return dashboardHomeViewController
+        studentDashboardHomeViewController.tabBarItem.title = "Home"
+        studentDashboardHomeViewController.tabBarItem.image = R.image.home_icon()
+        return studentDashboardHomeViewController
     }
     
     private func createCategoryVC() -> UIViewController {
@@ -44,9 +43,9 @@ final class TBDashBoardViewController: UITabBarController {
     }
     
     private func createAccountVC() -> UIViewController {
-        accountViewController.tabBarItem.title = "Account"
-        accountViewController.tabBarItem.image = R.image.account_icon()
-        return accountViewController
+        studentAccountViewController.tabBarItem.title = "Account"
+        studentAccountViewController.tabBarItem.image = R.image.account_icon()
+        return studentAccountViewController
     }
     
 }

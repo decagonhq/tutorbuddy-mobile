@@ -28,21 +28,25 @@ extension Container {
     
     var verifyOTPController: VerifyOTPViewController { resolve(VerifyOTPViewController.self)! }
     
-    var selectOptionsController: SelectOptionsViewController { resolve(SelectOptionsViewController.self)! }
-    
     var dashBoardController: TBDashBoardViewController { resolve(TBDashBoardViewController.self)! }
     
     var forgotPasswordController: ForgotPasswordViewController { resolve(ForgotPasswordViewController.self)! }
     
     var checkMailController: CheckMailViewController { resolve(CheckMailViewController.self)! }
     
-    var dashboardHomeController: HomeViewController { resolve(HomeViewController.self)! }
+    var studentDashboardHomeController: StudentHomeViewController { resolve(StudentHomeViewController.self)! }
+    
+    var tutorDashboardHomeController: TutorHomeViewController { resolve(TutorHomeViewController.self)! }
     
     var allCoursesController: AllCoursesViewController { resolve(AllCoursesViewController.self)! }
     
     var myCoursesController: MyCoursesViewController { resolve(MyCoursesViewController.self)! }
     
-    var accountController: AccountViewController { resolve(AccountViewController.self)! }
+    var studentAccountController: StudentAccountViewController { resolve(StudentAccountViewController.self)! }
+    
+    var tutorAccountController: TutorAccountViewController { resolve(TutorAccountViewController.self)! }
+    
+    var notificationsController: NotificationsViewController { resolve(NotificationsViewController.self)! }
     
     var courseDetailsController: CourseDetailsViewController { resolve(CourseDetailsViewController.self)! }
 

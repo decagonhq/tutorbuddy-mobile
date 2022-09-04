@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import AuthenticationServices
 
 class SignInViewController: BaseViewController<SignInView, IAuthViewModel> {
     
@@ -27,6 +28,17 @@ class SignInViewController: BaseViewController<SignInView, IAuthViewModel> {
             $0.createAnAccountTapHandler = { [weak self] in
                 self?._pushViewController(AppDelegate.dependencyContainer.signupController, animated: true)
             }
+            
+            $0.signinWithAppleTapHandler = { [weak self] in
+                let provider = ASAuthorizationAppleIDProvider()
+                let request = provider.createRequest()
+                request.requestedScopes = [.fullName, .email]
+                
+                let controller = ASAuthorizationController(authorizationRequests: [request])
+                controller.delegate = self
+                controller.presentationContextProvider = self
+                controller.performRequests()
+            }
         }
     }
     
@@ -38,8 +50,10 @@ class SignInViewController: BaseViewController<SignInView, IAuthViewModel> {
     
     fileprivate func observeAuthNavRoute() {
         viewModel.authNavRoute.bind { [weak self] route in
-            if route == .dashboard {
+            if route == .studentDashboard {
                 self?.setViewControllers(using: TBDashBoardViewController())
+            } else if route == .tutorDashboard {
+                self?.setViewControllers(using: TBTutorDashboardViewController())
             }
         }.disposed(by: disposeBag)
     }
@@ -50,4 +64,28 @@ class SignInViewController: BaseViewController<SignInView, IAuthViewModel> {
         }.disposed(by: disposeBag)
     }
 
+}
+
+extension SignInViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return view.window!
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        _print("Sign in with Apple failed", .error)
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+        case let credentials as ASAuthorizationAppleIDCredential:
+            let firstName = credentials.fullName?.givenName
+            let lastName = credentials.fullName?.familyName
+            let email = credentials.email
+            _print(firstName, .success)
+            break
+        default:
+            break
+        }
+    }
 }

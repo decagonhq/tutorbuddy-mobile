@@ -17,4 +17,6 @@ protocol IAuthRemoteDatasource {
     func verifyOTP(params: Parameters) -> Observable<TBRegisterResponse>
     
     func resetPassword(params: Parameters) -> Observable<TBRegisterResponse>
+    
+    func getRegisterResource() -> Observable<TBRegisterResourceResponse>
 }
