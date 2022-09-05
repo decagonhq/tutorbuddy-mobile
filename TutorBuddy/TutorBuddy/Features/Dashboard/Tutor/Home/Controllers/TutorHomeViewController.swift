@@ -7,28 +7,6 @@
 
 import UIKit
 
-//class TutorHomeViewController: UIViewController {
-//
-//    fileprivate let homeView = TutorHomeView()
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        view.backgroundColor = .appBackground
-//        configureViews()
-//    }
-//
-//    func configureViews() {
-//        view.addSubview(homeView)
-//        NSLayoutConstraint.activate([
-//            homeView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-//            homeView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            homeView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            homeView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-//        ])
-//    }
-//
-//}
-
 final class TutorHomeViewController: BaseViewController<TutorHomeView, IDashBoardViewModel> {
     
     override func viewDidLoad() {
@@ -37,7 +15,13 @@ final class TutorHomeViewController: BaseViewController<TutorHomeView, IDashBoar
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        viewModel.getUserDetails()
         super.viewWillAppear(animated)
-        (parent as? TBDashBoardViewController)?.showNavBar(false)
+        (parent as? TBTutorDashboardViewController)?.showNavBar(false)
+    }
+    
+    override func setChildViewControllerObservers() {
+        super.setChildViewControllerObservers()
+        viewModel.userName.bind(to: kview.userNameLabel.rx.text).disposed(by: disposeBag)
     }
 }

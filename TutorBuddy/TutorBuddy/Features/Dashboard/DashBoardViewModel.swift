@@ -6,8 +6,15 @@
 //
 
 import Foundation
-
+import RxSwift
 
 protocol IDashBoardViewModel {
     
+    var userName: BehaviorSubject<String> { get }
+    
+    var userUpdated: PublishSubject<Bool> { get }
+    
+    func getUserDetails()
+    
+    func updateUser(with fullName: String, and email: String)
 }

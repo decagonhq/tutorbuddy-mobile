@@ -44,3 +44,14 @@ struct Day: Codable, Equatable {
 struct Subject: Codable, Equatable {
     let id, subject: String?
 }
+
+struct TBUserResponse: Codable {
+    let success: Bool?
+    let data: TBUserData?
+    let message: String?
+    let statusCode: Int?
+}
+
+struct TBUserData: Codable {
+    let firstName, lastName, email, avatarUrl: String?
+}

@@ -23,7 +23,7 @@ struct PreferenceImpl: IPreference {
     var hasOnboarded: Bool
     
     @UserDefaultCodable(key: PreferenceConstants.USER, default: nil)
-    var user: AnyStruct?
+    var user: TBUserData?
     
     @UserDefaultCodable(key: PreferenceConstants.LANGUAGE, default: .english)
     var language: Language

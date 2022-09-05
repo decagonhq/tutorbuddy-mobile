@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "in_progress_icon.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

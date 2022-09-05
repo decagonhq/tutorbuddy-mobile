@@ -46,6 +46,8 @@ class OnboardingViewController: BaseViewController<OnboardingView, IOnboardingVi
         viewModel.authNavRoute.bind { [weak self] route in
             if route == .studentDashboard {
                 self?.setViewControllers(using: TBDashBoardViewController())
+            } else if route == .tutorDashboard {
+                self?.setViewControllers(using: TBTutorDashboardViewController())
             } else {
                 self?.getStarted()
             }

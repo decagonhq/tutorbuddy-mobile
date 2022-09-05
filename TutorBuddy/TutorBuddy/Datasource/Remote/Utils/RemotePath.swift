@@ -7,10 +7,10 @@ import Foundation
 
 enum RemotePath {
     
-    case login, register, requestOTP, verifyOTP, resetPassword
+    case login, register, requestOTP, verifyOTP, resetPassword, updateUser
     case documentUpload, imageUpload
     case carMakes, carModels, auctionDetails(String)
-    case user, myLocation, colors, states, cities, bodyTypes, franchise
+    case user(String), myLocation, colors, states, cities, bodyTypes, franchise
     case inspectionRequest, inventoryCarOffer, sourcingOverview, inspectionRequestStatus, inspectionRequestDetails(String)
     
     var desc: String {
@@ -25,6 +25,8 @@ enum RemotePath {
             return "Auth/verify-email"
         case .resetPassword:
             return "Auth/reset-password"
+        case .updateUser:
+            return "User/update-user"
         case .documentUpload:
             return "document/upload"
         case .imageUpload:
@@ -35,8 +37,8 @@ enum RemotePath {
             return "inventory/model"
         case .auctionDetails(let id):
             return "auction/\(id)"
-        case .user:
-            return "user"
+        case .user(let id):
+            return "User/\(id)"
         case .myLocation:
             return "\(Bundle.main.baseURL.replacingOccurrences(of: "v1/", with: ""))get-my-location"
         case .colors:

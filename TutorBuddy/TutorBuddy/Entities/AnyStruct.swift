@@ -20,6 +20,26 @@ struct Course: Scopable {
     let courseRating: String?
 }
 
+struct CourseRequest: Scopable {
+    let avatarImage: UIImage?
+    let courseName: String?
+    let studentName: String?
+    let courseDuration: String?
+    let progressStatus: ProgressStatus?
+    
+    enum ProgressStatus: String, CaseIterable {
+        case inProgress, completed
+        
+        var localized: String {
+            switch self {
+            case .inProgress:
+                return "In progress"
+            case .completed:
+                return "Completed"
+            }
+        }
+    }
+}
 
 struct Rating: Scopable {
     let ratingTitle: String?

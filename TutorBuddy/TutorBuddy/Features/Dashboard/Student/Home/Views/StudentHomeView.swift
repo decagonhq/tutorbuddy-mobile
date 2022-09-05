@@ -19,7 +19,7 @@ class StudentHomeView: BaseScrollView {
     var seeAllButtonTapHandler: NoParamHandler?
     
     fileprivate let welcomeLabel = UILabel(text: "Welcome", font: .interRegular(size: 16), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
-    fileprivate let userNameLabel = UILabel(text: "John Doe", font: .interExtraBold(size: 30), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
+    let userNameLabel = UILabel(text: "", font: .interExtraBold(size: 25), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate lazy var welcomeUserInfoStackView = VerticalStackView(arrangedSubviews: [welcomeLabel, userNameLabel])
     
     fileprivate let reminderButton = TBButton(backgroundColor: .clear, size: 40, image: R.image.clock_icon()?.withRenderingMode(.alwaysOriginal), tapAction: nil)
@@ -86,11 +86,11 @@ class StudentHomeView: BaseScrollView {
         seeAllButtonTapHandler?()
     }
     
-    fileprivate func showTutorDetails(with tutor: FeaturedTutor, at index: Int) {
+    fileprivate func showDetails(for tutor: FeaturedTutor, at index: Int) {
         showtutorDetailsHandler?(tutor, index)
     }
     
-    fileprivate func showCourseDetails(with course: Course, at index: Int) {
+    fileprivate func showDetails(for course: Course, at index: Int) {
         showCourseDetailsHandler?(course, index)
     }
     
@@ -132,9 +132,9 @@ extension StudentHomeView: UICollectionViewConformable {
         let tutor = data[indexPath.item]
         let course = _data[indexPath.item]
         if collectionView == featuredTutorsCollectionView {
-            showTutorDetails(with: tutor, at: indexPath.item)
+            showDetails(for: tutor, at: indexPath.item)
         } else {
-            showCourseDetails(with: course, at: indexPath.item)
+            showDetails(for: course, at: indexPath.item)
         }
     }
     
