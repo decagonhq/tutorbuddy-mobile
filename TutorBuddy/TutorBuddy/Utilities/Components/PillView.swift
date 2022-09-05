@@ -25,7 +25,7 @@ final class PillView: BaseView {
         }
     }
     
-    convenience init(backgroundColor: UIColor = .primaryTextColor, cornerRadius: CGFloat = 5, text: String, textColor: UIColor = .white, font: UIFont = .interRegular(size: 14), showCancel: Bool = false) {
+    convenience init(backgroundColor: UIColor = .clear, cornerRadius: CGFloat = 5, text: String, textColor: UIColor = .primaryTextColor, font: UIFont = .interRegular(size: 14), showCancel: Bool = false) {
         self.init(frame: .zero)
         setup()
         setBackgroundColor(backgroundColor)

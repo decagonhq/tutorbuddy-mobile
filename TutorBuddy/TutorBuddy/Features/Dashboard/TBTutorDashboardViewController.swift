@@ -16,7 +16,7 @@ final class TBTutorDashboardViewController: UITabBarController {
     fileprivate weak var currentlyVisibleViewController: UIViewController?
     fileprivate lazy var tutorDashboardHomeViewController = diContainer.tutorDashboardHomeController
     fileprivate lazy var notificationsViewController = NotificationsViewController()
-    fileprivate lazy var tutorAccountViewController = TutorAccountViewController()
+    fileprivate lazy var tutorAccountViewController = diContainer.tutorAccountController
     
     override func viewDidLoad() {
         super.viewDidLoad()

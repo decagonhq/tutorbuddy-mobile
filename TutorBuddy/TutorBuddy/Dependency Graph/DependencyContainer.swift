@@ -42,12 +42,14 @@ extension Container {
     
     var myCoursesController: MyCoursesViewController { resolve(MyCoursesViewController.self)! }
     
-    var studentAccountController: StudentAccountViewController { resolve(StudentAccountViewController.self)! }
+    var studentAccountController: AccountViewController { resolve(AccountViewController.self)! }
     
     var tutorAccountController: TutorAccountViewController { resolve(TutorAccountViewController.self)! }
     
     var notificationsController: NotificationsViewController { resolve(NotificationsViewController.self)! }
     
     var courseDetailsController: CourseDetailsViewController { resolve(CourseDetailsViewController.self)! }
+    
+    var editProfileController: EditProfileViewController { resolve(EditProfileViewController.self)! }
 
 }

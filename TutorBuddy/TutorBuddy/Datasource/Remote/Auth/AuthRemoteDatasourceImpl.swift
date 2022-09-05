@@ -33,4 +33,8 @@ class AuthRemoteDatasourceImpl: BaseRemoteDatasource, IAuthRemoteDatasource {
         makeAPIRequest(path: .register, responseType: TBRegisterResourceResponse.self, encoding: URLEncoding.default)
     }
     
+    func updateUser(params: Parameters) -> Observable<TBRegisterResponse> {
+        makeAPIRequest(path: .updateUser, responseType: TBRegisterResponse.self, method: .put, params: params, headers: [.authorization(bearerToken: preference.accessToken)])
+    }
+    
 }
