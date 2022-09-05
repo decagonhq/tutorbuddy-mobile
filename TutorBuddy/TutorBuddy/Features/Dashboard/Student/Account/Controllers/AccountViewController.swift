@@ -7,25 +7,31 @@
 
 import UIKit
 
-class StudentAccountViewController: BaseViewController<AccountView, IDashBoardViewModel> {
+class AccountViewController: BaseViewController<AccountView, IDashBoardViewModel> {
     
     fileprivate let diContainer = AppDelegate.dependencyContainer
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackgroundColor(.appBackground)
+        viewModel.getUserDetails()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         (parent as? TBDashBoardViewController)?.showNavBar()
+        (parent as? TBTutorDashboardViewController)?.showNavBar()
         (parent as? TBDashBoardViewController)?.configureNavBar(title: "Profile")
+        (parent as? TBTutorDashboardViewController)?.configureNavBar(title: "Profile")
     }
     
     override func configureViews() {
         super.configureViews()
         with(kview) {
             $0.signoutHandler = signOut
+            $0.editProfileHandler = { [weak self] in
+                self?._pushViewController(AppDelegate.dependencyContainer.editProfileController.apply { $0.delegate = self; $0.username = self?.kview.userFullName.text; $0.email = self?.preference.user?.email })
+            }
         }
     }
     
@@ -39,5 +45,16 @@ class StudentAccountViewController: BaseViewController<AccountView, IDashBoardVi
             self.setViewControllers(using: self.diContainer.signInController)
         })
     }
+    
+    override func setChildViewControllerObservers() {
+        super.setChildViewControllerObservers()
+        viewModel.userName.bind(to: kview.userFullName.rx.text).disposed(by: disposeBag)
+    }
+}
 
+extension AccountViewController: AccountUpdatable {
+    
+    func update(with newName: String) {
+        kview.userFullName.text = newName
+    }
 }

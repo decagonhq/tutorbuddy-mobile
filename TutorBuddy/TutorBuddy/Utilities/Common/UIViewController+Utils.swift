@@ -210,21 +210,6 @@ extension UIViewController {
         backgroundColor = color
     }
     
-//    func showNavigationMenu(menuItemSelectionHandler: MenuItemParamHandler? = nil, signOutHandler: NoParamHandler? = nil) {
-//        let transition = CATransition().apply {
-//            $0.duration = 0.5
-//            $0.type = .push
-//            $0.subtype = .fromLeft
-//            $0.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-//        }
-//        view.window!.layer.add(transition, forKey: kCATransition)
-//        present(NavigationMenuViewController().apply {
-//            $0.menuItemSelectionHandler = menuItemSelectionHandler
-//            $0.signoutHandler = signOutHandler
-//            $0.modalPresentationStyle = .overFullScreen
-//        }, animated: true)
-//    }
-    
     func showFilterableItemsViewController(items: [String], itemName: String, itemSelectionHandler: IntStringParamHandler? = nil) {
         present(FilterableItemsViewController().apply {
             $0.items = items
@@ -237,18 +222,6 @@ extension UIViewController {
         navigationController?._setStatusBarBackgroundColor(backgroundColor)
     }
     
-    func showDashboard() {
-//        setViewControllers(using: NavigationContainerViewController())
-    }
-    
-//    func showCarDetailOptionsViewController(titleText: String = .EDIT_CAR, optionSelectionHandler: CarDetailOptionHandler? = nil, delistHandler: StringParamHandler? = nil) {
-//        present(CarDetailOptionsViewController().apply {
-//            $0.titleText = titleText
-//            $0.optionSelectedHandler = optionSelectionHandler
-//            $0.delistHandler = delistHandler
-//        }, animated: true)
-//    }
-    
     func showConfirmationDialogViewController(confirmationText: String = .ARE_YOU_SURE_TO_PERFORM_ACTION, yestText: String = .YES, noText: String = .NO, tapToDismiss: Bool = true, noHandler: NoParamHandler? = nil, dismissHandler: NoParamHandler? = nil, yesHandler: NoParamHandler?) {
         showDialog(for: ConfirmationDialogViewController().apply {
             $0.confirmationText = confirmationText
@@ -259,35 +232,20 @@ extension UIViewController {
         }, tapToDismiss: tapToDismiss, dismissCompletionHandler: dismissHandler)
     }
     
-//    func showUploadCarDocumentsOptionsViewController() {
-//        present(UploadCarDocumentsOptionsViewController().apply {_ in
-//            print("showing bottom popup view controller")
-//        }, animated: true)
-//    }
-//    
-//    func showConfirmationDialogViewController(confirmationText: String = .ARE_YOU_SURE_TO_PERFORM_ACTION, yestText: String = .YES, noText: String = .NO, tapToDismiss: Bool = true, noHandler: NoParamHandler? = nil, dismissHandler: NoParamHandler? = nil, yesHandler: NoParamHandler?) {
-//        showDialog(for: ConfirmationDialogViewController().apply {
-//            $0.confirmationText = confirmationText
-//            $0.yesText = yestText
-//            $0.noText = noText
-//            $0.noHandler = noHandler
-//            $0.yesHandler = yesHandler
-//        }, tapToDismiss: tapToDismiss, dismissCompletionHandler: dismissHandler)
-//    }
 }
+
+extension UINavigationController {
     
-    extension UINavigationController {
-        
-        func _setStatusBarBackgroundColor(_ backgroundColor: UIColor) {
-            let statusBarFrame: CGRect
-            if #available(iOS 13.0, *) {
-                statusBarFrame = view.window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero
-            } else {
-                statusBarFrame = UIApplication.shared.statusBarFrame
-            }
-            let statusBarView = UIView(frame: statusBarFrame)
-            statusBarView.backgroundColor = backgroundColor
-            view.addSubview(statusBarView)
+    func _setStatusBarBackgroundColor(_ backgroundColor: UIColor) {
+        let statusBarFrame: CGRect
+        if #available(iOS 13.0, *) {
+            statusBarFrame = view.window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero
+        } else {
+            statusBarFrame = UIApplication.shared.statusBarFrame
         }
-        
+        let statusBarView = UIView(frame: statusBarFrame)
+        statusBarView.backgroundColor = backgroundColor
+        view.addSubview(statusBarView)
     }
+    
+}

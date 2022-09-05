@@ -15,6 +15,7 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        viewModel.getUserDetails()
         super.viewWillAppear(animated)
         (parent as? TBDashBoardViewController)?.showNavBar(false)
     }
@@ -38,6 +39,11 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
                 }
             }
         }
+    }
+    
+    override func setChildViewControllerObservers() {
+        super.setChildViewControllerObservers()
+        viewModel.userName.bind(to: kview.userNameLabel.rx.text).disposed(by: disposeBag)
     }
     
 }

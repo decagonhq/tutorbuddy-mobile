@@ -37,8 +37,12 @@ class OnboardingViewModelImpl: BaseViewModel, IOnboardingViewModel {
     }
     
     fileprivate func navigate() {
-        if preference.user.isNotNil {
-            authNavRoute.onNext(.studentDashboard)
+        if preference.accessToken.isNotEmpty {
+            if preference.roles.contains(where: { $0.insensitiveEquals("Student") }) {
+                authNavRoute.onNext(.studentDashboard)
+            } else if preference.roles.contains(where: { $0.insensitiveEquals("Tutor") }) {
+                authNavRoute.onNext(.tutorDashboard)
+            }
         } else if preference.hasOnboarded {
             authNavRoute.onNext(.signin)
         }

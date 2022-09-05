@@ -16,7 +16,7 @@ protocol IPreference {
     
     var hasOnboarded: Bool { get set }
     
-    var user: AnyStruct? { get set }
+    var user: TBUserData? { get set }
     
     var language: Language { get set }
     
