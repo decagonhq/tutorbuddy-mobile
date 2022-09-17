@@ -28,21 +28,9 @@ struct PreferenceImpl: IPreference {
     @UserDefaultCodable(key: PreferenceConstants.LANGUAGE, default: .english)
     var language: Language
     
-    @UserDefaultPrimitive(key: PreferenceConstants.NEW_LOAN_APPLICATION_SUBMITTED, default: false)
-    var newLoanApplicationSubmitted: Bool
+    @UserDefaultCodable(key: .newFeatureTutorAddedOrRemoved, default: false)
+    var newFeatureTutorAddedOrRemoved: Bool
     
     @UserDefaultCodable(key: PreferenceConstants.COUNTRY, default: nil)
     var country: AnyStruct?
-    
-    @UserDefaultCodable(key: .carDetailsUpdated, default: false)
-    var carDetailsUpdated: Bool
-    
-    @UserDefaultCodable(key: .carMediaUploaded, default: false)
-    var carMediaUploaded: Bool
-    
-    @UserDefaultCodable(key: .carListedOrDelisted, default: false)
-    var carListedOrDelisted: Bool
-    
-    @UserDefaultPrimitive(key: .newInspectionRequestCreated, default: false)
-    var newInspectionRequestCreated: Bool
 }

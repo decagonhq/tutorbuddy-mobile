@@ -71,6 +71,7 @@ extension String {
     static var TUTOR_BUDDY: String { "TutorBuddyKey".localized }
     static var AREA_OF_INTEREST: String { "AreaOfInterestKey".localized }
     static var USER_TYPE: String { "UserTypeKey".localized }
+    static var NO_FEATURED_TUTORS_FOUND: String { "NoFeaturedTutorsFoundKey".localized }
     
     
     
@@ -105,7 +106,6 @@ extension String {
     static var CARS_WITH_LOAN: String { "CarsWithLoanKey".localized }
     static var CARS_WITHOUT_LOAN: String { "CarsWithoutLoanKey".localized }
     static var PENDING_INSPECTION: String { "PendingInspectionKey".localized }
-    static var NO_INVENTORIES_FOUND: String { "NoInventoriesFoundKey".localized }
     static var FILTERS: String { "FiltersKey".localized }
     static var APPLY_FILTERS: String { "ApplyFiltersKey".localized }
     static var UNABLE_TO_GET_MAKES: String { "UnableToGetMakesKey".localized }

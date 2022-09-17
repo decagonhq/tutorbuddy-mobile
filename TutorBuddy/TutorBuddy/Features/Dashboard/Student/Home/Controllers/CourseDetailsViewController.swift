@@ -10,7 +10,7 @@ import DatePickerDialog
 
 final class CourseDetailsViewController: BaseViewController<CourseDetailsView, IDashBoardViewModel> {
     
-    var course: Course?
+    var course: RecommendedSubject?
     
     var titleText: String = "Course Details"
     fileprivate lazy var titleTextLabel = UILabel(text: titleText, font: .interBold(size: 17), color: .primaryTextColor)

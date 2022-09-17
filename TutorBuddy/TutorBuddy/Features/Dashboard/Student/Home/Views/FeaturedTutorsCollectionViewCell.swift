@@ -24,9 +24,11 @@ class FeaturedTutorsCollectionViewCell: BaseCollectionViewCell {
     
     func configure(with featuredTutor: FeaturedTutor) {
         with(featuredTutor) {
-            avatarImageView.image = $0.avatarImage
-            tutorName.text = $0.tutorName
-            ratingsIconText.text = $0.rating
+            tutorName.text = $0.fullName?.components(separatedBy: " ").first
+            ratingsIconText.text = $0.rating?.string
+            if let avatarUrl = $0.avatar, avatarUrl.isNotEmpty {
+                avatarImageView.setImageFromURL(url: avatarUrl, placeholderImage: R.image.avatar_icon())
+            }
         }
     }
 }

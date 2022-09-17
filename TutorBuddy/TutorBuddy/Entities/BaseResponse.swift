@@ -55,3 +55,46 @@ struct TBUserResponse: Codable {
 struct TBUserData: Codable {
     let firstName, lastName, email, avatarUrl: String?
 }
+
+struct TBFeaturedTutorsResponse: Codable {
+    let success: Bool?
+    let data: [FeaturedTutor]?
+    let message: String?
+    let statusCode: Int?
+}
+
+struct TBRefreshTokenResponse: Codable {
+    let success: Bool?
+    let data: TBRefreshTokenData?
+    let message: String?
+    let statusCode: Int?
+}
+
+struct TBRefreshTokenData: Codable, Scopable {
+    let newAccessToken, newRefreshToken: String?
+}
+
+struct TBRecommendedSubjectsResponse: Codable {
+    let success: Bool?
+    let data: TBRecommendedSubjectsData?
+    let message: String?
+    let statusCode: Int?
+}
+
+struct TBRecommendedSubjectsData: Codable {
+    let pageItems: [RecommendedSubject]?
+    let pagination: Pagination?
+}
+
+struct RecommendedSubject: Codable, Scopable {
+    let id, subject, thumbnail, description, tutorSubjectId, tutor: String?
+    let rating, userCount: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, subject, thumbnail, description, tutorSubjectId, tutor, userCount, rating = "rate"
+    }
+}
+
+struct Pagination: Codable, Scopable {
+    let totalNumberOfPages, currentPage, pageSize, previousPage: Int?
+}

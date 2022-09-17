@@ -18,5 +18,5 @@ struct PreferenceConstants {
 }
 
 enum PreferenceKey: String {
-    case carDetailsUpdated, carMediaUploaded, carListedOrDelisted, newInspectionRequestCreated
+    case newFeatureTutorAddedOrRemoved
 }

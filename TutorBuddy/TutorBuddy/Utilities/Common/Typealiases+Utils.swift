@@ -22,7 +22,7 @@ typealias StringIntParamHandler = ((String, Int) -> Void)
 
 typealias IntStringParamHandler = ((Int, String) -> Void)
 
-typealias NumericParamHandler = ((Numeric) -> Void)
+typealias NumericParamHandler = ((any Numeric) -> Void)
 
 typealias ErrorParamHandler = ((Error) -> Void)
 

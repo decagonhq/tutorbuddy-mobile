@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import Alamofire
 
 protocol IDashBoardViewModel {
     
@@ -14,7 +15,21 @@ protocol IDashBoardViewModel {
     
     var userUpdated: PublishSubject<Bool> { get }
     
+    var featuredTutors: [FeaturedTutor] { get }
+    
+    var recommendedSubjects: [RecommendedSubject] { get }
+    
+    var showFeaturedTutors: PublishSubject<Bool> { get }
+    
+    var showRecommendedSubjects: PublishSubject<Bool> { get }
+    
+    var noFeaturedTutorsMessage: String { get }
+    
     func getUserDetails()
     
     func updateUser(with fullName: String, and email: String)
+    
+    func getFeaturedTutors(params: Parameters)
+    
+    func getAllRecommendedSubjects(params: Parameters)
 }

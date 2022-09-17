@@ -15,14 +15,21 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.getUserDetails()
         super.viewWillAppear(animated)
         (parent as? TBDashBoardViewController)?.showNavBar(false)
+        if preference.newFeatureTutorAddedOrRemoved {
+            preference.newFeatureTutorAddedOrRemoved = false
+            viewModel.getUserDetails()
+            viewModel.getFeaturedTutors(params: [:])
+            viewModel.getAllRecommendedSubjects(params: [:])
+        }
     }
     
     override func configureViews() {
         super.configureViews()
         with(kview) {
+            $0.viewModel = viewModel
+            $0.setupBindings()
             $0.seeAllButtonTapHandler = { [weak self] in
                 self?.tabBarController?.selectedIndex = 1
             }
@@ -39,6 +46,9 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
                 }
             }
         }
+        viewModel.getUserDetails()
+        viewModel.getFeaturedTutors(params: [:])
+        viewModel.getAllRecommendedSubjects(params: [:])
     }
     
     override func setChildViewControllerObservers() {

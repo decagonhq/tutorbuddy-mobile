@@ -75,12 +75,15 @@ class CourseDetailsView: BaseScrollView {
     }
     
     
-    func configure(with course: Course) {
+    func configure(with course: RecommendedSubject) {
         with(course) {
-            courseImageView.image = $0.avatarImage
-            tutorNameLabel.text = "Chukwudi Kamdibe"
+//            courseImageView.image = $0.avatarImage
+            tutorNameLabel.text = $0.tutor
             numberOfCoursesLabel.text = "62 courses"
             tutorBioLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At nibh quam odio sit vestibulum sagittis urna."
+            if let thumbnailUrl = $0.thumbnail, thumbnailUrl.isNotEmpty {
+                courseImageView.setImageFromURL(url: thumbnailUrl, placeholderImage: R.image.chemistry_banner())
+            }
         }
     }
     

@@ -19,7 +19,7 @@ final class TutorDetailsViewController: BottomPopupViewController {
     fileprivate let closeImageView = UIImageView(image: R.image.close_icon(), tintColor: .primaryTextColor, size: 18)
     fileprivate lazy var titleStackView = HorizontalStackView(arrangedSubviews: [titleTextLabel, closeImageView], spacing: 10, alignment: .center)
     
-    fileprivate let avatarImageView = UIImageView(image: R.image.avatar_icon(), width: 80, cornerRadius: 40)
+    fileprivate let avatarImageView = UIImageView(image: R.image.avatar_icon(), height: 80, width: 80, cornerRadius: 40)
     fileprivate let tutorNameLabel = UILabel(text: "N/A", font: .interExtraBold(size: 15), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate let certificationLabel = IconTextView(text: "Certified Tutor", font: .interRegular(size: 15), placeholderIcon: R.image.certified_icon(), iconTextAlignment: .iconLeft, iconSize: 20, textColor: .gray, textAlignment: .left, contentStackAlignment: .center, contentSpacing: 5).apply { $0.backgroundColor = .clear }
     fileprivate let locationLabel = IconTextView(text: "Lagos, Nigeria", font: .interRegular(size: 15), placeholderIcon: R.image.location_icon(), iconTextAlignment: .iconLeft, iconSize: 20, textColor: .gray, textAlignment: .left, contentStackAlignment: .center, contentSpacing: 5).apply { $0.backgroundColor = .clear }
@@ -63,7 +63,10 @@ final class TutorDetailsViewController: BottomPopupViewController {
     
     fileprivate func configure(with tutor: FeaturedTutor) {
         with(tutor) {
-            tutorNameLabel.text = $0.tutorName
+            tutorNameLabel.text = $0.fullName
+            if let avatarUrl = $0.avatar, avatarUrl.isNotEmpty {
+                avatarImageView.setImageFromURL(url: avatarUrl, placeholderImage: R.image.avatar_icon())
+            }
         }
     }
     

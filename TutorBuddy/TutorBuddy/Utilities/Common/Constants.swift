@@ -48,16 +48,25 @@ struct Constants {
         Course(avatarImage: R.image.physics_banner(), courseName: "The complete tutorial on physics", courseRating: "4.7")
     ]
     
-    static let TUTORS = [
-        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.7"),
-        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.8"),
-        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.3"),
-        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "5.0"),
-        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.8"),
-        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.3"),
-        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "5.0"),
-        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.7")
-    ]
+//    static let TUTORS = [
+//        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.7"),
+//        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.8"),
+//        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.3"),
+//        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "5.0"),
+//        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.8"),
+//        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.3"),
+//        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "5.0"),
+//        FeaturedTutor(avatarImage: R.image.avatar_icon(), tutorName: "Chukwudi Kamdibe", rating: "4.7")
+        
+//        FeaturedTutor(id: "", avatar: "", fullName: "", rating: 0),
+//        FeaturedTutor(id: "", avatar: "", fullName: "", rating: 0),
+//        FeaturedTutor(id: "", avatar: "", fullName: "", rating: 0),
+//        FeaturedTutor(id: "", avatar: "", fullName: "", rating: 0),
+//        FeaturedTutor(id: "", avatar: "", fullName: "", rating: 0),
+//        FeaturedTutor(id: "", avatar: "", fullName: "", rating: 0),
+//        FeaturedTutor(id: "", avatar: "", fullName: "", rating: 0),
+//        FeaturedTutor(id: "", avatar: "", fullName: "", rating: 0),
+//    ]
     
     static let COURSE_REQUESTS = [
         CourseRequest(avatarImage: R.image.python_banner(), courseName: "Learning Python for Data analysis", studentName: "Chukwudi Kamdibe", courseDuration: "July 26 - 30, 2022", progressStatus: .inProgress),

@@ -78,7 +78,7 @@
 "CarsWithLoanKey" = "Voitures avec prêt";
 "CarsWithoutLoanKey" = "Voitures sans prêt";
 "PendingInspectionKey" = "En attente d'inspection";
-"NoInventoriesFoundKey" = "Aucun inventaire trouvé.";
+"NoFeaturedTutorsFoundKey" = "aucun tuteur en vedette trouvé.";
 "FiltersKey" = "Filtres";
 "ApplyFiltersKey" = "Appliquer des filtres";
 "UnableToGetMakesKey" = "Impossible d'obtenir les marques et les modèles, veuillez réessayer";

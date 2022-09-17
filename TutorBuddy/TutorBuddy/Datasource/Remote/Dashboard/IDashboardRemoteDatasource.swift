@@ -12,4 +12,8 @@ import Alamofire
 protocol IDashboardRemoteDatasource {
     
     func getUserDetails(id: String) -> Observable<TBUserResponse>
+    
+    func getFeaturedTutors(params: Parameters) -> Observable<TBFeaturedTutorsResponse>
+    
+    func getAllRecommendedSubjects(params: Parameters) -> Observable<TBRecommendedSubjectsResponse>
 }

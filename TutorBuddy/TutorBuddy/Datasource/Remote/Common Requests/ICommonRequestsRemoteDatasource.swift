@@ -7,4 +7,7 @@ import Foundation
 import RxSwift
 import Alamofire
 
-protocol ICommonRequestsRemoteDatasource { }
+protocol ICommonRequestsRemoteDatasource {
+    
+    func refreshToken(params: Parameters) -> Observable<TBRefreshTokenResponse>
+}

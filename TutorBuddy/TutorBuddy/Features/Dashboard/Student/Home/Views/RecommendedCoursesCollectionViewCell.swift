@@ -9,9 +9,9 @@ import UIKit
 
 final class RecommendedCoursesCollectionViewCell: BaseCollectionViewCell {
     
-    fileprivate let courseImageView = UIImageView(image: R.image.chemistry_banner(), contentMode: .scaleAspectFill, height: 100)
-    fileprivate let courseNameLabel = UILabel(text: "N/A", font: .interExtraBold(size: 11), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
-    fileprivate let courseTutorLabel = UILabel(text: "N/A", font: .interRegular(size: 10), color: .primaryTextColor, alignment: .left)
+    fileprivate let courseImageView = UIImageView(image: R.image.chemistry_banner(), contentMode: .scaleAspectFill, height: 90)
+    fileprivate let courseNameLabel = UILabel(text: "N/A", font: .interExtraBold(size: 12), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)//.apply { $0.setContentCompressionResistancePriority(UILayoutPriority.required, for: .vertical) }
+    fileprivate let courseTutorLabel = UILabel(text: "N/A", font: .interRegular(size: 11), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)//.apply { $0.setContentCompressionResistancePriority(UILayoutPriority.required, for: .vertical) }
     fileprivate let ratingIconTextView = IconTextView(text: "N/A", font: .interRegular(size: 13), placeholderIcon: R.image.star_icon(), iconTextAlignment: .iconRight, iconSize: 15, textColor: .primaryTextColor, textAlignment: .left, contentStackDistribution: .fill, contentStackAlignment: .center, contentSpacing: 5).apply { $0.backgroundColor = .clear }
     fileprivate let numberOfVotesLabel = UILabel(text: "N/A", font: .interRegular(size: 13), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate lazy var ratingsStackView = HorizontalStackView(arrangedSubviews: [ratingIconTextView, numberOfVotesLabel]).apply { $0.setCustomSpacing(10, after: ratingIconTextView) }
@@ -30,13 +30,15 @@ final class RecommendedCoursesCollectionViewCell: BaseCollectionViewCell {
         }
     }
     
-    func configure(with course: Course) {
-        with(course) {
-            courseImageView.image = $0.avatarImage
-            courseNameLabel.text = $0.courseName
-            courseTutorLabel.text = "Adebukola Ayo"
-            ratingIconTextView.text = $0.courseRating
-            numberOfVotesLabel.text = "(48)"
+    func configure(with subject: RecommendedSubject) {
+        with(subject) {
+            courseNameLabel.text = $0.subject.orEmpty + ": " + $0.description.orEmpty
+            courseTutorLabel.text = $0.tutor
+            ratingIconTextView.text = $0.rating?.string
+            numberOfVotesLabel.text = $0.userCount?.string
+            if let thumbnailUrl = $0.thumbnail, thumbnailUrl.isNotEmpty {
+                courseImageView.setImageFromURL(url: thumbnailUrl, placeholderImage: R.image.chemistry_banner())
+            }
         }
     }
 }
