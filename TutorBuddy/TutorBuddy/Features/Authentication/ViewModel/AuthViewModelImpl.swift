@@ -111,10 +111,8 @@ class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
             "token": otp
         ]
         subscribe(authRemote.verifyOTP(params: params), success: { [weak self] authRes in
-            if authRes.success == true && authRes.data?.isEmpty == false {
-                self?.preference.userID = authRes.data ?? ""
-                self?.authNavRoute.onNext(.signin)
-            }
+            self?.preference.userID = authRes.data ?? ""
+            self?.authNavRoute.onNext(.signin)
         })
     }
     
@@ -126,22 +124,16 @@ class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
             "confirmPassword": newPassword
         ]
         subscribe(authRemote.resetPassword(params: params), success: { [weak self] authRes in
-            if authRes.success == true && authRes.data?.isEmpty == false {
-                self?.authNavRoute.onNext(.resetSuccess)
-                self?.showMessage(.RESET_SUCCESSFUL, type: .success)
-            }
-        }, error: { [weak self] error in
-            self?.showMessage("error: make sure otp is correct and try again.", type: .error)
+            self?.authNavRoute.onNext(.resetSuccess)
+            self?.showMessage(.RESET_SUCCESSFUL, type: .success)
         })
     }
     
     func getRegisterResource(showRegisterResources: Bool) {
         subscribe(authRemote.getRegisterResource(), success: { [weak self] authRes in
-            if authRes.success == true && authRes.data.isNotNil {
-                self?.subjects = authRes.data?.subjects ?? []
-                self?.days = authRes.data?.avaliabilities ?? []
-                self?.showRegisterResources.onNext(showRegisterResources)
-            }
+            self?.subjects = authRes.data?.subjects ?? []
+            self?.days = authRes.data?.avaliabilities ?? []
+            self?.showRegisterResources.onNext(showRegisterResources)
         })
     }
     

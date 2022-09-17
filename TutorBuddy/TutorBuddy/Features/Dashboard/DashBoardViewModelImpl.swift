@@ -32,16 +32,9 @@ class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
     }
     
     func getUserDetails() {
-        subscribe(dashboardRemote.getUserDetails(id: preference.userID), errorMessage: .NO_DATA_FOUND, success: { [weak self] res in
-            if res.success == true && res.data.isNotNil {
-                self?.preference.user = res.data
-                self?.userName.onNext((res.data?.firstName ?? "John") + " " + (res.data?.lastName ?? "Doe"))
-            } else {
-                self?.showMessage(.AN_ERROR_OCCURRED_TRY_AGAIN, type: .error)
-            }
-        }, error: { [weak self] error in
-            guard let self = self else { return }
-            self.showMessage(error.localizedDescription, type: .error)
+        subscribe(dashboardRemote.getUserDetails(id: preference.userID), success: { [weak self] res in
+            self?.preference.user = res.data
+            self?.userName.onNext((res.data?.firstName ?? "John") + " " + (res.data?.lastName ?? "Doe"))
         })
     }
     
@@ -56,39 +49,23 @@ class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
                 "email": email
             ]
             subscribe(authRemote.updateUser(params: params), success: { [weak self] res in
-                if res.success == true && res.data?.isEmpty == false {
-                    self?.userUpdated.onNext(true)
-                    self?.showMessage("User updated successfully.", type: .success)
-                }
-            }, error: { [weak self] error in
-                self?.showMessage(error.localizedDescription, type: .error)
+                self?.userUpdated.onNext(true)
+                self?.showMessage("User updated successfully.", type: .success)
             })
         }
     }
     
     func getFeaturedTutors(params: Parameters) {
-        subscribe(dashboardRemote.getFeaturedTutors(params: params), errorMessage: .NO_DATA_FOUND, success: { [weak self] featuredTutorsRes in
-            if featuredTutorsRes.success == true && featuredTutorsRes.data.isNotNil {
-                self?.featuredTutors = featuredTutorsRes.data ?? []
-                self?.showFeaturedTutors.onNext(true)
-            } else {
-                self?.showMessage(.AN_ERROR_OCCURRED_TRY_AGAIN, type: .error)
-            }
-        }, error: { [weak self] error in
-            self?.showMessage(error.localizedDescription, type: .error)
+        subscribe(dashboardRemote.getFeaturedTutors(params: params), success: { [weak self] featuredTutorsRes in
+            self?.featuredTutors = featuredTutorsRes.data ?? []
+            self?.showFeaturedTutors.onNext(true)
         })
     }
     
     func getAllRecommendedSubjects(params: Parameters) {
-        subscribe(dashboardRemote.getAllRecommendedSubjects(params: params), errorMessage: .NO_DATA_FOUND, success: { [weak self] recommendedSubjectsRes in
-            if recommendedSubjectsRes.success == true && recommendedSubjectsRes.data.isNotNil {
-                self?.recommendedSubjects = recommendedSubjectsRes.data?.pageItems ?? []
-                self?.showRecommendedSubjects.onNext(true)
-            } else {
-                self?.showMessage(.AN_ERROR_OCCURRED_TRY_AGAIN, type: .error)
-            }
-        }, error: { [weak self] error in
-            self?.showMessage(error.localizedDescription, type: .error)
+        subscribe(dashboardRemote.getAllRecommendedSubjects(params: params), success: { [weak self] recommendedSubjectsRes in
+            self?.recommendedSubjects = recommendedSubjectsRes.data?.pageItems ?? []
+            self?.showRecommendedSubjects.onNext(true)
         })
     }
     
@@ -97,11 +74,9 @@ class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
             "userId": self.preference.userID,
             "refreshToken": self.preference.refreshToken
         ]
-        subscribe(commonRemote.refreshToken(params: params), errorMessage: .NO_DATA_FOUND, success: { [weak self] refreshTokenRes in
-            if refreshTokenRes.success == true && refreshTokenRes.data.isNotNil {
-                self?.preference.accessToken = refreshTokenRes.data?.newAccessToken.orEmpty ?? ""
-                self?.preference.refreshToken = refreshTokenRes.data?.newRefreshToken.orEmpty ?? ""
-            }
+        subscribe(commonRemote.refreshToken(params: params), success: { [weak self] refreshTokenRes in
+            self?.preference.accessToken = refreshTokenRes.data?.newAccessToken.orEmpty ?? ""
+            self?.preference.refreshToken = refreshTokenRes.data?.newRefreshToken.orEmpty ?? ""
         })
     }
 }

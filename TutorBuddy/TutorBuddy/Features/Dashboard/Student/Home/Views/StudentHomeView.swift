@@ -87,7 +87,7 @@ class StudentHomeView: BaseScrollView {
             $0.anchor(top: recommendedCoursesStackView.bottomAnchor, leading: _leadingAnchor, bottom: _bottomAnchor, trailing: _trailingAnchor, padding: ._init(top: 20, left: 20, right: 20))
         }
         
-//        setupBindings()
+        setupBindings()
     }
     
     func setupBindings() {
