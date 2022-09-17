@@ -14,6 +14,14 @@ class DashboardRemoteDatasourceImpl: BaseRemoteDatasource, IDashboardRemoteDatas
     func getUserDetails(id: String) -> Observable<TBUserResponse> {
         makeAPIRequest(path: .user(id), responseType: TBUserResponse.self, headers: [.authorization(bearerToken: preference.accessToken)])
     }
+    
+    func getFeaturedTutors(params: Parameters) -> Observable<TBFeaturedTutorsResponse> {
+        makeAPIRequest(path: .featuredTutors, responseType: TBFeaturedTutorsResponse.self, headers: [.authorization(bearerToken: preference.accessToken)])
+    }
+    
+    func getAllRecommendedSubjects(params: Parameters) -> Observable<TBRecommendedSubjectsResponse> {
+        makeAPIRequest(path: .recommendedSubjects, responseType: TBRecommendedSubjectsResponse.self,params: params, encoding: URLEncoding.default)
+    }
 }
 
 

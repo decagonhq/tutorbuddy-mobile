@@ -12,7 +12,7 @@ struct DashboardDependencyContainer {
         
         container.register(IDashboardRemoteDatasource.self) { _ in DashboardRemoteDatasourceImpl() }
         
-        container.register(IDashBoardViewModel.self) { DashBoardViewModelImpl(preference: $0.resolve(IPreference.self)!, dashboardRemote: $0.resolve(IDashboardRemoteDatasource.self)!, authRemote: $0.resolve(IAuthRemoteDatasource.self)!) }
+        container.register(IDashBoardViewModel.self) { DashBoardViewModelImpl(preference: $0.resolve(IPreference.self)!, dashboardRemote: $0.resolve(IDashboardRemoteDatasource.self)!, authRemote: $0.resolve(IAuthRemoteDatasource.self)!, commonRemote: $0.resolve(ICommonRequestsRemoteDatasource.self)!) }
         
         container.register(TBDashBoardViewController.self) { resolver in TBDashBoardViewController().apply { $0.viewModel = resolver.resolve(IDashBoardViewModel.self)! } }
         

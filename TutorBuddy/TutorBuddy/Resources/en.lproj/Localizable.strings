@@ -75,7 +75,7 @@
 "CarsWithLoanKey" = "Cars with Loan";
 "CarsWithoutLoanKey" = "Cars without Loan";
 "PendingInspectionKey" = "Pending Inspection";
-"NoInventoriesFoundKey" = "No inventories found.";
+"NoFeaturedTutorsFoundKey" = "No featured tutors found.";
 "FiltersKey" = "Filters";
 "ApplyFiltersKey" = "Apply Filters";
 "UnableToGetMakesKey" = "Unable to get makes & models, please try again";

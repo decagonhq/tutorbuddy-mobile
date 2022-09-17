@@ -8,10 +8,13 @@ import UIKit
 
 struct AnyStruct: Codable {}
 
-struct FeaturedTutor: Scopable {
-    let avatarImage: UIImage?
-    let tutorName: String?
-    let rating: String?
+struct FeaturedTutor: Codable, Scopable {
+    let id, avatar, fullName: String?
+    let rating: Double?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, avatar, rating = "rate", fullName = "fullname"
+    }
 }
 
 struct Course: Scopable {

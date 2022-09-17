@@ -20,15 +20,7 @@ protocol IPreference {
     
     var language: Language { get set }
     
-    var newLoanApplicationSubmitted: Bool { get set }
+    var newFeatureTutorAddedOrRemoved: Bool { get set }
     
     var country: AnyStruct? { get set }
-    
-    var carDetailsUpdated: Bool { get set }
-    
-    var carMediaUploaded: Bool { get set }
-    
-    var carListedOrDelisted: Bool { get set }
-    
-    var newInspectionRequestCreated: Bool { get set }
 }

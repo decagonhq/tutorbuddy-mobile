@@ -11,12 +11,18 @@ import RxSwift
 
 class StudentHomeView: BaseScrollView {
     
-    var showtutorDetailsHandler: ((FeaturedTutor, Int) -> Void)?
-    var showCourseDetailsHandler: ((Course, Int) -> Void)?
-    
-    private let data = Constants.TUTORS
-    private let _data = Constants.COURSES
+    var viewModel: IDashBoardViewModel?
     var seeAllButtonTapHandler: NoParamHandler?
+    var showCourseDetailsHandler: ((RecommendedSubject, Int) -> Void)?
+    var showtutorDetailsHandler: ((FeaturedTutor, Int) -> Void)?
+    
+    fileprivate var data: [FeaturedTutor] {
+        viewModel?.featuredTutors ?? []
+    }
+    
+    private var _data: [RecommendedSubject] {
+        viewModel?.recommendedSubjects ?? []
+    }
     
     fileprivate let welcomeLabel = UILabel(text: "Welcome", font: .interRegular(size: 16), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     let userNameLabel = UILabel(text: "", font: .interExtraBold(size: 25), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
@@ -80,6 +86,46 @@ class StudentHomeView: BaseScrollView {
             _addSubview($0)
             $0.anchor(top: recommendedCoursesStackView.bottomAnchor, leading: _leadingAnchor, bottom: _bottomAnchor, trailing: _trailingAnchor, padding: ._init(top: 20, left: 20, right: 20))
         }
+        
+//        setupBindings()
+    }
+    
+    func setupBindings() {
+        viewModel?.showFeaturedTutors.bind { [weak self] show in
+            if show {
+                self?.showFeaturedTutors()
+            }
+        }.disposed(by: disposeBag)
+        
+        viewModel?.showRecommendedSubjects.bind { [weak self] show in
+            if show {
+                self?.showRecommendedSubjects()
+            }
+        }.disposed(by: disposeBag)
+    }
+    
+    fileprivate func showFeaturedTutors() {
+        with(featuredTutorsCollectionView) {
+            if data.isEmpty {
+                $0.setEmptyMessage(viewModel?.noFeaturedTutorsMessage ?? "")
+            } else {
+                $0.restore()
+            }
+            $0.setContentOffset(.zero, animated: true)
+            $0.reloadData()
+        }
+    }
+    
+    fileprivate func showRecommendedSubjects() {
+        with(recommendedCoursesCollectionView) {
+            if _data.isEmpty {
+                $0.setEmptyMessage(viewModel?.noFeaturedTutorsMessage ?? "")
+            } else {
+                $0.restore()
+            }
+            $0.setContentOffset(.zero, animated: true)
+            $0.reloadData()
+        }
     }
     
     fileprivate func seeAllButtonTapped() {
@@ -90,7 +136,7 @@ class StudentHomeView: BaseScrollView {
         showtutorDetailsHandler?(tutor, index)
     }
     
-    fileprivate func showDetails(for course: Course, at index: Int) {
+    fileprivate func showDetails(for course: RecommendedSubject, at index: Int) {
         showCourseDetailsHandler?(course, index)
     }
     
@@ -107,13 +153,13 @@ extension StudentHomeView: UICollectionViewConformable {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let tutor = data[indexPath.item]
-        let course = _data[indexPath.item]
         if collectionView == featuredTutorsCollectionView {
+            let tutor = data[indexPath.item]
             return collectionView.deque(cell: FeaturedTutorsCollectionViewCell.self, at: indexPath).apply {
                 $0.configure(with: tutor)
             }
         } else {
+            let course = _data[indexPath.item]
             return collectionView.deque(cell: RecommendedCoursesCollectionViewCell.self, at: indexPath).apply {
                 $0.configure(with: course)
             }
