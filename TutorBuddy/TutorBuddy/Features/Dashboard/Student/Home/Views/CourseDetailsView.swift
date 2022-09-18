@@ -31,7 +31,7 @@ class CourseDetailsView: BaseScrollView {
     let scheduleTimeIconText = IconTextView(text: "Schedule Time", font: .interExtraBold(size: 16), placeholderIcon: R.image.calendar_icon(), iconTint: .primaryColor, iconTextAlignment: .iconLeft, iconSize: 30, textColor: .primaryColor, textAlignment: .left, contentStackDistribution: .equalCentering, contentStackAlignment: .center, contentSpacing: 5)
     fileprivate lazy var scheduleTimeStackView = VerticalStackView(arrangedSubviews: [scheduleTimeIconText], alignment: .leading)
     
-    fileprivate let ratingsLabel = UILabel(text: "Ratings (6)", font: .interExtraBold(size: 16), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
+    fileprivate let ratingsLabel = UILabel(text: "Ratings", font: .interExtraBold(size: 16), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate lazy var ratingsStackView = VerticalStackView(arrangedSubviews: [ratingsLabel], alignment: .leading)
     lazy var headerView = UIView(backgroundColor: .clear, borderWidth: 1, borderColor: .primaryGrey)
     lazy var ratingsTableView = UITableView(cell: RatingsTableViewCell.self, delegate: self, datasource: self, separatorStyle: .singleLine, separatorColor: .gray).withHeight(200).apply { $0.layer.borderWidth = 1; $0.layer.borderColor = UIColor.primaryGrey.cgColor }
@@ -81,6 +81,7 @@ class CourseDetailsView: BaseScrollView {
             tutorNameLabel.text = $0.name
             numberOfCoursesLabel.text = ($0.noOfCourses?.string ?? 0.string) + " courses"
             tutorBioLabel.text = $0.bioNote
+            ratingsLabel.text = "Ratings (\($0.tutorComments?.count ?? 0))"
             if let thumbnailUrl = $0.thumbnail, thumbnailUrl.isNotEmpty {
                 courseImageView.setImageFromURL(url: thumbnailUrl, placeholderImage: R.image.chemistry_banner())
             }

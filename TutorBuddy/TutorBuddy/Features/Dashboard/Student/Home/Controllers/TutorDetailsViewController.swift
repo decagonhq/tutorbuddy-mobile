@@ -27,7 +27,7 @@ final class TutorDetailsViewController: BottomPopupViewController {
     fileprivate lazy var tutorBioTopView = HorizontalStackView(arrangedSubviews: [avatarImageView, tutorBioStackView], spacing: 15)
     
     fileprivate let aboutLabel = UILabel(text: "About", font: .interExtraBold(size: 13), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
-    fileprivate let aboutTextView = UILabel(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At nibh quam odio sit vestibulum sagittis urna. Velit fermentum, accumsan, egestas sit volutpat.", font: .interRegular(size: 13), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
+    fileprivate let aboutTextView = UILabel(text: "N/A", font: .interRegular(size: 13), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate lazy var tutorBioMiddleView = VerticalStackView(arrangedSubviews: [aboutLabel, aboutTextView], spacing: 5)
     
     fileprivate let expertiseLabel = UILabel(text: "Expertise", font: .interExtraBold(size: 13), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
