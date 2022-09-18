@@ -158,3 +158,15 @@ struct RecommendedSubjectDetailsData: Scopable {
     let rating, noOfCourses, price: Int?
     let tutorComments: [String?]?
 }
+
+struct TBFeaturedTutorDetailsResponse: Codable {
+    let success: Bool?
+    let data: TBFeaturedTutorDetailsData?
+    let message: String?
+    let statusCode: Int?
+}
+
+struct TBFeaturedTutorDetailsData: Codable, Scopable {
+    let fullName, avatar, bioNote: String?
+    let subject, avaliabilities: [String]?
+}

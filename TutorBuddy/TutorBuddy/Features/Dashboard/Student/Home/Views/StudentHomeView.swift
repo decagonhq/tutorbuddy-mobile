@@ -14,7 +14,7 @@ class StudentHomeView: BaseScrollView {
     var viewModel: IDashBoardViewModel?
     var seeAllButtonTapHandler: NoParamHandler?
     var courseSelectedHandler: ((RecommendedSubject, Int) -> Void)?
-    var showtutorDetailsHandler: ((FeaturedTutor, Int) -> Void)?
+    var tutorSelectedHandler: ((FeaturedTutor, Int) -> Void)?
     
     fileprivate var data: [FeaturedTutor] {
         viewModel?.featuredTutors ?? []
@@ -132,16 +132,12 @@ class StudentHomeView: BaseScrollView {
         seeAllButtonTapHandler?()
     }
     
-    fileprivate func showDetails(for tutor: FeaturedTutor, at index: Int) {
-        showtutorDetailsHandler?(tutor, index)
-    }
-    
-//    fileprivate func showDetails(for course: RecommendedSubject, at index: Int) {
-//        showCourseDetailsHandler?(course, index)
-//    }
-    
     fileprivate func handleCourseSelected(_ course: RecommendedSubject, at index: Int) {
         courseSelectedHandler?(course, index)
+    }
+    
+    fileprivate func handleTutorSelected(_ tutor: FeaturedTutor, at index: Int) {
+        tutorSelectedHandler?(tutor, index)
     }
     
 }
@@ -161,6 +157,9 @@ extension StudentHomeView: UICollectionViewConformable {
             let tutor = data[indexPath.item]
             return collectionView.deque(cell: FeaturedTutorsCollectionViewCell.self, at: indexPath).apply {
                 $0.configure(with: tutor)
+                $0.containerView.animateViewOnTapGesture { [weak self] in
+                    self?.handleTutorSelected(tutor, at: indexPath.row)
+                }
             }
         } else {
             let course = _data[indexPath.item]
@@ -180,16 +179,5 @@ extension StudentHomeView: UICollectionViewConformable {
             return CGSize(width: (collectionView.frame.size.width / 2) - 10, height: 180)
         }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let tutor = data[indexPath.item]
-        let course = _data[indexPath.item]
-        if collectionView == featuredTutorsCollectionView {
-            showDetails(for: tutor, at: indexPath.item)
-        } //else {
-//            showDetails(for: course, at: indexPath.item)
-//        }
-    }
-    
     
 }

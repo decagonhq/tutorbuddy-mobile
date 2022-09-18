@@ -15,19 +15,21 @@ class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
     var featuredTutors = [FeaturedTutor]()
     var userUpdated = PublishSubject<Bool>()
     var userName = BehaviorSubject(value: "")
+    var showTutorComments = PublishSubject<Bool>()
+    var tutorComments = PublishSubject<[String?]>()
     var showFeaturedTutors = PublishSubject<Bool>()
+    var selectedFeatureTutor: FeaturedTutor? = nil
     var recommendedSubjects = [RecommendedSubject]()
     fileprivate let authRemote: IAuthRemoteDatasource
     var showRecommendedSubjects = PublishSubject<Bool>()
     var showAllCoursesCategories = PublishSubject<Bool>()
+    var selectedRecommendedCourse: RecommendedSubject? = nil
     var allCoursesCategories = [RecommendedSubjectCategory]()
     fileprivate let dashboardRemote: IDashboardRemoteDatasource
     fileprivate let commonRemote: ICommonRequestsRemoteDatasource
     var noFeaturedTutorsMessage: String = .NO_FEATURED_TUTORS_FOUND
-    var selectedRecommendedCourse: RecommendedSubject? = nil
     var recommendedSubjectDetailsData = PublishSubject<RecommendedSubjectDetailsData>()
-    var tutorComments = PublishSubject<[String?]>()
-    var showTutorComments = PublishSubject<Bool>()
+    var featuredTutorDetailsData = PublishSubject<TBFeaturedTutorDetailsData>()
     
     
     init(preference:IPreference, dashboardRemote: IDashboardRemoteDatasource, authRemote: IAuthRemoteDatasource, commonRemote: ICommonRequestsRemoteDatasource) {
@@ -106,8 +108,29 @@ class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
                         rating: $0.rating,
                         noOfCourses: $0.noOfCourses,
                         price: $0.price,
-                        tutorComments: $0.tutorComments))
+                        tutorComments: $0.tutorComments)
+                    )
                     self?.tutorComments.onNext($0.tutorComments ?? [])
+                }
+            }
+        })
+    }
+    
+    func getFeaturedTutorDetails() {
+        guard let id = selectedFeatureTutor?.id else {
+            showMessage(.NO_DATA_FOUND, type: .error)
+            return
+        }
+        subscribe(dashboardRemote.getFeaturedTutorDetails(id: id), success: { [weak self] tutorDetailsRes in
+            if let _data = tutorDetailsRes.data {
+                with(_data) {
+                    self?.featuredTutorDetailsData.onNext(TBFeaturedTutorDetailsData(
+                        fullName: $0.fullName,
+                        avatar: $0.avatar,
+                        bioNote: $0.bioNote,
+                        subject: $0.subject,
+                        avaliabilities: $0.avaliabilities)
+                    )
                 }
             }
         })

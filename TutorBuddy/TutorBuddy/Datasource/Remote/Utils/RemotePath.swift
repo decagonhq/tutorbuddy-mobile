@@ -8,7 +8,7 @@ import Foundation
 enum RemotePath {
     
     case login, register, requestOTP, verifyOTP, resetPassword, updateUser, refreshToken
-    case featuredTutors, recommendedSubjects, allSubjectsCategories, recommendedSubjectDetails(String)
+    case featuredTutors, recommendedSubjects, allSubjectsCategories, recommendedSubjectDetails(String), featuredTutorDetails(String)
     case documentUpload, imageUpload
     case carMakes, carModels, auctionDetails(String)
     case user(String), myLocation, colors, states, cities, bodyTypes, franchise
@@ -38,6 +38,8 @@ enum RemotePath {
             return "Tutor/get-all-subject-with-categories"
         case .recommendedSubjectDetails(let tutorSubjectId):
             return "Subject/\(tutorSubjectId)"
+        case .featuredTutorDetails(let id):
+            return "Tutor/\(id)"
         case .documentUpload:
             return "document/upload"
         case .imageUpload:

@@ -31,6 +31,10 @@ class DashboardRemoteDatasourceImpl: BaseRemoteDatasource, IDashboardRemoteDatas
 //        makeAPIRequest(path: .recommendedSubjectDetails(tutorSubjectId), responseType: TBRecommendedSubjectDetailsResponse.self, headers: [.authorization(bearerToken: preference.accessToken)])
         makeAPIRequest(path: "https://api.tutorbuddy.net/api/Subject/\(tutorSubjectId)", responseType: TBRecommendedSubjectDetailsResponse.self, headers: [.authorization(bearerToken: preference.accessToken)])
     }
+    
+    func getFeaturedTutorDetails(id: String) -> Observable<TBFeaturedTutorDetailsResponse> {
+        makeAPIRequest(path: .featuredTutorDetails(id), responseType: TBFeaturedTutorDetailsResponse.self, headers: [.authorization(bearerToken: preference.accessToken)])
+    }
 }
 
 

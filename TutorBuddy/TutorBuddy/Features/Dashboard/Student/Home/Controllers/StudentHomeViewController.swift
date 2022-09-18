@@ -40,13 +40,14 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
                 self?.tabBarController?.selectedIndex = 1
             }
             
-            $0.showtutorDetailsHandler = { [weak self] tutor, index in
-                self?.present(TutorDetailsViewController().apply { $0.tutor = tutor }, animated: true)
-            }
-            
             $0.courseSelectedHandler = { [weak self] course, index in
                 self?.viewModel.selectedRecommendedCourse = course
                 self?.viewModel.getRecommendedCourseDetails()
+            }
+            
+            $0.tutorSelectedHandler = { [weak self] tutor, index in
+                self?.viewModel.selectedFeatureTutor = tutor
+                self?.viewModel.getFeaturedTutorDetails()
             }
         }
         
@@ -59,6 +60,7 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
         super.setChildViewControllerObservers()
         viewModel.userName.bind(to: kview.userNameLabel.rx.text).disposed(by: disposeBag)
         observeRecommendedSubjectDetailsData()
+        observeFeaturedTutorDetailsData()
     }
     
     fileprivate func observeRecommendedSubjectDetailsData() {
@@ -67,6 +69,15 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
             with(AppDelegate.dependencyContainer.courseDetailsController.apply { $0.recommendedSubjectDetailsData = data; $0.ratings = data.tutorComments }) {
                 $0.modalPresentationStyle = .overFullScreen
                 $0.setBackgroundColor()
+                self.present($0, animated: true)
+            }
+        }.disposed(by: disposeBag)
+    }
+    
+    fileprivate func observeFeaturedTutorDetailsData() {
+        viewModel.featuredTutorDetailsData.bind { [weak self] data in
+            guard let self = self else { return }
+            with(TutorDetailsViewController().apply { $0.tutor = data }) {
                 self.present($0, animated: true)
             }
         }.disposed(by: disposeBag)

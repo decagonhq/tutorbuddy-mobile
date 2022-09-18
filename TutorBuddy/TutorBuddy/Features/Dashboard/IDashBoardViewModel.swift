@@ -37,6 +37,10 @@ protocol IDashBoardViewModel {
     
     var showTutorComments: PublishSubject<Bool> { get }
     
+    var selectedFeatureTutor: FeaturedTutor? { get set }
+    
+    var featuredTutorDetailsData: PublishSubject<TBFeaturedTutorDetailsData> { get }
+    
     func getUserDetails()
     
     func updateUser(with fullName: String, and email: String)
@@ -48,4 +52,6 @@ protocol IDashBoardViewModel {
     func getAllCoursesCategories(params: Parameters)
     
     func getRecommendedCourseDetails()
+    
+    func getFeaturedTutorDetails()
 }
