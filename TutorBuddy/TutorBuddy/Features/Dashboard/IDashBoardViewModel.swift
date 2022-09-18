@@ -29,6 +29,14 @@ protocol IDashBoardViewModel {
     
     var noFeaturedTutorsMessage: String { get }
     
+    var selectedRecommendedCourse: RecommendedSubject? { get set }
+    
+    var recommendedSubjectDetailsData: PublishSubject<RecommendedSubjectDetailsData> { get }
+    
+    var tutorComments: PublishSubject<[String?]> { get }
+    
+    var showTutorComments: PublishSubject<Bool> { get }
+    
     func getUserDetails()
     
     func updateUser(with fullName: String, and email: String)
@@ -38,4 +46,6 @@ protocol IDashBoardViewModel {
     func getAllRecommendedSubjects(params: Parameters)
     
     func getAllCoursesCategories(params: Parameters)
+    
+    func getRecommendedCourseDetails()
 }

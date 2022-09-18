@@ -18,4 +18,6 @@ protocol IDashboardRemoteDatasource {
     func getAllRecommendedSubjects(params: Parameters) -> Observable<TBRecommendedSubjectsResponse>
     
     func getAllCoursesCategories(params: Parameters) -> Observable<TBRecommendedSubjectCategoryResponse>
+    
+    func getRecommendedCourseDetails(tutorSubjectId: String) -> Observable<TBRecommendedSubjectDetailsResponse>
 }

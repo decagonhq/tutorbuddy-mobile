@@ -13,7 +13,7 @@
 		70B5F16C28881A79008BD901 /* MyCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F16B28881A79008BD901 /* MyCoursesViewController.swift */; };
 		70B5F16E28881AAC008BD901 /* AllCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F16D28881AAC008BD901 /* AllCoursesViewController.swift */; };
 		70B5F17028881ADB008BD901 /* StudentHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F16F28881ADB008BD901 /* StudentHomeViewController.swift */; };
-		70B5F17228883431008BD901 /* DashBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F17128883431008BD901 /* DashBoardViewModel.swift */; };
+		70B5F17228883431008BD901 /* IDashBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F17128883431008BD901 /* IDashBoardViewModel.swift */; };
 		70B5F174288834FC008BD901 /* DashBoardViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F173288834FC008BD901 /* DashBoardViewModelImpl.swift */; };
 		70B5F176288933E2008BD901 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F175288933E2008BD901 /* ForgotPasswordViewController.swift */; };
 		70B5F17828893430008BD901 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F17728893430008BD901 /* ForgotPasswordView.swift */; };
@@ -190,7 +190,7 @@
 		70B5F16B28881A79008BD901 /* MyCoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoursesViewController.swift; sourceTree = "<group>"; };
 		70B5F16D28881AAC008BD901 /* AllCoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCoursesViewController.swift; sourceTree = "<group>"; };
 		70B5F16F28881ADB008BD901 /* StudentHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeViewController.swift; sourceTree = "<group>"; };
-		70B5F17128883431008BD901 /* DashBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewModel.swift; sourceTree = "<group>"; };
+		70B5F17128883431008BD901 /* IDashBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDashBoardViewModel.swift; sourceTree = "<group>"; };
 		70B5F173288834FC008BD901 /* DashBoardViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewModelImpl.swift; sourceTree = "<group>"; };
 		70B5F175288933E2008BD901 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		70B5F17728893430008BD901 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -401,7 +401,7 @@
 				BC32757B28C031AA00A4CAA0 /* Tutor */,
 				70B5F15F28880356008BD901 /* TBDashBoardViewController.swift */,
 				BCFB81592882C7CA00C50982 /* TBTutorDashboardViewController.swift */,
-				70B5F17128883431008BD901 /* DashBoardViewModel.swift */,
+				70B5F17128883431008BD901 /* IDashBoardViewModel.swift */,
 				70B5F173288834FC008BD901 /* DashBoardViewModelImpl.swift */,
 				BC32759728C4876800A4CAA0 /* CourseImageView.swift */,
 				BC32759E28C584F900A4CAA0 /* EditProfileViewController.swift */,
@@ -1457,7 +1457,7 @@
 				BCFB8264288314FB00C50982 /* PickerManager.swift in Sources */,
 				70B5F17C28894870008BD901 /* CheckMailView.swift in Sources */,
 				BC533AA42887E54B00D2A6DA /* WelcomeViewController.swift in Sources */,
-				70B5F17228883431008BD901 /* DashBoardViewModel.swift in Sources */,
+				70B5F17228883431008BD901 /* IDashBoardViewModel.swift in Sources */,
 				BC32758728C0368F00A4CAA0 /* TutorHomeViewController.swift in Sources */,
 				BCFB821E288312A900C50982 /* IAuthRemoteDatasource.swift in Sources */,
 				BCFB82862883155000C50982 /* DateType.swift in Sources */,

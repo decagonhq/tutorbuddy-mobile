@@ -11,6 +11,8 @@ import DatePickerDialog
 final class CourseDetailsViewController: BaseViewController<CourseDetailsView, IDashBoardViewModel> {
     
     var course: RecommendedSubject?
+    var recommendedSubjectDetailsData: RecommendedSubjectDetailsData?
+    var ratings: [String?]!
     
     var titleText: String = "Course Details"
     fileprivate lazy var titleTextLabel = UILabel(text: titleText, font: .interBold(size: 17), color: .primaryTextColor)
@@ -50,9 +52,11 @@ final class CourseDetailsViewController: BaseViewController<CourseDetailsView, I
     override func configureViews() {
         super.configureViews()
         with(kview) {
-            if let course = course {
+            $0.ratings = ratings
+            if let course = recommendedSubjectDetailsData {
                 $0.configure(with: course)
             }
+            
         }
         
         closeImageView.animateViewOnTapGesture { [weak self] in

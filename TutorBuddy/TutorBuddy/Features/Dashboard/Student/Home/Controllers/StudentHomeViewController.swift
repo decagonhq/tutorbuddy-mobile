@@ -35,6 +35,7 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
             $0.notificationButton.animateViewOnTapGesture {
                 self._pushViewController(AppDelegate.dependencyContainer.notificationsController)
             }
+            
             $0.seeAllButtonTapHandler = { [weak self] in
                 self?.tabBarController?.selectedIndex = 1
             }
@@ -43,14 +44,12 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
                 self?.present(TutorDetailsViewController().apply { $0.tutor = tutor }, animated: true)
             }
             
-            $0.showCourseDetailsHandler = { [weak self] course, index in
-                with(AppDelegate.dependencyContainer.courseDetailsController.apply { $0.course = course }) {
-                    $0.modalPresentationStyle = .overFullScreen
-                    $0.setBackgroundColor()
-                    self?.present($0, animated: true)
-                }
+            $0.courseSelectedHandler = { [weak self] course, index in
+                self?.viewModel.selectedRecommendedCourse = course
+                self?.viewModel.getRecommendedCourseDetails()
             }
         }
+        
         viewModel.getUserDetails()
         viewModel.getFeaturedTutors(params: [:])
         viewModel.getAllRecommendedSubjects(params: [:])
@@ -59,6 +58,18 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
     override func setChildViewControllerObservers() {
         super.setChildViewControllerObservers()
         viewModel.userName.bind(to: kview.userNameLabel.rx.text).disposed(by: disposeBag)
+        observeRecommendedSubjectDetailsData()
+    }
+    
+    fileprivate func observeRecommendedSubjectDetailsData() {
+        viewModel.recommendedSubjectDetailsData.bind { [weak self] data in
+            guard let self = self else { return }
+            with(AppDelegate.dependencyContainer.courseDetailsController.apply { $0.recommendedSubjectDetailsData = data; $0.ratings = data.tutorComments }) {
+                $0.modalPresentationStyle = .overFullScreen
+                $0.setBackgroundColor()
+                self.present($0, animated: true)
+            }
+        }.disposed(by: disposeBag)
     }
     
 }

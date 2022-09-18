@@ -10,6 +10,8 @@ import UIKit
 class CourseDetailsView: BaseScrollView {
     
     var engageTutorButtonTapHandler: NoParamHandler?
+    var viewModel: IDashBoardViewModel?
+    var ratings: [String?]!
     
     fileprivate let courseImageView = UIImageView(image: R.image.physics_banner(), contentMode: .scaleAspectFill, height: 160)
     fileprivate let aboutTheTutorLabel = UILabel(text: "About the Tutor", font: .interExtraBold(size: 16), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
@@ -74,13 +76,11 @@ class CourseDetailsView: BaseScrollView {
         ratingsStackView.fillSuperview(padding: ._init(allEdges: 10))
     }
     
-    
-    func configure(with course: RecommendedSubject) {
+    func configure(with course: RecommendedSubjectDetailsData) {
         with(course) {
-//            courseImageView.image = $0.avatarImage
-            tutorNameLabel.text = $0.tutor
-            numberOfCoursesLabel.text = "62 courses"
-            tutorBioLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At nibh quam odio sit vestibulum sagittis urna."
+            tutorNameLabel.text = $0.name
+            numberOfCoursesLabel.text = ($0.noOfCourses?.string ?? 0.string) + " courses"
+            tutorBioLabel.text = $0.bioNote
             if let thumbnailUrl = $0.thumbnail, thumbnailUrl.isNotEmpty {
                 courseImageView.setImageFromURL(url: thumbnailUrl, placeholderImage: R.image.chemistry_banner())
             }
@@ -94,12 +94,13 @@ class CourseDetailsView: BaseScrollView {
 
 extension CourseDetailsView: UITableViewConformable {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        ratings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let rating = ratings[indexPath.row]
         return tableView.deque(cell: RatingsTableViewCell.self, at: indexPath).apply {
-            $0.configure(with: Rating(ratingTitle: nil, ratingSubtitle: nil))
+            $0.configure(with: Rating(ratingTitle: nil, ratingSubtitle: rating))
         }
     }
     

@@ -61,6 +61,7 @@ class BaseRemoteDatasource {
     func makeAPIRequest<T>(path: String, responseType: T.Type, method: HTTPMethod = .get, params: Parameters? = nil, encoding: ParameterEncoding = JSONEncoding.default, headers: HTTPHeaders? = nil) -> Observable<T> where T : Decodable, T : Encodable {
         
         _print("Request URL: \(path)", .success)
+        _print("Request Headers: \(headers ?? self.headers)", .success)
         _print("Request Parameters:\n \(String(describing: params))", .success)
         
         var _params = params

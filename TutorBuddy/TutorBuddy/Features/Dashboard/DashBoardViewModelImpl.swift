@@ -24,6 +24,10 @@ class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
     fileprivate let dashboardRemote: IDashboardRemoteDatasource
     fileprivate let commonRemote: ICommonRequestsRemoteDatasource
     var noFeaturedTutorsMessage: String = .NO_FEATURED_TUTORS_FOUND
+    var selectedRecommendedCourse: RecommendedSubject? = nil
+    var recommendedSubjectDetailsData = PublishSubject<RecommendedSubjectDetailsData>()
+    var tutorComments = PublishSubject<[String?]>()
+    var showTutorComments = PublishSubject<Bool>()
     
     
     init(preference:IPreference, dashboardRemote: IDashboardRemoteDatasource, authRemote: IAuthRemoteDatasource, commonRemote: ICommonRequestsRemoteDatasource) {
@@ -79,6 +83,33 @@ class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
         subscribe(dashboardRemote.getAllCoursesCategories(params: params), success: { [weak self] allCoursesCategoriesRes in
             self?.allCoursesCategories = allCoursesCategoriesRes.data?.pageItems ?? []
             self?.showAllCoursesCategories.onNext(true)
+        })
+    }
+    
+    func getRecommendedCourseDetails() {
+        guard let tutorSubjectId = selectedRecommendedCourse?.tutorSubjectId else {
+            showMessage(.NO_DATA_FOUND, type: .error)
+            return
+        }
+        subscribe(dashboardRemote.getRecommendedCourseDetails(tutorSubjectId: tutorSubjectId), success: { [weak self] courseDetailsRes in
+            if let _data = courseDetailsRes.data {
+                with(_data) {
+                    self?.recommendedSubjectDetailsData.onNext(RecommendedSubjectDetailsData(
+                        topic: $0.topic,
+                        thumbnail: $0.thumbnail,
+                        description: $0.description,
+                        name: $0.name,
+                        avatar: $0.avatar,
+                        bioNote: $0.bioNote,
+                        unitOfPrice: $0.unitOfPrice,
+                        createdAt: $0.createdAt,
+                        rating: $0.rating,
+                        noOfCourses: $0.noOfCourses,
+                        price: $0.price,
+                        tutorComments: $0.tutorComments))
+                    self?.tutorComments.onNext($0.tutorComments ?? [])
+                }
+            }
         })
     }
     

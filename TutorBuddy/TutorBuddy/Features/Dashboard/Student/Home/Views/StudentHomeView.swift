@@ -13,7 +13,7 @@ class StudentHomeView: BaseScrollView {
     
     var viewModel: IDashBoardViewModel?
     var seeAllButtonTapHandler: NoParamHandler?
-    var showCourseDetailsHandler: ((RecommendedSubject, Int) -> Void)?
+    var courseSelectedHandler: ((RecommendedSubject, Int) -> Void)?
     var showtutorDetailsHandler: ((FeaturedTutor, Int) -> Void)?
     
     fileprivate var data: [FeaturedTutor] {
@@ -136,8 +136,12 @@ class StudentHomeView: BaseScrollView {
         showtutorDetailsHandler?(tutor, index)
     }
     
-    fileprivate func showDetails(for course: RecommendedSubject, at index: Int) {
-        showCourseDetailsHandler?(course, index)
+//    fileprivate func showDetails(for course: RecommendedSubject, at index: Int) {
+//        showCourseDetailsHandler?(course, index)
+//    }
+    
+    fileprivate func handleCourseSelected(_ course: RecommendedSubject, at index: Int) {
+        courseSelectedHandler?(course, index)
     }
     
 }
@@ -162,6 +166,9 @@ extension StudentHomeView: UICollectionViewConformable {
             let course = _data[indexPath.item]
             return collectionView.deque(cell: RecommendedCoursesCollectionViewCell.self, at: indexPath).apply {
                 $0.configure(with: course)
+                $0.container.animateViewOnTapGesture { [weak self] in
+                    self?.handleCourseSelected(course, at: indexPath.row)
+                }
             }
         }
     }
@@ -179,9 +186,9 @@ extension StudentHomeView: UICollectionViewConformable {
         let course = _data[indexPath.item]
         if collectionView == featuredTutorsCollectionView {
             showDetails(for: tutor, at: indexPath.item)
-        } else {
-            showDetails(for: course, at: indexPath.item)
-        }
+        } //else {
+//            showDetails(for: course, at: indexPath.item)
+//        }
     }
     
     

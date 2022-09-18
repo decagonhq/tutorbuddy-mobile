@@ -26,6 +26,11 @@ class DashboardRemoteDatasourceImpl: BaseRemoteDatasource, IDashboardRemoteDatas
     func getAllCoursesCategories(params: Parameters) -> Observable<TBRecommendedSubjectCategoryResponse> {
         makeAPIRequest(path: .allSubjectsCategories, responseType: TBRecommendedSubjectCategoryResponse.self, params: params, encoding: URLEncoding.default, headers: [.authorization(bearerToken: preference.accessToken)])
     }
+    
+    func getRecommendedCourseDetails(tutorSubjectId: String) -> Observable<TBRecommendedSubjectDetailsResponse> {
+//        makeAPIRequest(path: .recommendedSubjectDetails(tutorSubjectId), responseType: TBRecommendedSubjectDetailsResponse.self, headers: [.authorization(bearerToken: preference.accessToken)])
+        makeAPIRequest(path: "https://api.tutorbuddy.net/api/Subject/\(tutorSubjectId)", responseType: TBRecommendedSubjectDetailsResponse.self, headers: [.authorization(bearerToken: preference.accessToken)])
+    }
 }
 
 

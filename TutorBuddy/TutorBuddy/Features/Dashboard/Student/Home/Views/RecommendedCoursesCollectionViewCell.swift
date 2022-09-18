@@ -18,7 +18,7 @@ final class RecommendedCoursesCollectionViewCell: BaseCollectionViewCell {
     
     fileprivate lazy var labelsStackView = VerticalStackView(arrangedSubviews: [courseNameLabel, courseTutorLabel, ratingsStackView], distribution: .equalSpacing)
     fileprivate lazy var containerView = VerticalStackView(arrangedSubviews: [courseImageView, labelsStackView], spacing: 10)
-    fileprivate lazy var container = UIView(subviews: [courseImageView, labelsStackView], backgroundColor: .white)
+    lazy var container = UIView(subviews: [courseImageView, labelsStackView], backgroundColor: .white)
     
     override func setup() {
         super.setup()

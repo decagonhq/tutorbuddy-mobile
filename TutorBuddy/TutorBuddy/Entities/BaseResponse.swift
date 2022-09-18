@@ -139,3 +139,22 @@ struct RecommendedSubjectCategory: Codable, Scopable {
     let categoryId, categoryName: String?
     let subject: [RecommendedSubject]?
 }
+
+struct TBRecommendedSubjectDetailsResponse: Codable {
+    let success: Bool?
+    let data: TBRecommendedSubjectDetailsData?
+    let message: String?
+    let statusCode: Int?
+}
+
+struct TBRecommendedSubjectDetailsData: Codable, Scopable {
+    let topic, thumbnail, description, name, avatar, bioNote, unitOfPrice, createdAt: String?
+    let rating, noOfCourses, price: Int?
+    let tutorComments: [String?]?
+}
+
+struct RecommendedSubjectDetailsData: Scopable {
+    let topic, thumbnail, description, name, avatar, bioNote, unitOfPrice, createdAt: String?
+    let rating, noOfCourses, price: Int?
+    let tutorComments: [String?]?
+}
