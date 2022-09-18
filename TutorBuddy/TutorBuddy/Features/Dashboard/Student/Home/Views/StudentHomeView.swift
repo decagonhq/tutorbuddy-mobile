@@ -29,7 +29,7 @@ class StudentHomeView: BaseScrollView {
     fileprivate lazy var welcomeUserInfoStackView = VerticalStackView(arrangedSubviews: [welcomeLabel, userNameLabel])
     
     fileprivate let reminderButton = TBButton(backgroundColor: .clear, size: 40, image: R.image.clock_icon()?.withRenderingMode(.alwaysOriginal), tapAction: nil)
-    fileprivate let notificationButton = TBButton(backgroundColor: .clear, size: 40, image: R.image.unread_notification_icon()?.withRenderingMode(.alwaysOriginal), tapAction: nil)
+    let notificationButton = TBButton(backgroundColor: .clear, size: 40, image: R.image.unread_notification_icon()?.withRenderingMode(.alwaysOriginal), tapAction: nil)
     fileprivate lazy var iconsStackView = HorizontalStackView(arrangedSubviews: [reminderButton, notificationButton])
     fileprivate let searchBar = UISearchBar(placeholder: .SEARCH, showsCancelButton: false).apply {
         $0.updateAppearance(height: 50, radius: 5, backgroundColor: .white, borderWidth: 1, borderColor: UIColor(red: 0, green: 0, blue: 0, alpha: 0.16))

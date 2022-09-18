@@ -46,7 +46,7 @@ extension Container {
     
     var tutorAccountController: TutorAccountViewController { resolve(TutorAccountViewController.self)! }
     
-    var notificationsController: NotificationsViewController { resolve(NotificationsViewController.self)! }
+    var notificationsController: NotificationViewController { resolve(NotificationViewController.self)! }
     
     var courseDetailsController: CourseDetailsViewController { resolve(CourseDetailsViewController.self)! }
     

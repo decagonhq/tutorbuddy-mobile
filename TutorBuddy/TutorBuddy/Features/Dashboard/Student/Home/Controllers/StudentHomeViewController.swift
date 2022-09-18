@@ -12,11 +12,13 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackgroundColor(.appBackground)
+        navigationItem.backButtonTitle = ""
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         (parent as? TBDashBoardViewController)?.showNavBar(false)
+        (parent as? TBDashBoardViewController)?.configureNavBar(title: "")
         if preference.newFeatureTutorAddedOrRemoved {
             preference.newFeatureTutorAddedOrRemoved = false
             viewModel.getUserDetails()
@@ -30,6 +32,9 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
         with(kview) {
             $0.viewModel = viewModel
             $0.setupBindings()
+            $0.notificationButton.animateViewOnTapGesture {
+                self._pushViewController(AppDelegate.dependencyContainer.notificationsController)
+            }
             $0.seeAllButtonTapHandler = { [weak self] in
                 self?.tabBarController?.selectedIndex = 1
             }

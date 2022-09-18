@@ -29,9 +29,9 @@ struct DashboardDependencyContainer {
         container.register(CourseDetailsViewController.self) { CourseDetailsViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
         
         container.register(TutorHomeViewController.self) { TutorHomeViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
-//        
-//        container.register(NotificationsViewController.self) { NotificationsViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
-//        
+        
+        container.register(NotificationViewController.self) { NotificationViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
+        
         container.register(TutorAccountViewController.self) { TutorAccountViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }
         
         container.register(EditProfileViewController.self) { EditProfileViewController(viewModel: $0.resolve(IDashBoardViewModel.self)!) }

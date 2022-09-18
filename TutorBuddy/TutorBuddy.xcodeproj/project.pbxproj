@@ -22,9 +22,9 @@
 		70B5F17E28898A6E008BD901 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F17D28898A6E008BD901 /* ResetPasswordViewController.swift */; };
 		70B5F18028898B0C008BD901 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B5F17F28898B0C008BD901 /* ResetPasswordView.swift */; };
 		A39CC394D2F012F416F62F74 /* Pods_TutorBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DC1360A0688C72A0395964 /* Pods_TutorBuddy.framework */; };
+		BC146DFD28D70DD8009267EA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC146DFC28D70DD8009267EA /* NotificationView.swift */; };
 		BC32758728C0368F00A4CAA0 /* TutorHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC32758628C0368F00A4CAA0 /* TutorHomeViewController.swift */; };
 		BC32758928C036A500A4CAA0 /* TutorAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC32758828C036A500A4CAA0 /* TutorAccountViewController.swift */; };
-		BC32758B28C036C800A4CAA0 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC32758A28C036C800A4CAA0 /* NotificationsViewController.swift */; };
 		BC32758D28C0398600A4CAA0 /* TutorHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC32758C28C0398600A4CAA0 /* TutorHomeView.swift */; };
 		BC32758F28C03A2F00A4CAA0 /* CourseRequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC32758E28C03A2F00A4CAA0 /* CourseRequestCollectionViewCell.swift */; };
 		BC32759128C040DE00A4CAA0 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC32759028C040DE00A4CAA0 /* NotificationsView.swift */; };
@@ -51,6 +51,7 @@
 		BC8299DC28A39B3D00021DF7 /* RatingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8299DB28A39B3D00021DF7 /* RatingsTableViewCell.swift */; };
 		BC8299DE28A414E300021DF7 /* SuccessfulTutorRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8299DD28A414E300021DF7 /* SuccessfulTutorRequestViewController.swift */; };
 		BC86CB7D28D65CD400BE3A9E /* AllCoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC86CB7C28D65CD400BE3A9E /* AllCoursesView.swift */; };
+		BC86CB8128D7084800BE3A9E /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC86CB8028D7084800BE3A9E /* NotificationViewController.swift */; };
 		BC8BA91028B58D9B0064E44B /* VerifyOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BA90F28B58D9B0064E44B /* VerifyOTPViewController.swift */; };
 		BC8BA91228B58DC90064E44B /* VerifyOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BA91128B58DC80064E44B /* VerifyOTPView.swift */; };
 		BC8BA91428BA696F0064E44B /* FormEntryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BA91328BA696E0064E44B /* FormEntryType.swift */; };
@@ -202,9 +203,9 @@
 		922CBCC9C5E81DE88A688B13 /* Pods_TutorBuddy_TutorBuddyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TutorBuddy_TutorBuddyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FE60279A0906AC8C586B5D /* Pods-TutorBuddy-TutorBuddyUITests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorBuddy-TutorBuddyUITests.staging.xcconfig"; path = "Target Support Files/Pods-TutorBuddy-TutorBuddyUITests/Pods-TutorBuddy-TutorBuddyUITests.staging.xcconfig"; sourceTree = "<group>"; };
 		BB42BAEE00FC7683FA60C693 /* Pods-TutorBuddyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorBuddyTests.release.xcconfig"; path = "Target Support Files/Pods-TutorBuddyTests/Pods-TutorBuddyTests.release.xcconfig"; sourceTree = "<group>"; };
+		BC146DFC28D70DD8009267EA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		BC32758628C0368F00A4CAA0 /* TutorHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorHomeViewController.swift; sourceTree = "<group>"; };
 		BC32758828C036A500A4CAA0 /* TutorAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorAccountViewController.swift; sourceTree = "<group>"; };
-		BC32758A28C036C800A4CAA0 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		BC32758C28C0398600A4CAA0 /* TutorHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorHomeView.swift; sourceTree = "<group>"; };
 		BC32758E28C03A2F00A4CAA0 /* CourseRequestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRequestCollectionViewCell.swift; sourceTree = "<group>"; };
 		BC32759028C040DE00A4CAA0 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
@@ -232,6 +233,7 @@
 		BC8299DB28A39B3D00021DF7 /* RatingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsTableViewCell.swift; sourceTree = "<group>"; };
 		BC8299DD28A414E300021DF7 /* SuccessfulTutorRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulTutorRequestViewController.swift; sourceTree = "<group>"; };
 		BC86CB7C28D65CD400BE3A9E /* AllCoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCoursesView.swift; sourceTree = "<group>"; };
+		BC86CB8028D7084800BE3A9E /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		BC8BA90F28B58D9B0064E44B /* VerifyOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewController.swift; sourceTree = "<group>"; };
 		BC8BA91128B58DC80064E44B /* VerifyOTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPView.swift; sourceTree = "<group>"; };
 		BC8BA91328BA696E0064E44B /* FormEntryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormEntryType.swift; sourceTree = "<group>"; };
@@ -417,21 +419,21 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		70B5F16228881943008BD901 /* Reminder */ = {
+		70B5F16228881943008BD901 /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				BC86CB7B28D65B0F00BE3A9E /* Views */,
 				70B5F167288819B7008BD901 /* Controllers */,
 			);
-			path = Reminder;
+			path = Category;
 			sourceTree = "<group>";
 		};
-		70B5F16328881959008BD901 /* Notification */ = {
+		70B5F16328881959008BD901 /* My Courses */ = {
 			isa = PBXGroup;
 			children = (
 				70B5F16628881998008BD901 /* Controllers */,
 			);
-			path = Notification;
+			path = "My Courses";
 			sourceTree = "<group>";
 		};
 		70B5F16428881971008BD901 /* Account */ = {
@@ -474,6 +476,7 @@
 				70B5F16F28881ADB008BD901 /* StudentHomeViewController.swift */,
 				BC8299D728A3842300021DF7 /* CourseDetailsViewController.swift */,
 				BC8299DD28A414E300021DF7 /* SuccessfulTutorRequestViewController.swift */,
+				BC86CB8028D7084800BE3A9E /* NotificationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -505,8 +508,8 @@
 			isa = PBXGroup;
 			children = (
 				70B5F16428881971008BD901 /* Account */,
-				70B5F16328881959008BD901 /* Notification */,
-				70B5F16228881943008BD901 /* Reminder */,
+				70B5F16328881959008BD901 /* My Courses */,
+				70B5F16228881943008BD901 /* Category */,
 				70B5F16128881935008BD901 /* Home */,
 			);
 			path = Student;
@@ -559,7 +562,6 @@
 		BC32758228C0327300A4CAA0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BC32758A28C036C800A4CAA0 /* NotificationsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -568,7 +570,6 @@
 			isa = PBXGroup;
 			children = (
 				BC32759028C040DE00A4CAA0 /* NotificationsView.swift */,
-				BC32759228C0415B00A4CAA0 /* NotificationTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -606,6 +607,8 @@
 				BC41C682289FCF9900E983A0 /* RecommendedCoursesCollectionViewCell.swift */,
 				BC8299D928A384EB00021DF7 /* CourseDetailsView.swift */,
 				BC8299DB28A39B3D00021DF7 /* RatingsTableViewCell.swift */,
+				BC32759228C0415B00A4CAA0 /* NotificationTableViewCell.swift */,
+				BC146DFC28D70DD8009267EA /* NotificationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1372,6 +1375,7 @@
 				BC32759528C042E700A4CAA0 /* TutorAccountView.swift in Sources */,
 				BCFB815A2882C7CA00C50982 /* TBTutorDashboardViewController.swift in Sources */,
 				70B5F16A28881A36008BD901 /* AccountViewController.swift in Sources */,
+				BC146DFD28D70DD8009267EA /* NotificationView.swift in Sources */,
 				BCFB82922883155000C50982 /* UIView+AutoLayout+Utils.swift in Sources */,
 				BCFB8269288314FB00C50982 /* BaseScrollView.swift in Sources */,
 				BCFB825B288314FB00C50982 /* BaseView.swift in Sources */,
@@ -1404,7 +1408,6 @@
 				BCFB823F2883149D00C50982 /* IconPosition.swift in Sources */,
 				BC32758928C036A500A4CAA0 /* TutorAccountViewController.swift in Sources */,
 				BCFB81E12883127800C50982 /* SignInViewController.swift in Sources */,
-				BC32758B28C036C800A4CAA0 /* NotificationsViewController.swift in Sources */,
 				BCFB81B7288311ED00C50982 /* AnyStruct.swift in Sources */,
 				BCFB81E72883127800C50982 /* BaseViewModel.swift in Sources */,
 				BCFB81ED2883127800C50982 /* OnboardingCollectionViewCell.swift in Sources */,
@@ -1445,6 +1448,7 @@
 				BC8299D828A3842300021DF7 /* CourseDetailsViewController.swift in Sources */,
 				BC8BA91828BA7E8D0064E44B /* ChooseSubjectsViewController.swift in Sources */,
 				BC8BA91228B58DC90064E44B /* VerifyOTPView.swift in Sources */,
+				BC86CB8128D7084800BE3A9E /* NotificationViewController.swift in Sources */,
 				BCFB82392883149D00C50982 /* AttachmentManager.swift in Sources */,
 				BCFB82942883155000C50982 /* Numeric+Utils.swift in Sources */,
 				BC32759B28C4E8AE00A4CAA0 /* IDashboardRemoteDatasource.swift in Sources */,
