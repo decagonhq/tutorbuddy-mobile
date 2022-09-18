@@ -50,6 +50,7 @@
 		BC8299DA28A384EB00021DF7 /* CourseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8299D928A384EB00021DF7 /* CourseDetailsView.swift */; };
 		BC8299DC28A39B3D00021DF7 /* RatingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8299DB28A39B3D00021DF7 /* RatingsTableViewCell.swift */; };
 		BC8299DE28A414E300021DF7 /* SuccessfulTutorRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8299DD28A414E300021DF7 /* SuccessfulTutorRequestViewController.swift */; };
+		BC86CB7D28D65CD400BE3A9E /* AllCoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC86CB7C28D65CD400BE3A9E /* AllCoursesView.swift */; };
 		BC8BA91028B58D9B0064E44B /* VerifyOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BA90F28B58D9B0064E44B /* VerifyOTPViewController.swift */; };
 		BC8BA91228B58DC90064E44B /* VerifyOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BA91128B58DC80064E44B /* VerifyOTPView.swift */; };
 		BC8BA91428BA696F0064E44B /* FormEntryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BA91328BA696E0064E44B /* FormEntryType.swift */; };
@@ -230,6 +231,7 @@
 		BC8299D928A384EB00021DF7 /* CourseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsView.swift; sourceTree = "<group>"; };
 		BC8299DB28A39B3D00021DF7 /* RatingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsTableViewCell.swift; sourceTree = "<group>"; };
 		BC8299DD28A414E300021DF7 /* SuccessfulTutorRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulTutorRequestViewController.swift; sourceTree = "<group>"; };
+		BC86CB7C28D65CD400BE3A9E /* AllCoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCoursesView.swift; sourceTree = "<group>"; };
 		BC8BA90F28B58D9B0064E44B /* VerifyOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewController.swift; sourceTree = "<group>"; };
 		BC8BA91128B58DC80064E44B /* VerifyOTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPView.swift; sourceTree = "<group>"; };
 		BC8BA91328BA696E0064E44B /* FormEntryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormEntryType.swift; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 		70B5F16228881943008BD901 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				BC86CB7B28D65B0F00BE3A9E /* Views */,
 				70B5F167288819B7008BD901 /* Controllers */,
 			);
 			path = Reminder;
@@ -603,6 +606,14 @@
 				BC41C682289FCF9900E983A0 /* RecommendedCoursesCollectionViewCell.swift */,
 				BC8299D928A384EB00021DF7 /* CourseDetailsView.swift */,
 				BC8299DB28A39B3D00021DF7 /* RatingsTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BC86CB7B28D65B0F00BE3A9E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC86CB7C28D65CD400BE3A9E /* AllCoursesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1338,6 +1349,7 @@
 				BCFB81A12882F47200C50982 /* AuthDependencyContainer.swift in Sources */,
 				BCFB823B2883149D00C50982 /* ResponseViewController.swift in Sources */,
 				BCFB82962883155000C50982 /* Typealiases+Utils.swift in Sources */,
+				BC86CB7D28D65CD400BE3A9E /* AllCoursesView.swift in Sources */,
 				BC533A9E2886850600D2A6DA /* SelectOptionsView.swift in Sources */,
 				BCFB826A288314FB00C50982 /* Loader.swift in Sources */,
 				BC533AA62887E56500D2A6DA /* WelcomeView.swift in Sources */,

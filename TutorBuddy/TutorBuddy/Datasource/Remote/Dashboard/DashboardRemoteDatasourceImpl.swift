@@ -20,7 +20,11 @@ class DashboardRemoteDatasourceImpl: BaseRemoteDatasource, IDashboardRemoteDatas
     }
     
     func getAllRecommendedSubjects(params: Parameters) -> Observable<TBRecommendedSubjectsResponse> {
-        makeAPIRequest(path: .recommendedSubjects, responseType: TBRecommendedSubjectsResponse.self,params: params, encoding: URLEncoding.default)
+        makeAPIRequest(path: .recommendedSubjects, responseType: TBRecommendedSubjectsResponse.self, params: params, encoding: URLEncoding.default, headers: [.authorization(bearerToken: preference.accessToken)])
+    }
+    
+    func getAllCoursesCategories(params: Parameters) -> Observable<TBRecommendedSubjectCategoryResponse> {
+        makeAPIRequest(path: .allSubjectsCategories, responseType: TBRecommendedSubjectCategoryResponse.self, params: params, encoding: URLEncoding.default, headers: [.authorization(bearerToken: preference.accessToken)])
     }
 }
 

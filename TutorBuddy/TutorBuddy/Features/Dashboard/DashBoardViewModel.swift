@@ -19,9 +19,13 @@ protocol IDashBoardViewModel {
     
     var recommendedSubjects: [RecommendedSubject] { get }
     
+    var allCoursesCategories: [RecommendedSubjectCategory] { get }
+    
     var showFeaturedTutors: PublishSubject<Bool> { get }
     
     var showRecommendedSubjects: PublishSubject<Bool> { get }
+    
+    var showAllCoursesCategories: PublishSubject<Bool> { get }
     
     var noFeaturedTutorsMessage: String { get }
     
@@ -32,4 +36,6 @@ protocol IDashBoardViewModel {
     func getFeaturedTutors(params: Parameters)
     
     func getAllRecommendedSubjects(params: Parameters)
+    
+    func getAllCoursesCategories(params: Parameters)
 }

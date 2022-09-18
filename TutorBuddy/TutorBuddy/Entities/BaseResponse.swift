@@ -87,14 +87,55 @@ struct TBRecommendedSubjectsData: Codable {
 }
 
 struct RecommendedSubject: Codable, Scopable {
-    let id, subject, thumbnail, description, tutorSubjectId, tutor: String?
+    let id, subject, thumbnail, description, tutorSubjectId, tutor, tutorImage: String?
     let rating, userCount: Int?
     
     enum CodingKeys: String, CodingKey {
-        case id, subject, thumbnail, description, tutorSubjectId, tutor, userCount, rating = "rate"
+        case id, subject, thumbnail, description, tutorSubjectId, tutor, tutorImage, userCount, rating = "rate"
     }
 }
 
 struct Pagination: Codable, Scopable {
     let totalNumberOfPages, currentPage, pageSize, previousPage: Int?
+}
+
+struct TBRecommendedSubjectCategoryResponse: Codable {
+    let success: Bool?
+    let data: TBRecommendedSubjectCategoryData?
+    let message: String?
+    let statusCode: Int?
+}
+
+struct TBRecommendedSubjectCategoryData: Codable {
+    let pageItems: [RecommendedSubjectCategory]?
+    let pagination: Pagination?
+}
+
+enum SubjectCategorySection {
+    case basicScience([RecommendedSubject])
+    case programmingLanguage([RecommendedSubject])
+    
+    var items: [RecommendedSubject] {
+        switch self {
+        case .basicScience(let items),
+                .programmingLanguage(let items):
+            return items
+        }
+    }
+    
+    var count: Int { items.count }
+    
+    var localized: String {
+        switch self {
+        case .basicScience:
+            return "Basic Science"
+        case .programmingLanguage:
+            return "Programming Language"
+        }
+    }
+}
+
+struct RecommendedSubjectCategory: Codable, Scopable {
+    let categoryId, categoryName: String?
+    let subject: [RecommendedSubject]?
 }

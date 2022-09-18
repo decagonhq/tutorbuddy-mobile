@@ -16,9 +16,11 @@ class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
     var userUpdated = PublishSubject<Bool>()
     var userName = BehaviorSubject(value: "")
     var showFeaturedTutors = PublishSubject<Bool>()
+    var recommendedSubjects = [RecommendedSubject]()
     fileprivate let authRemote: IAuthRemoteDatasource
     var showRecommendedSubjects = PublishSubject<Bool>()
-    var recommendedSubjects = [RecommendedSubject]()
+    var showAllCoursesCategories = PublishSubject<Bool>()
+    var allCoursesCategories = [RecommendedSubjectCategory]()
     fileprivate let dashboardRemote: IDashboardRemoteDatasource
     fileprivate let commonRemote: ICommonRequestsRemoteDatasource
     var noFeaturedTutorsMessage: String = .NO_FEATURED_TUTORS_FOUND
@@ -66,6 +68,17 @@ class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
         subscribe(dashboardRemote.getAllRecommendedSubjects(params: params), success: { [weak self] recommendedSubjectsRes in
             self?.recommendedSubjects = recommendedSubjectsRes.data?.pageItems ?? []
             self?.showRecommendedSubjects.onNext(true)
+        })
+    }
+    
+    func getAllCoursesCategories(params: Parameters) {
+        let params: Parameters = [
+            "pageSize": 10000,
+            "pageNumber": 1
+        ]
+        subscribe(dashboardRemote.getAllCoursesCategories(params: params), success: { [weak self] allCoursesCategoriesRes in
+            self?.allCoursesCategories = allCoursesCategoriesRes.data?.pageItems ?? []
+            self?.showAllCoursesCategories.onNext(true)
         })
     }
     
