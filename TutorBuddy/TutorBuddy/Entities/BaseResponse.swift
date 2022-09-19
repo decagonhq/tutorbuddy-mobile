@@ -170,3 +170,9 @@ struct TBFeaturedTutorDetailsData: Codable, Scopable {
     let fullName, avatar, bioNote: String?
     let subject, avaliabilities: [String]?
 }
+
+struct DashboardData: Codable, Scopable {
+    let userDetails: TBUserData?
+    let featuredTutors: [FeaturedTutor]?
+    let recommendedSubjects: [RecommendedSubject]?
+}

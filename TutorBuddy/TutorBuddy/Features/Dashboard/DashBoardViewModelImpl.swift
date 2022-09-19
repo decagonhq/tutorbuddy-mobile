@@ -28,9 +28,9 @@ class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
     fileprivate let dashboardRemote: IDashboardRemoteDatasource
     fileprivate let commonRemote: ICommonRequestsRemoteDatasource
     var noFeaturedTutorsMessage: String = .NO_FEATURED_TUTORS_FOUND
+    var noRecommendedCoursesMessage: String = .NO_RECOMMENDED_COURSES_FOUND
     var recommendedSubjectDetailsData = PublishSubject<RecommendedSubjectDetailsData>()
     var featuredTutorDetailsData = PublishSubject<TBFeaturedTutorDetailsData>()
-    
     
     init(preference:IPreference, dashboardRemote: IDashboardRemoteDatasource, authRemote: IAuthRemoteDatasource, commonRemote: ICommonRequestsRemoteDatasource) {
         self.preference =  preference
@@ -61,20 +61,6 @@ class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
                 self?.showMessage("User updated successfully.", type: .success)
             })
         }
-    }
-    
-    func getFeaturedTutors(params: Parameters) {
-        subscribe(dashboardRemote.getFeaturedTutors(params: params), success: { [weak self] featuredTutorsRes in
-            self?.featuredTutors = featuredTutorsRes.data ?? []
-            self?.showFeaturedTutors.onNext(true)
-        })
-    }
-    
-    func getAllRecommendedSubjects(params: Parameters) {
-        subscribe(dashboardRemote.getAllRecommendedSubjects(params: params), success: { [weak self] recommendedSubjectsRes in
-            self?.recommendedSubjects = recommendedSubjectsRes.data?.pageItems ?? []
-            self?.showRecommendedSubjects.onNext(true)
-        })
     }
     
     func getAllCoursesCategories(params: Parameters) {
@@ -136,6 +122,23 @@ class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
         })
     }
     
+    func getDashboardData() {
+        subscribe(
+            Observable.zip(
+                dashboardRemote.getUserDetails(id: preference.userID),
+                dashboardRemote.getFeaturedTutors(params: [:]),
+                dashboardRemote.getAllRecommendedSubjects(params: [:])
+            ), success: { [weak self] userDetailsRes, featuredTutorsRes, recommendedSubjectsRes in
+                self?.preference.user = userDetailsRes.data
+                self?.userName.onNext((userDetailsRes.data?.firstName ?? "John") + " " + (userDetailsRes.data?.lastName ?? "Doe"))
+                self?.recommendedSubjects = recommendedSubjectsRes.data?.pageItems ?? []
+                self?.featuredTutors = featuredTutorsRes.data ?? []
+                self?.showFeaturedTutors.onNext(true)
+                self?.showRecommendedSubjects.onNext(true)
+            }
+        )
+    }
+    
     fileprivate func refreshToken() {
         let params: Parameters = [
             "userId": self.preference.userID,
@@ -146,4 +149,5 @@ class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
             self?.preference.refreshToken = refreshTokenRes.data?.newRefreshToken.orEmpty ?? ""
         })
     }
+    
 }

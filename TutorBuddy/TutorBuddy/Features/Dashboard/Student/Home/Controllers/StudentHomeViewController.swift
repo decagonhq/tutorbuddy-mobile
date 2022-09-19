@@ -21,9 +21,7 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
         (parent as? TBDashBoardViewController)?.configureNavBar(title: "")
         if preference.newFeatureTutorAddedOrRemoved {
             preference.newFeatureTutorAddedOrRemoved = false
-            viewModel.getUserDetails()
-            viewModel.getFeaturedTutors(params: [:])
-            viewModel.getAllRecommendedSubjects(params: [:])
+            viewModel.getDashboardData()
         }
     }
     
@@ -50,10 +48,7 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
                 self?.viewModel.getFeaturedTutorDetails()
             }
         }
-        
-        viewModel.getUserDetails()
-        viewModel.getFeaturedTutors(params: [:])
-        viewModel.getAllRecommendedSubjects(params: [:])
+        viewModel.getDashboardData()
     }
     
     override func setChildViewControllerObservers() {

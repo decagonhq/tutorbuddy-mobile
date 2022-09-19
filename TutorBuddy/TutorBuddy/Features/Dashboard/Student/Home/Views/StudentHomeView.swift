@@ -27,7 +27,6 @@ class StudentHomeView: BaseScrollView {
     fileprivate let welcomeLabel = UILabel(text: "Welcome", font: .interRegular(size: 16), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     let userNameLabel = UILabel(text: "", font: .interExtraBold(size: 25), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate lazy var welcomeUserInfoStackView = VerticalStackView(arrangedSubviews: [welcomeLabel, userNameLabel])
-    
     fileprivate let reminderButton = TBButton(backgroundColor: .clear, size: 40, image: R.image.clock_icon()?.withRenderingMode(.alwaysOriginal), tapAction: nil)
     let notificationButton = TBButton(backgroundColor: .clear, size: 40, image: R.image.unread_notification_icon()?.withRenderingMode(.alwaysOriginal), tapAction: nil)
     fileprivate lazy var iconsStackView = HorizontalStackView(arrangedSubviews: [reminderButton, notificationButton])
@@ -36,18 +35,13 @@ class StudentHomeView: BaseScrollView {
     }
     
     fileprivate let topContainerView = UIView(height: 165, backgroundColor: .primaryColor.withAlphaComponent(0.1))
-    
     fileprivate let featuredTutorsLabel = UILabel(text: "Featured Tutors", font: .interExtraBold(size: 15), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate lazy var featuredTutorsCollectionView = BaseCollectionView(cell: FeaturedTutorsCollectionViewCell.self, direction: .horizontal, interitemSpacing: 0, height: 130, delegate: self, dataSource: self)
     fileprivate lazy var featuredTutorsStackView = VerticalStackView(arrangedSubviews: [featuredTutorsLabel, featuredTutorsCollectionView], spacing: 8)
-    
     fileprivate let recommendedCoursesLabel = UILabel(text: "Recommended Courses", font: .interExtraBold(size: 15), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate lazy var seeAllButton = TBButton(title: "See all", font: .interExtraBold(size: 15), backgroundColor: .clear, textColor: .primaryColor, tapAction: seeAllButtonTapped)
     fileprivate lazy var recommendedCoursesStackView = HorizontalStackView(arrangedSubviews: [recommendedCoursesLabel, seeAllButton])
-    
     fileprivate lazy var recommendedCoursesCollectionView = BaseCollectionView(cell: RecommendedCoursesCollectionViewCell.self, direction: .vertical, lineSpacing: 20, height: 700, delegate: self, dataSource: self)
-    
-    
     
     override func setup() {
         super.setup()
@@ -119,7 +113,7 @@ class StudentHomeView: BaseScrollView {
     fileprivate func showRecommendedSubjects() {
         with(recommendedCoursesCollectionView) {
             if _data.isEmpty {
-                $0.setEmptyMessage(viewModel?.noFeaturedTutorsMessage ?? "")
+                $0.setEmptyMessage(viewModel?.noRecommendedCoursesMessage ?? "")
             } else {
                 $0.restore()
             }
@@ -142,8 +136,8 @@ class StudentHomeView: BaseScrollView {
     
 }
 
-
 extension StudentHomeView: UICollectionViewConformable {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == featuredTutorsCollectionView {
             return data.count

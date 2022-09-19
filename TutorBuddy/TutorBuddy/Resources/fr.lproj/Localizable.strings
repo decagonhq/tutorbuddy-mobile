@@ -79,6 +79,7 @@
 "CarsWithoutLoanKey" = "Voitures sans prêt";
 "PendingInspectionKey" = "En attente d'inspection";
 "NoFeaturedTutorsFoundKey" = "aucun tuteur en vedette trouvé.";
+"NoRecommendedCoursesFoundKey" = "Aucun cours recommandé trouvé.";
 "FiltersKey" = "Filtres";
 "ApplyFiltersKey" = "Appliquer des filtres";
 "UnableToGetMakesKey" = "Impossible d'obtenir les marques et les modèles, veuillez réessayer";
