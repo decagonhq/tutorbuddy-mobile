@@ -176,3 +176,31 @@ struct DashboardData: Codable, Scopable {
     let featuredTutors: [FeaturedTutor]?
     let recommendedSubjects: [RecommendedSubject]?
 }
+
+struct TBSessionStartResponse: Codable {
+    let success,  data: Bool?
+    let message: String?
+    let statusCode: Int?
+}
+
+struct MyCourseResponse: Codable {
+    let success: Bool?
+    let data: MyCourseData?
+    let message: String?
+    let statusCode: Int?
+}
+
+struct MyCourseData: Codable {
+    let pageItems: [MyCourse]?
+    let pagination: Pagination?
+}
+
+struct MyCourse: Codable, Scopable {
+    let sessionId, topic, thumbnail, tutor, student, studentImage, tutorImage: String?
+    let startTime, endTime: String?
+    let status: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case sessionId, topic, thumbnail, tutor, student, studentImage, tutorImage, startTime = "startime", endTime, status
+    }
+}

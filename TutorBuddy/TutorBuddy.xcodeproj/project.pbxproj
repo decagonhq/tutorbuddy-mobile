@@ -45,6 +45,8 @@
 		BC533AA2288696D600D2A6DA /* TutorSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533AA1288696D600D2A6DA /* TutorSignUpView.swift */; };
 		BC533AA42887E54B00D2A6DA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533AA32887E54B00D2A6DA /* WelcomeViewController.swift */; };
 		BC533AA62887E56500D2A6DA /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC533AA52887E56500D2A6DA /* WelcomeView.swift */; };
+		BC73192528DA459400189EFC /* MyCoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC73192428DA459400189EFC /* MyCoursesView.swift */; };
+		BC73192728DA47F400189EFC /* MyCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC73192628DA47F400189EFC /* MyCourseTableViewCell.swift */; };
 		BC8299D628A25CAF00021DF7 /* TutorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8299D528A25CAF00021DF7 /* TutorDetailsViewController.swift */; };
 		BC8299D828A3842300021DF7 /* CourseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8299D728A3842300021DF7 /* CourseDetailsViewController.swift */; };
 		BC8299DA28A384EB00021DF7 /* CourseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8299D928A384EB00021DF7 /* CourseDetailsView.swift */; };
@@ -227,6 +229,8 @@
 		BC533AA1288696D600D2A6DA /* TutorSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorSignUpView.swift; sourceTree = "<group>"; };
 		BC533AA32887E54B00D2A6DA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		BC533AA52887E56500D2A6DA /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		BC73192428DA459400189EFC /* MyCoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoursesView.swift; sourceTree = "<group>"; };
+		BC73192628DA47F400189EFC /* MyCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCourseTableViewCell.swift; sourceTree = "<group>"; };
 		BC8299D528A25CAF00021DF7 /* TutorDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorDetailsViewController.swift; sourceTree = "<group>"; };
 		BC8299D728A3842300021DF7 /* CourseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsViewController.swift; sourceTree = "<group>"; };
 		BC8299D928A384EB00021DF7 /* CourseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsView.swift; sourceTree = "<group>"; };
@@ -431,6 +435,7 @@
 		70B5F16328881959008BD901 /* My Courses */ = {
 			isa = PBXGroup;
 			children = (
+				BC73192328DA457500189EFC /* Views */,
 				70B5F16628881998008BD901 /* Controllers */,
 			);
 			path = "My Courses";
@@ -609,6 +614,15 @@
 				BC8299DB28A39B3D00021DF7 /* RatingsTableViewCell.swift */,
 				BC32759228C0415B00A4CAA0 /* NotificationTableViewCell.swift */,
 				BC146DFC28D70DD8009267EA /* NotificationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BC73192328DA457500189EFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC73192428DA459400189EFC /* MyCoursesView.swift */,
+				BC73192628DA47F400189EFC /* MyCourseTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1392,6 +1406,7 @@
 				70B5F17E28898A6E008BD901 /* ResetPasswordViewController.swift in Sources */,
 				BCF1536C28B282120003767F /* AccountTableViewCell.swift in Sources */,
 				BC533AA2288696D600D2A6DA /* TutorSignUpView.swift in Sources */,
+				BC73192528DA459400189EFC /* MyCoursesView.swift in Sources */,
 				BCFB828E2883155000C50982 /* Constants.swift in Sources */,
 				BCFB825E288314FB00C50982 /* TBRatingLabel.swift in Sources */,
 				BCFB81562882C7CA00C50982 /* AppDelegate.swift in Sources */,
@@ -1453,6 +1468,7 @@
 				BCFB82942883155000C50982 /* Numeric+Utils.swift in Sources */,
 				BC32759B28C4E8AE00A4CAA0 /* IDashboardRemoteDatasource.swift in Sources */,
 				BC32758F28C03A2F00A4CAA0 /* CourseRequestCollectionViewCell.swift in Sources */,
+				BC73192728DA47F400189EFC /* MyCourseTableViewCell.swift in Sources */,
 				BCFB81982882F47200C50982 /* DependencyContainer.swift in Sources */,
 				BCFB8264288314FB00C50982 /* PickerManager.swift in Sources */,
 				70B5F17C28894870008BD901 /* CheckMailView.swift in Sources */,

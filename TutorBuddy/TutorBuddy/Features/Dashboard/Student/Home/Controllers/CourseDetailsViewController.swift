@@ -22,23 +22,30 @@ final class CourseDetailsViewController: BaseViewController<CourseDetailsView, I
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackgroundColor(.appBackground)
+        viewModel.selectedRecommendedCourse = course
         kview.ratingsTableView.tableHeaderView = kview.headerView
         with(kview) {
-            $0.scheduleTimeIconText.animateViewOnTapGesture { [weak self] in
-                guard let self = self else { return }
-                self.showDatePickerDialog(maxDate: currentDate(format: "dd-MM-yyyy"))
+            $0.engageTutorButtonErrorHandler = { [weak self] in
+                self?.showMessage("make sure all neccessary fields are filled.", type: .error)
             }
             
-            $0.engageTutorButtonTapHandler = { [weak self] in
-                with(SuccessfulTutorRequestViewController().apply { $0.dismissHandler = { [weak self] in
-                    self?.dismissViewController(animated: true)
-                }}) {
-                    $0.modalPresentationStyle = .overFullScreen
-                    $0.setBackgroundColor()
-                    self?.present($0, animated: true)
-                }
+            $0.engageTutorButtonTapHandler = { [weak self] startTime, endTime in
+                print(startTime, endTime)
+//                with(SuccessfulTutorRequestViewController().apply { $0.dismissHandler = { [weak self] in
+//                    self?.dismissViewController(animated: true)
+//                }}) {
+//                    $0.modalPresentationStyle = .overFullScreen
+//                    $0.setBackgroundColor()
+//                    self?.present($0, animated: true)
+//                }
+                self?.viewModel.engageTutor(from: startTime, to: endTime)
             }
         }
+    }
+    
+    override func setChildViewControllerObservers() {
+        super.setChildViewControllerObservers()
+        observeSessionStarted()
     }
     
     override func addSubviewConstraints() {
@@ -67,6 +74,21 @@ final class CourseDetailsViewController: BaseViewController<CourseDetailsView, I
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         updateHeaderViewHeight(for: kview.ratingsTableView.tableHeaderView)
+    }
+    
+    fileprivate func observeSessionStarted() {
+        viewModel.showSessionStarted.bind { [weak self] show in
+            if show {
+                with(SuccessfulTutorRequestViewController().apply { $0.dismissHandler = { [weak self] in
+                    self?.dismissViewController(animated: true)
+                }}) {
+                    $0.modalPresentationStyle = .overFullScreen
+                    $0.setBackgroundColor()
+                    self?.present($0, animated: true)
+                }
+                
+            }
+        }.disposed(by: disposeBag)
     }
 
     fileprivate func updateHeaderViewHeight(for header: UIView?) {

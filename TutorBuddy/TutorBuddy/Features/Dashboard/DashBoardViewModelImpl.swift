@@ -11,14 +11,18 @@ import Alamofire
 
 class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
     
+    
     var preference: IPreference
+    var myCourses = [MyCourse]()
     var featuredTutors = [FeaturedTutor]()
     var userUpdated = PublishSubject<Bool>()
     var userName = BehaviorSubject(value: "")
+    var showMyCourses = PublishSubject<Bool>()
     var showTutorComments = PublishSubject<Bool>()
     var tutorComments = PublishSubject<[String?]>()
     var showFeaturedTutors = PublishSubject<Bool>()
     var selectedFeatureTutor: FeaturedTutor? = nil
+    var showSessionStarted = PublishSubject<Bool>()
     var recommendedSubjects = [RecommendedSubject]()
     fileprivate let authRemote: IAuthRemoteDatasource
     var showRecommendedSubjects = PublishSubject<Bool>()
@@ -137,6 +141,35 @@ class DashBoardViewModelImpl: BaseViewModel, IDashBoardViewModel {
                 self?.showRecommendedSubjects.onNext(true)
             }
         )
+    }
+    
+    func engageTutor(from: String, to: String) {
+        guard let tutorSubjectId = selectedRecommendedCourse?.tutorSubjectId else { showMessage("ensure you have selected a particular subject.", type: .error); print(selectedRecommendedCourse?.tutorSubjectId); return }
+        let params: Parameters = [
+            "tutorSubjectId": tutorSubjectId,
+            "studentId": preference.userID,
+            "startTime": from,
+            "endTime": to
+        ]
+        subscribe(dashboardRemote.startSession(params: params), errorMessage: .AN_ERROR_OCCURRED_TRY_AGAIN, success: { [weak self] startSessionRes in
+            if startSessionRes.success == true {
+                self?.showSessionStarted.onNext(true)
+            } else {
+                self?.showMessage(.AN_ERROR_OCCURRED_TRY_AGAIN, type: .error)
+            }
+        })
+    }
+    
+    func getMyCourses(params: Parameters) {
+        let params: Parameters = [
+            "pageSize": 10000,
+            "pageNumber": 1
+        ]
+        subscribe(dashboardRemote.getMyCourses(params: params), errorMessage: .NO_DATA_FOUND, success: { [weak self] myCoursesRes in
+            self?.myCourses = myCoursesRes.data?.pageItems ?? []
+            self?.showMyCourses.onNext(true)
+            print(myCoursesRes)
+        })
     }
     
     fileprivate func refreshToken() {

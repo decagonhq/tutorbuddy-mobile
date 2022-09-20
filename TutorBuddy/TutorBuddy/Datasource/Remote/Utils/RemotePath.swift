@@ -9,6 +9,7 @@ enum RemotePath {
     
     case login, register, requestOTP, verifyOTP, resetPassword, updateUser, refreshToken
     case featuredTutors, recommendedSubjects, allSubjectsCategories, recommendedSubjectDetails(String), featuredTutorDetails(String)
+    case session, studentSession(String), tutorSession(String)
     case documentUpload, imageUpload
     case carMakes, carModels, auctionDetails(String)
     case user(String), myLocation, colors, states, cities, bodyTypes, franchise
@@ -40,6 +41,12 @@ enum RemotePath {
             return "Subject/\(tutorSubjectId)"
         case .featuredTutorDetails(let id):
             return "Tutor/\(id)"
+        case .session:
+            return "Session"
+        case .studentSession(let studentId):
+            return "Session/\(studentId)/student"
+        case .tutorSession(let tutorId):
+            return "Session/\(tutorId)/tutor"
         case .documentUpload:
             return "document/upload"
         case .imageUpload:

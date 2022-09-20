@@ -61,7 +61,7 @@ class StudentHomeViewController: BaseViewController<StudentHomeView, IDashBoardV
     fileprivate func observeRecommendedSubjectDetailsData() {
         viewModel.recommendedSubjectDetailsData.bind { [weak self] data in
             guard let self = self else { return }
-            with(AppDelegate.dependencyContainer.courseDetailsController.apply { $0.recommendedSubjectDetailsData = data; $0.ratings = data.tutorComments }) {
+            with(AppDelegate.dependencyContainer.courseDetailsController.apply { $0.recommendedSubjectDetailsData = data; $0.ratings = data.tutorComments; $0.course = self.viewModel.selectedRecommendedCourse }) {
                 $0.modalPresentationStyle = .overFullScreen
                 $0.setBackgroundColor()
                 self.present($0, animated: true)

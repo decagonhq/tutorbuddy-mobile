@@ -35,6 +35,19 @@ class DashboardRemoteDatasourceImpl: BaseRemoteDatasource, IDashboardRemoteDatas
     func getFeaturedTutorDetails(id: String) -> Observable<TBFeaturedTutorDetailsResponse> {
         makeAPIRequest(path: .featuredTutorDetails(id), responseType: TBFeaturedTutorDetailsResponse.self, headers: [.authorization(bearerToken: preference.accessToken)])
     }
+    
+    func startSession(params: Parameters) -> Observable<TBSessionStartResponse> {
+        makeAPIRequest(path: .session, responseType: TBSessionStartResponse.self, method: .post, params: params)
+    }
+    
+    func getMyCourses(params: Parameters) -> Observable<MyCourseResponse> {
+        let userRole = preference.roles.first
+        if userRole == .STUDENT {
+            return makeAPIRequest(path: .studentSession(preference.userID), responseType: MyCourseResponse.self, headers: [.authorization(bearerToken: preference.accessToken)])
+        } else {
+            return makeAPIRequest(path: .tutorSession(preference.userID), responseType: MyCourseResponse.self, headers: [.authorization(bearerToken: preference.accessToken)])
+        }
+    }
 }
 
 

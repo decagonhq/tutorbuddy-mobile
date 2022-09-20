@@ -80,6 +80,8 @@
 "PendingInspectionKey" = "En attente d'inspection";
 "NoFeaturedTutorsFoundKey" = "aucun tuteur en vedette trouvé.";
 "NoRecommendedCoursesFoundKey" = "Aucun cours recommandé trouvé.";
+"PickDateKey" = "Choisis une date";
+"PickTimeKey" = "Choisissez une heure";
 "FiltersKey" = "Filtres";
 "ApplyFiltersKey" = "Appliquer des filtres";
 "UnableToGetMakesKey" = "Impossible d'obtenir les marques et les modèles, veuillez réessayer";

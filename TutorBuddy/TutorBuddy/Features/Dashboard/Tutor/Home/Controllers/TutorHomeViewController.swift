@@ -15,9 +15,13 @@ final class TutorHomeViewController: BaseViewController<TutorHomeView, IDashBoar
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.getUserDetails()
         super.viewWillAppear(animated)
+        viewModel.getUserDetails()
         (parent as? TBTutorDashboardViewController)?.showNavBar(false)
+    }
+    
+    override func configureViews() {
+        super.configureViews()
     }
     
     override func setChildViewControllerObservers() {

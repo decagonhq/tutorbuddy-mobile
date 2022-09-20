@@ -43,6 +43,12 @@ protocol IDashBoardViewModel {
     
     var featuredTutorDetailsData: PublishSubject<TBFeaturedTutorDetailsData> { get }
     
+    var showSessionStarted: PublishSubject<Bool> { get }
+    
+    var showMyCourses: PublishSubject<Bool> { get }
+    
+    var myCourses: [MyCourse] { get }
+    
     func getUserDetails()
     
     func updateUser(with fullName: String, and email: String)
@@ -54,5 +60,9 @@ protocol IDashBoardViewModel {
     func getFeaturedTutorDetails()
     
     func getDashboardData()
+    
+    func engageTutor(from: String, to: String)
+    
+    func getMyCourses(params: Parameters)
     
 }

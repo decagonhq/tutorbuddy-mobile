@@ -22,4 +22,8 @@ protocol IDashboardRemoteDatasource {
     func getRecommendedCourseDetails(tutorSubjectId: String) -> Observable<TBRecommendedSubjectDetailsResponse>
     
     func getFeaturedTutorDetails(id: String) -> Observable<TBFeaturedTutorDetailsResponse>
+    
+    func startSession(params: Parameters) -> Observable<TBSessionStartResponse>
+    
+    func getMyCourses(params: Parameters) -> Observable<MyCourseResponse>
 }
