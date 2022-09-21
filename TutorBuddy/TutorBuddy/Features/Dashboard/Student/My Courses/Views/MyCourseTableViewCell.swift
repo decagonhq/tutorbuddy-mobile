@@ -42,7 +42,7 @@ class MyCourseTableViewCell: BaseTableViewCell {
         separatorView.anchor(top: containerView.bottomAnchor, leading: _leadingAnchor, bottom: _bottomAnchor, trailing: _trailingAnchor)
     }
     
-    func configure(with course: MyCourse, status: ProgressStatus, action: MyCourseActionClosure?) {
+    func configure(with course: MyCourse, action: MyCourseActionClosure?) {
         course.do {
             if let thumbnailUrl  = $0.thumbnail, thumbnailUrl.isNotEmpty {
                 courseImageView.imageView.setImageFromURL(url: thumbnailUrl)
@@ -55,11 +55,12 @@ class MyCourseTableViewCell: BaseTableViewCell {
                 rateTutorLabel.backgroundColor = UIColor("#FCD635")
                 completedLabel.text = "Complete"
                 progressViewThree.showView()
+                progressViewTwo.showView(false)
             } else {
                 rateTutorLabel.backgroundColor = .primaryGrey
                 completedLabel.text = "Your progress"
                 progressViewTwo.showView()
-
+                progressViewThree.showView(false)
             }
         }
     }

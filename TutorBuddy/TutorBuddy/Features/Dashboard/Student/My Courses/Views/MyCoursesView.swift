@@ -53,24 +53,8 @@ extension MyCoursesView: UITableViewConformable {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let course = myCourses[indexPath.row]
         return tableView.deque(cell: MyCourseTableViewCell.self, at: indexPath).apply {
-            $0.configure(with: course, status: .inProgress, action: nil)
+            $0.configure(with: course, action: nil)
         }
-//        return tableView.deque(cell: MyCourseTableViewCell.self, at: indexPath).apply {
-//            $0.configure(with:
-//                            RecommendedSubject(
-//                                id: nil,
-//                                subject: "Chemistry for beginners: 30 days perfection",
-//                                thumbnail: "https://res.cloudinary.com/djrjrb0a4/image/upload/v1659757360/iOS-Apple_kans4s.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At nibh quam odio sit vestibulum sagittis urna.",
-//                                tutorSubjectId: nil,
-//                                tutor: "Kolawole Folahanmi",
-//                                tutorImage: "",
-//                                rating: 5,
-//                                userCount: 10
-//                            ),
-//                         status: .inProgress,
-//                         action: nil
-//            )
-//        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

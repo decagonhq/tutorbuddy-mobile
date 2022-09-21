@@ -33,17 +33,6 @@ struct CourseRequest: Scopable {
 
 enum ProgressStatus: Int, CaseIterable {
     case inProgress, completed, cancelled
-    
-//    var localized: String {
-//        switch self {
-//        case .inProgress:
-//            return "In progress"
-//        case .completed:
-//            return "Completed"
-//        case .cancelled:
-//            return "Cancelled"
-//        }
-//    }
 }
 
 struct Rating: Scopable {
