@@ -76,6 +76,9 @@
 "CarsWithoutLoanKey" = "Cars without Loan";
 "PendingInspectionKey" = "Pending Inspection";
 "NoFeaturedTutorsFoundKey" = "No featured tutors found.";
+"NoRecommendedCoursesFoundKey" = "No recommended courses found.";
+"PickDateKey" = "Pick a date";
+"PickTimeKey" = "Pick a time";
 "FiltersKey" = "Filters";
 "ApplyFiltersKey" = "Apply Filters";
 "UnableToGetMakesKey" = "Unable to get makes & models, please try again";

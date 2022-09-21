@@ -11,7 +11,7 @@ import RxSwift
 
 final class TutorDetailsViewController: BottomPopupViewController {
     
-    var tutor: FeaturedTutor?
+    var tutor: TBFeaturedTutorDetailsData?
     var titleText: String = "Tutor Profile"
     fileprivate let disposeBag = DisposeBag()
     
@@ -27,16 +27,11 @@ final class TutorDetailsViewController: BottomPopupViewController {
     fileprivate lazy var tutorBioTopView = HorizontalStackView(arrangedSubviews: [avatarImageView, tutorBioStackView], spacing: 15)
     
     fileprivate let aboutLabel = UILabel(text: "About", font: .interExtraBold(size: 13), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
-    fileprivate let aboutTextView = UILabel(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At nibh quam odio sit vestibulum sagittis urna. Velit fermentum, accumsan, egestas sit volutpat.", font: .interRegular(size: 13), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
+    fileprivate let aboutTextView = UILabel(text: "N/A", font: .interRegular(size: 13), numberOfLines: 0, color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
     fileprivate lazy var tutorBioMiddleView = VerticalStackView(arrangedSubviews: [aboutLabel, aboutTextView], spacing: 5)
     
     fileprivate let expertiseLabel = UILabel(text: "Expertise", font: .interExtraBold(size: 13), color: .primaryTextColor, alignment: .left, adjustsFontSizeToFitWidth: false)
-    fileprivate let coursePillView = HorizontalStackView(arrangedSubviews: [
-        PillView(backgroundColor: .appBackground, cornerRadius: 15, text: "Physics", textColor: .primaryTextColor, font: .interRegular(size: 13)).withHeight(30),
-        PillView(backgroundColor: .appBackground, cornerRadius: 15, text: "Coding", textColor: .primaryTextColor, font: .interRegular(size: 13)).withHeight(30),
-        PillView(backgroundColor: .appBackground, cornerRadius: 15, text: "Chemistry", textColor: .primaryTextColor, font: .interRegular(size: 13)).withHeight(30),
-        PillView(backgroundColor: .appBackground, cornerRadius: 15, text: "Python", textColor: .primaryTextColor, font: .interRegular(size: 13)).withHeight(30)
-    ], distribution: .equalCentering)
+    fileprivate let coursePillView = HorizontalStackView(arrangedSubviews: [], distribution: .fillEqually)
     fileprivate lazy var _tutorBioMiddleView = VerticalStackView(arrangedSubviews: [expertiseLabel, coursePillView], spacing: 20)
     
     fileprivate lazy var contentView = VerticalStackView(arrangedSubviews: [titleStackView, tutorBioTopView, tutorBioMiddleView, _tutorBioMiddleView], distribution: .equalSpacing)
@@ -61,9 +56,14 @@ final class TutorDetailsViewController: BottomPopupViewController {
         }
     }
     
-    fileprivate func configure(with tutor: FeaturedTutor) {
+    fileprivate func configure(with tutor: TBFeaturedTutorDetailsData) {
         with(tutor) {
             tutorNameLabel.text = $0.fullName
+            aboutTextView.text = $0.bioNote
+            tutor.subject?.enumerated().forEach({ (idx, _subject) in
+                coursePillView.addArrangedSubview(UILabel(text: _subject, font: .interRegular(size: 13), color: .primaryTextColor, alignment: .center, adjustsFontSizeToFitWidth: false).apply { $0.backgroundColor = .primaryGrey; $0.constraintHeight(constant: 30); $0.layer.cornerRadius = 10; $0.clipsToBounds = true; })
+                coursePillView.setCustomSpacing(15, after: coursePillView.subviews[idx])
+            })
             if let avatarUrl = $0.avatar, avatarUrl.isNotEmpty {
                 avatarImageView.setImageFromURL(url: avatarUrl, placeholderImage: R.image.avatar_icon())
             }

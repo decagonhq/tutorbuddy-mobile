@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyCoursesViewController: BaseViewController<UIView, IDashBoardViewModel> {
+class MyCoursesViewController: BaseViewController<MyCoursesView, IDashBoardViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,15 +20,13 @@ class MyCoursesViewController: BaseViewController<UIView, IDashBoardViewModel> {
         (parent as? TBDashBoardViewController)?.configureNavBar(title: "My Courses")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func configureViews() {
+        super.configureViews()
+        with(kview) {
+            $0.viewModel = viewModel
+            $0.setupBindings()
+        }
+        viewModel.getMyCourses(params: [:])
     }
-    */
 
 }

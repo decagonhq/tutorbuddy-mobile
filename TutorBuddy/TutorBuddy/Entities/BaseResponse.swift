@@ -87,14 +87,120 @@ struct TBRecommendedSubjectsData: Codable {
 }
 
 struct RecommendedSubject: Codable, Scopable {
-    let id, subject, thumbnail, description, tutorSubjectId, tutor: String?
+    let id, subject, thumbnail, description, tutorSubjectId, tutor, tutorImage: String?
     let rating, userCount: Int?
     
     enum CodingKeys: String, CodingKey {
-        case id, subject, thumbnail, description, tutorSubjectId, tutor, userCount, rating = "rate"
+        case id, subject, thumbnail, description, tutorSubjectId, tutor, tutorImage, userCount, rating = "rate"
     }
 }
 
 struct Pagination: Codable, Scopable {
     let totalNumberOfPages, currentPage, pageSize, previousPage: Int?
+}
+
+struct TBRecommendedSubjectCategoryResponse: Codable {
+    let success: Bool?
+    let data: TBRecommendedSubjectCategoryData?
+    let message: String?
+    let statusCode: Int?
+}
+
+struct TBRecommendedSubjectCategoryData: Codable {
+    let pageItems: [RecommendedSubjectCategory]?
+    let pagination: Pagination?
+}
+
+enum SubjectCategorySection {
+    case basicScience([RecommendedSubject])
+    case programmingLanguage([RecommendedSubject])
+    
+    var items: [RecommendedSubject] {
+        switch self {
+        case .basicScience(let items),
+                .programmingLanguage(let items):
+            return items
+        }
+    }
+    
+    var count: Int { items.count }
+    
+    var localized: String {
+        switch self {
+        case .basicScience:
+            return "Basic Science"
+        case .programmingLanguage:
+            return "Programming Language"
+        }
+    }
+}
+
+struct RecommendedSubjectCategory: Codable, Scopable {
+    let categoryId, categoryName: String?
+    let subject: [RecommendedSubject]?
+}
+
+struct TBRecommendedSubjectDetailsResponse: Codable {
+    let success: Bool?
+    let data: TBRecommendedSubjectDetailsData?
+    let message: String?
+    let statusCode: Int?
+}
+
+struct TBRecommendedSubjectDetailsData: Codable, Scopable {
+    let topic, thumbnail, description, name, avatar, bioNote, unitOfPrice, createdAt: String?
+    let rating, noOfCourses, price: Int?
+    let tutorComments: [String?]?
+}
+
+struct RecommendedSubjectDetailsData: Scopable {
+    let topic, thumbnail, description, name, avatar, bioNote, unitOfPrice, createdAt: String?
+    let rating, noOfCourses, price: Int?
+    let tutorComments: [String?]?
+}
+
+struct TBFeaturedTutorDetailsResponse: Codable {
+    let success: Bool?
+    let data: TBFeaturedTutorDetailsData?
+    let message: String?
+    let statusCode: Int?
+}
+
+struct TBFeaturedTutorDetailsData: Codable, Scopable {
+    let fullName, avatar, bioNote: String?
+    let subject, avaliabilities: [String]?
+}
+
+struct DashboardData: Codable, Scopable {
+    let userDetails: TBUserData?
+    let featuredTutors: [FeaturedTutor]?
+    let recommendedSubjects: [RecommendedSubject]?
+}
+
+struct TBSessionStartResponse: Codable {
+    let success,  data: Bool?
+    let message: String?
+    let statusCode: Int?
+}
+
+struct MyCourseResponse: Codable {
+    let success: Bool?
+    let data: MyCourseData?
+    let message: String?
+    let statusCode: Int?
+}
+
+struct MyCourseData: Codable {
+    let pageItems: [MyCourse]?
+    let pagination: Pagination?
+}
+
+struct MyCourse: Codable, Scopable {
+    let sessionId, topic, thumbnail, tutor, student, studentImage, tutorImage: String?
+    let startTime, endTime: String?
+    let status: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case sessionId, topic, thumbnail, tutor, student, studentImage, tutorImage, startTime = "startime", endTime, status
+    }
 }

@@ -29,19 +29,10 @@ struct CourseRequest: Scopable {
     let studentName: String?
     let courseDuration: String?
     let progressStatus: ProgressStatus?
-    
-    enum ProgressStatus: String, CaseIterable {
-        case inProgress, completed
-        
-        var localized: String {
-            switch self {
-            case .inProgress:
-                return "In progress"
-            case .completed:
-                return "Completed"
-            }
-        }
-    }
+}
+
+enum ProgressStatus: Int, CaseIterable {
+    case inProgress, completed, cancelled
 }
 
 struct Rating: Scopable {

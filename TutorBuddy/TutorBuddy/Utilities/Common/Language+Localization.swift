@@ -72,6 +72,7 @@ extension String {
     static var AREA_OF_INTEREST: String { "AreaOfInterestKey".localized }
     static var USER_TYPE: String { "UserTypeKey".localized }
     static var NO_FEATURED_TUTORS_FOUND: String { "NoFeaturedTutorsFoundKey".localized }
+    static var NO_RECOMMENDED_COURSES_FOUND: String { "NoRecommendedCoursesFoundKey".localized }
     
     
     

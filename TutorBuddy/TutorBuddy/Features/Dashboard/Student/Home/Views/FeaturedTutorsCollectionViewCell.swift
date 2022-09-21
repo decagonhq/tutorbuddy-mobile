@@ -12,7 +12,7 @@ class FeaturedTutorsCollectionViewCell: BaseCollectionViewCell {
     fileprivate let avatarImageView = UIImageView(image: R.image.avatar_icon(), height: 80, width: 80, cornerRadius: 40)
     fileprivate let tutorName = UILabel(text: "N/A", font: .interRegular(size: 15), numberOfLines: 0, color: .primaryTextColor, alignment: .center, adjustsFontSizeToFitWidth: false)
     fileprivate let ratingsIconText = IconTextView(text: "N/A", font: .interBold(), placeholderIcon: R.image.star_icon(), iconTextAlignment: .iconLeft, iconSize: 15, textColor: .primaryTextColor, textAlignment: .left, contentStackDistribution: .equalCentering, contentStackAlignment: .center, contentSpacing: 5).apply { $0.backgroundColor = .clear }
-    fileprivate lazy var containerView = VerticalStackView(arrangedSubviews: [avatarImageView, tutorName, ratingsIconText], spacing: 5, alignment: .center)
+    lazy var containerView = VerticalStackView(arrangedSubviews: [avatarImageView, tutorName, ratingsIconText], spacing: 5, alignment: .center)
     
     override func setup() {
         super.setup()
